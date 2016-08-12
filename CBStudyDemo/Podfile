@@ -1,0 +1,12 @@
+
+platform :ios, '8.0'
+pod 'JSPatch'
+pod 'Aspects'
+pod 'AsyncDisplayKit'
+pod 'SDWebImage', '~>3.8'
+pod 'AFNetworking', '~> 3.0'
+pod 'FMDB'
+pod 'BlocksKit'
+pod 'MagicalRecord'
+pod 'YYKit'
+pod 'MBProgressHUD'
