@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class CBSkipItem;
+@class CBSectionItem;
 @interface CBBaseTableViewController : UIViewController
 
-@property (nonatomic, strong) NSMutableArray<NSMutableArray<CBSkipItem *> *> *dataArr;
+@property (nonatomic, strong) NSMutableArray<CBSectionItem *> *dataArr;
 @property (nonatomic, readonly) UITableView *tableView;
 
 @end

@@ -11,3 +11,21 @@
 @implementation CBSkipItem
 
 @end
+
+@interface CBSectionItem ()
+
+@property (nonatomic, strong) NSMutableArray<CBSkipItem *> *cellItems;
+
+@end
+
+@implementation CBSectionItem
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.cellItems = [NSMutableArray array];
+    }
+    return self;
+}
+
+@end

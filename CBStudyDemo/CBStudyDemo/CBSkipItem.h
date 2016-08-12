@@ -14,3 +14,10 @@
 @property (nonatomic, copy) Class destinationClass;
 
 @end
+
+@interface CBSectionItem : NSObject
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong, readonly) NSMutableArray<CBSkipItem *> *cellItems;
+
+@end
