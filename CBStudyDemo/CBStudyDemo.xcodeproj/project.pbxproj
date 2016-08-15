@@ -10,6 +10,9 @@
 		3781767E1D61DA050092C6A4 /* CBNSRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3781767D1D61DA050092C6A4 /* CBNSRunLoopViewController.m */; };
 		378176811D61DA180092C6A4 /* CBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176801D61DA180092C6A4 /* CBBaseViewController.m */; };
 		378176841D61DA3F0092C6A4 /* CBCFRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176831D61DA3F0092C6A4 /* CBCFRunLoopViewController.m */; };
+		378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378176861D61E2380092C6A4 /* CBSwiftNormal.swift */; };
+		3781768A1D61E2A70092C6A4 /* CBNormalInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176891D61E2A70092C6A4 /* CBNormalInputSource.m */; };
+		3781768E1D61E4980092C6A4 /* CBThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3781768D1D61E4980092C6A4 /* CBThread.m */; };
 		37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4041D5DC6CA00C3CB1F /* main.m */; };
 		37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */; };
 		37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */; };
@@ -34,6 +37,12 @@
 		378176801D61DA180092C6A4 /* CBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBaseViewController.m; sourceTree = "<group>"; };
 		378176821D61DA3F0092C6A4 /* CBCFRunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCFRunLoopViewController.h; sourceTree = "<group>"; };
 		378176831D61DA3F0092C6A4 /* CBCFRunLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCFRunLoopViewController.m; sourceTree = "<group>"; };
+		378176851D61E2380092C6A4 /* CBStudyDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBStudyDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		378176861D61E2380092C6A4 /* CBSwiftNormal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSwiftNormal.swift; sourceTree = "<group>"; };
+		378176881D61E2A70092C6A4 /* CBNormalInputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNormalInputSource.h; sourceTree = "<group>"; };
+		378176891D61E2A70092C6A4 /* CBNormalInputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNormalInputSource.m; sourceTree = "<group>"; };
+		3781768C1D61E4980092C6A4 /* CBThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBThread.h; sourceTree = "<group>"; };
+		3781768D1D61E4980092C6A4 /* CBThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBThread.m; sourceTree = "<group>"; };
 		37F3C4001D5DC6CA00C3CB1F /* CBStudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStudyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3C4041D5DC6CA00C3CB1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,8 +86,19 @@
 				3781767D1D61DA050092C6A4 /* CBNSRunLoopViewController.m */,
 				378176821D61DA3F0092C6A4 /* CBCFRunLoopViewController.h */,
 				378176831D61DA3F0092C6A4 /* CBCFRunLoopViewController.m */,
+				378176881D61E2A70092C6A4 /* CBNormalInputSource.h */,
+				378176891D61E2A70092C6A4 /* CBNormalInputSource.m */,
 			);
 			name = RunLoop;
+			sourceTree = "<group>";
+		};
+		3781768B1D61E40B0092C6A4 /* Multi-Thread */ = {
+			isa = PBXGroup;
+			children = (
+				3781768C1D61E4980092C6A4 /* CBThread.h */,
+				3781768D1D61E4980092C6A4 /* CBThread.m */,
+			);
+			name = "Multi-Thread";
 			sourceTree = "<group>";
 		};
 		37F3C3F71D5DC6CA00C3CB1F = {
@@ -117,10 +137,12 @@
 				378176801D61DA180092C6A4 /* CBBaseViewController.m */,
 				37F3C4291D5DD46E00C3CB1F /* CBNavigationController.h */,
 				37F3C42A1D5DD46E00C3CB1F /* CBNavigationController.m */,
+				378176861D61E2380092C6A4 /* CBSwiftNormal.swift */,
 				37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */,
 				37F3C4111D5DC6CA00C3CB1F /* LaunchScreen.storyboard */,
 				37F3C4141D5DC6CA00C3CB1F /* Info.plist */,
 				37F3C4031D5DC6CA00C3CB1F /* Supporting Files */,
+				378176851D61E2380092C6A4 /* CBStudyDemo-Bridging-Header.h */,
 			);
 			path = CBStudyDemo;
 			sourceTree = "<group>";
@@ -137,6 +159,7 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
+				3781768B1D61E40B0092C6A4 /* Multi-Thread */,
 				3781767A1D61D8FE0092C6A4 /* RunLoop */,
 				37F3C4201D5DD33100C3CB1F /* CBBasicUseViewController.h */,
 				37F3C4211D5DD33100C3CB1F /* CBBasicUseViewController.m */,
@@ -300,6 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F3C4221D5DD33100C3CB1F /* CBBasicUseViewController.m in Sources */,
+				3781768E1D61E4980092C6A4 /* CBThread.m in Sources */,
+				3781768A1D61E2A70092C6A4 /* CBNormalInputSource.m in Sources */,
 				37F3C4281D5DD35900C3CB1F /* CBHomePrincipleViewController.m in Sources */,
 				37F3C42E1D5DD66000C3CB1F /* CBSkipItem.m in Sources */,
 				378176811D61DA180092C6A4 /* CBBaseViewController.m in Sources */,
@@ -309,6 +334,7 @@
 				3781767E1D61DA050092C6A4 /* CBNSRunLoopViewController.m in Sources */,
 				37F3C42B1D5DD46E00C3CB1F /* CBNavigationController.m in Sources */,
 				37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */,
+				378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */,
 				378176841D61DA3F0092C6A4 /* CBCFRunLoopViewController.m in Sources */,
 				37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */,
 			);
@@ -415,11 +441,14 @@
 			baseConfigurationReference = 867089A0BBE77A50F49D6D32 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = CBStudyDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CBStudyDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wnyfk.CBStudyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CBStudyDemo/CBStudyDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -428,11 +457,13 @@
 			baseConfigurationReference = 25B811628CA54DA3748105F2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = CBStudyDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CBStudyDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wnyfk.CBStudyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CBStudyDemo/CBStudyDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};

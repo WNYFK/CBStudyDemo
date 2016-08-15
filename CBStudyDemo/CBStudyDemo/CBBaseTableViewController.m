@@ -60,6 +60,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CBSectionItem *sectionItem = self.dataArr[indexPath.section];
     CBSkipItem *cellItem = sectionItem.cellItems[indexPath.row];
     UIViewController *viewController = [cellItem.destinationClass new];

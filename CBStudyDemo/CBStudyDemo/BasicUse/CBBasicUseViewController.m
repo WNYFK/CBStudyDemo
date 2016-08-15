@@ -8,7 +8,7 @@
 
 #import "CBBasicUseViewController.h"
 #import "CBNSRunLoopViewController.h"
-#import "CBCFRunLoopViewController.h"
+#import "CBCFRunLoopViewController.h" 
 
 @interface CBBasicUseViewController ()
 
@@ -27,7 +27,7 @@
 - (void)setupBaseData {
     CBSectionItem *runloopSectionItem = [[CBSectionItem alloc] initWithTitle:@"RunLoop"];
     [runloopSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"NSRunLoop" destinationClass:[CBNSRunLoopViewController class]]];
-    [runloopSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CFRunLoop" destinationClass:[CBNSRunLoopViewController class]]];
+    [runloopSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CFRunLoop" destinationClass:[CBCFRunLoopViewController class]]];
     [self.dataArr addObject:runloopSectionItem];
     
     CBSectionItem *multiThreadSectionItem = [[CBSectionItem alloc] initWithTitle:@"Multi-Thread"];
