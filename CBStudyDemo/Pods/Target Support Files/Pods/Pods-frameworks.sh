@@ -82,3 +82,36 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/Aspects.framework"
+  install_framework "Pods/AsyncDisplayKit.framework"
+  install_framework "Pods/BlocksKit.framework"
+  install_framework "Pods/FMDB.framework"
+  install_framework "Pods/JSPatch.framework"
+  install_framework "Pods/MBProgressHUD.framework"
+  install_framework "Pods/MagicalRecord.framework"
+  install_framework "Pods/PINCache.framework"
+  install_framework "Pods/PINRemoteImage.framework"
+  install_framework "Pods/RxCocoa.framework"
+  install_framework "Pods/RxSwift.framework"
+  install_framework "Pods/SDWebImage.framework"
+  install_framework "Pods/YYKit.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/Aspects.framework"
+  install_framework "Pods/AsyncDisplayKit.framework"
+  install_framework "Pods/BlocksKit.framework"
+  install_framework "Pods/FMDB.framework"
+  install_framework "Pods/JSPatch.framework"
+  install_framework "Pods/MBProgressHUD.framework"
+  install_framework "Pods/MagicalRecord.framework"
+  install_framework "Pods/PINCache.framework"
+  install_framework "Pods/PINRemoteImage.framework"
+  install_framework "Pods/RxCocoa.framework"
+  install_framework "Pods/RxSwift.framework"
+  install_framework "Pods/SDWebImage.framework"
+  install_framework "Pods/YYKit.framework"
+fi

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBBaseTableViewController.h"
 
-@interface CBHomePrincipleViewController : UIViewController
+@interface CBHomePrincipleViewController : CBBaseTableViewController
 
 @end

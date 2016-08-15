@@ -19,6 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor redColor];
+    self.dataArr = [NSMutableArray array];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.view addSubview:self.tableView];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -29,8 +35,12 @@
     return self.dataArr[section].cellItems.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 60;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,5 +54,17 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    CBSectionItem *sectionItem = self.dataArr[section];
+    return sectionItem.title;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CBSectionItem *sectionItem = self.dataArr[indexPath.section];
+    CBSkipItem *cellItem = sectionItem.cellItems[indexPath.row];
+    UIViewController *viewController = [cellItem.destinationClass new];
+    viewController.navigationItem.title = cellItem.title;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 @end

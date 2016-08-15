@@ -13,11 +13,15 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) Class destinationClass;
 
+- (instancetype)initWithTitle:(NSString *)title destinationClass:(Class)dClass;
+
 @end
 
 @interface CBSectionItem : NSObject
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, strong, readonly) NSMutableArray<CBSkipItem *> *cellItems;
+
+- (instancetype)initWithTitle:(NSString *)title;
 
 @end

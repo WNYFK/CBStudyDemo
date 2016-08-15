@@ -10,6 +10,13 @@
 
 @implementation CBSkipItem
 
+- (instancetype)initWithTitle:(NSString *)title destinationClass:(Class)dClass {
+    if (self = [super init]) {
+        self.title = title;
+        self.destinationClass = dClass;
+    }
+    return self;
+}
 @end
 
 @interface CBSectionItem ()
@@ -19,6 +26,13 @@
 @end
 
 @implementation CBSectionItem
+
+- (instancetype)initWithTitle:(NSString *)title {
+    if (self = [self init]) {
+        self.title = title;
+    }
+    return self;
+}
 
 - (instancetype)init {
     self = [super init];

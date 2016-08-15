@@ -1,10 +1,15 @@
 
 platform :ios, '8.0'
+
+use_frameworks!
+
+pod 'RxSwift',    '~> 2.0'
+pod 'RxCocoa',    '~> 2.0'
 pod 'JSPatch'
 pod 'Aspects'
 pod 'AsyncDisplayKit'
-pod 'SDWebImage', '~>3.8'
-pod 'AFNetworking', '~> 3.0'
+pod 'SDWebImage'
+pod 'AFNetworking'
 pod 'FMDB'
 pod 'BlocksKit'
 pod 'MagicalRecord'

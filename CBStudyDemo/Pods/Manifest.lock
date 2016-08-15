@@ -53,6 +53,9 @@ PODS:
     - PINCache (>= 3.0.0-beta)
   - PINRemoteImage/iOS (3.0.0-beta.3):
     - PINRemoteImage/Core
+  - RxCocoa (2.6.0):
+    - RxSwift (~> 2.5)
+  - RxSwift (2.6.0)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
@@ -61,7 +64,7 @@ PODS:
   - YYKit/no-arc (1.0.7)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.0)
+  - AFNetworking
   - Aspects
   - AsyncDisplayKit
   - BlocksKit
@@ -69,7 +72,9 @@ DEPENDENCIES:
   - JSPatch
   - MagicalRecord
   - MBProgressHUD
-  - SDWebImage (~> 3.8)
+  - RxCocoa (~> 2.0)
+  - RxSwift (~> 2.0)
+  - SDWebImage
   - YYKit
 
 SPEC CHECKSUMS:
@@ -83,6 +88,8 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PINCache: 6911fe422a633e18b3d3ddf2bd4f0e55e36e2892
   PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
+  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
