@@ -52,7 +52,7 @@
     self.control.str = [self.control.str stringByAppendingString:@"12"];
     self.control.x += 1;
     
-//    [self.control setValue:[self.control.str stringByAppendingString:@"123"] forKey:@"str"];
+    [self.control setValue:[self.control.str stringByAppendingString:@"123"] forKey:@"str"];
 }
 
 - (void)realiseBtnClicked {
@@ -83,10 +83,6 @@
     
     NSLog(@"Using NSObject methods, normal setX: is  %p, overridden setX: is %p\n",[self.control methodForSelector:@selector(setX:)], method_getImplementation(class_getInstanceMethod(class_getSuperclass(object_getClass(self.x)), @selector(setX:))));
     NSLog(@"Using libobjc functions, normal setX: is %p, overridden setX: is %p\n", method_getImplementation(class_getInstanceMethod(object_getClass(self.control), @selector(setX:))), method_getImplementation(class_getInstanceMethod(object_getClass(self.x), @selector(setX:))));
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    
 }
 
 @end

@@ -50,9 +50,8 @@ static NSString *setterForGetter(NSString *getter) {
     return setter;
 }
 
-static void sendKVO(id self, NSString *getterName, id newValue) {
+static void sendKVO(id self, NSString *getterName, id oldValue, id newValue) {
     NSMutableArray *observers = objc_getAssociatedObject(self, (__bridge const void *)(KCBKVOAssociatedObservers));
-    id oldValue = [self valueForKey:getterName];
     for (CBObserverInfo *observerInfo in observers) {
         if ([observerInfo.key isEqualToString:getterName]) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -75,15 +74,18 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
         .receiver = self,
         .super_class = class_getSuperclass(object_getClass(self))
     };
-    
+    id oldValue = [self valueForKey:getterName];
     void (*objc_msgSendSuperCasted)(void *, SEL, id) = (void *)objc_msgSendSuper;
     objc_msgSendSuperCasted(&superClass, _cmd, newValue);
-    sendKVO(self, getterName, newValue);
+    sendKVO(self, getterName, oldValue, newValue);
 }
 
 static Class kvo_class(id self, SEL _cmd) {
     return class_getSuperclass(object_getClass(self));
 }
+
+static NSMutableDictionary *_basicTypeEncodeDict;
+#define CB_DEFINE_TYPE_ENCODE_CASE(_type) [_basicTypeEncodeDict setObject:@#_type forKey:[NSString stringWithUTF8String:@encode(_type)]];
 
 @implementation NSObject (KVO)
 
@@ -105,18 +107,51 @@ static Class kvo_class(id self, SEL _cmd) {
     }
     
     if (![self hasSelector:setterSelector]) {
+        if (!_basicTypeEncodeDict) {
+            _basicTypeEncodeDict = [[NSMutableDictionary alloc] init];
+            CB_DEFINE_TYPE_ENCODE_CASE(BOOL);
+            CB_DEFINE_TYPE_ENCODE_CASE(int);
+            CB_DEFINE_TYPE_ENCODE_CASE(char);
+            CB_DEFINE_TYPE_ENCODE_CASE(short);
+            CB_DEFINE_TYPE_ENCODE_CASE(unsigned short);
+            CB_DEFINE_TYPE_ENCODE_CASE(unsigned int);
+            CB_DEFINE_TYPE_ENCODE_CASE(long);
+            CB_DEFINE_TYPE_ENCODE_CASE(unsigned long);
+            CB_DEFINE_TYPE_ENCODE_CASE(long long);
+            CB_DEFINE_TYPE_ENCODE_CASE(float);
+            CB_DEFINE_TYPE_ENCODE_CASE(double);
+        }
         const char *types = method_getTypeEncoding(setterMehod);
         NSString *methodType = [NSString stringWithUTF8String:method_getTypeEncoding(setterMehod)];
         methodType = [methodType componentsSeparatedByString:@"@0:8"].lastObject;
-        NSString *valueType = [methodType substringToIndex:methodType.length - 2];
+        NSString *valueEncodeType = [methodType substringToIndex:methodType.length - 2];
         IMP childSetValue = nil;
-        if ([valueType isEqualToString:[NSString stringWithUTF8String:@encode(int)]]) {
-            childSetValue = imp_implementationWithBlock(^(id _self, int newValue) {
-                IMP superSetterIMP = class_getMethodImplementation(class_getSuperclass(object_getClass(self)), setterSelector);
-                void (*setterSel)(void*, SEL, int) = (void *)superSetterIMP;
-                setterSel((__bridge void *)(_self), setterSelector, newValue);
-                sendKVO(self, key, [NSNumber numberWithInt:newValue]);
-            });
+        NSString *valueType = _basicTypeEncodeDict[valueEncodeType];
+        if (valueType) {
+            #define CB_SetterBasicTypeIMP(type) imp_implementationWithBlock(^(id _self, type newValue) { \
+                    id oldValue = [observer valueForKey:key];    \
+                    IMP superSetterIMP = class_getMethodImplementation(class_getSuperclass(object_getClass(self)), setterSelector); \
+                    void (*setterSel)(void*, SEL, int) = (void *)superSetterIMP; \
+                    setterSel((__bridge void *)(_self), setterSelector, newValue); \
+                    sendKVO(self, key, oldValue, @(newValue)); \
+                });
+            switch ([valueEncodeType UTF8String][0]) {
+                #define CB_Setter_ARG_CASE(_typeChar, _type) \
+                case _typeChar: {   \
+                    childSetValue = CB_SetterBasicTypeIMP(_type);   \
+                    break;  \
+                }
+                CB_Setter_ARG_CASE('i', int)
+                CB_Setter_ARG_CASE('B', BOOL)
+                CB_Setter_ARG_CASE('I', unsigned int)
+                CB_Setter_ARG_CASE('S', unsigned short)
+                CB_Setter_ARG_CASE('c', char)
+                CB_Setter_ARG_CASE('f', float)
+                CB_Setter_ARG_CASE('s', short)
+                CB_Setter_ARG_CASE('d', double)
+                default:
+                    break;
+            }
         } else {
             childSetValue = (IMP)kvo_setter;
         }
