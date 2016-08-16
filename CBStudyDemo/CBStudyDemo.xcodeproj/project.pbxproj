@@ -17,6 +17,8 @@
 		378176961D62A9600092C6A4 /* CBKVOBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176951D62A9600092C6A4 /* CBKVOBlockViewController.m */; };
 		378176991D62AB980092C6A4 /* CBKVOTestClassOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176981D62AB980092C6A4 /* CBKVOTestClassOne.m */; };
 		3781769C1D62CEF10092C6A4 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3781769B1D62CEF10092C6A4 /* NSObject+KVO.m */; };
+		378176A11D633D740092C6A4 /* CBKVCRealizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176A01D633D740092C6A4 /* CBKVCRealizeViewController.m */; };
+		378176A41D633EC00092C6A4 /* CBObject+KVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176A31D633EC00092C6A4 /* CBObject+KVC.m */; };
 		37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4041D5DC6CA00C3CB1F /* main.m */; };
 		37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */; };
 		37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */; };
@@ -56,6 +58,10 @@
 		3781769A1D62CEF10092C6A4 /* NSObject+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
 		3781769B1D62CEF10092C6A4 /* NSObject+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
 		3781769D1D62D9FC0092C6A4 /* CBRunTimeMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBRunTimeMethod.h; sourceTree = "<group>"; };
+		3781769F1D633D740092C6A4 /* CBKVCRealizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBKVCRealizeViewController.h; sourceTree = "<group>"; };
+		378176A01D633D740092C6A4 /* CBKVCRealizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBKVCRealizeViewController.m; sourceTree = "<group>"; };
+		378176A21D633EC00092C6A4 /* CBObject+KVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBObject+KVC.h"; sourceTree = "<group>"; };
+		378176A31D633EC00092C6A4 /* CBObject+KVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBObject+KVC.m"; sourceTree = "<group>"; };
 		37F3C4001D5DC6CA00C3CB1F /* CBStudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStudyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3C4041D5DC6CA00C3CB1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +134,17 @@
 				378176951D62A9600092C6A4 /* CBKVOBlockViewController.m */,
 			);
 			name = KVO;
+			sourceTree = "<group>";
+		};
+		3781769E1D633D570092C6A4 /* KVC */ = {
+			isa = PBXGroup;
+			children = (
+				3781769F1D633D740092C6A4 /* CBKVCRealizeViewController.h */,
+				378176A01D633D740092C6A4 /* CBKVCRealizeViewController.m */,
+				378176A21D633EC00092C6A4 /* CBObject+KVC.h */,
+				378176A31D633EC00092C6A4 /* CBObject+KVC.m */,
+			);
+			name = KVC;
 			sourceTree = "<group>";
 		};
 		37F3C3F71D5DC6CA00C3CB1F = {
@@ -208,6 +225,7 @@
 		37F3C41F1D5DD31100C3CB1F /* Principle */ = {
 			isa = PBXGroup;
 			children = (
+				3781769E1D633D570092C6A4 /* KVC */,
 				378176901D62A8E10092C6A4 /* KVO */,
 				37F3C4261D5DD35900C3CB1F /* CBHomePrincipleViewController.h */,
 				37F3C4271D5DD35900C3CB1F /* CBHomePrincipleViewController.m */,
@@ -360,9 +378,11 @@
 				378176811D61DA180092C6A4 /* CBBaseViewController.m in Sources */,
 				37F3C41C1D5DD1A800C3CB1F /* CBTabbarController.m in Sources */,
 				378176931D62A9100092C6A4 /* CBKVORealizeViewController.m in Sources */,
+				378176A41D633EC00092C6A4 /* CBObject+KVC.m in Sources */,
 				37F3C4251D5DD34900C3CB1F /* CBHomeKitViewController.m in Sources */,
 				3781769C1D62CEF10092C6A4 /* NSObject+KVO.m in Sources */,
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
+				378176A11D633D740092C6A4 /* CBKVCRealizeViewController.m in Sources */,
 				3781767E1D61DA050092C6A4 /* CBNSRunLoopViewController.m in Sources */,
 				37F3C42B1D5DD46E00C3CB1F /* CBNavigationController.m in Sources */,
 				378176961D62A9600092C6A4 /* CBKVOBlockViewController.m in Sources */,
