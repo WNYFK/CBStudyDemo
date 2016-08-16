@@ -20,7 +20,7 @@
 
 - (void)setupBaseData {
     CBSectionItem *kvoSectionItem = [[CBSectionItem alloc] initWithTitle:@"KVO"];
-    [kvoSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"KVO实现" destinationClass:[CBKVORealizeViewController class]]];
+    [kvoSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"KVO 实现" destinationClass:[CBKVORealizeViewController class]]];
     [kvoSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"KVO Block实现" destinationClass:[CBKVOBlockViewController class]]];
     [self.dataArr addObject:kvoSectionItem];
 }

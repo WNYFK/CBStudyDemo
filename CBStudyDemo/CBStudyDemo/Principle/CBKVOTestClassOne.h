@@ -8,14 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CBKVOTestClassOne : NSObject {
-    int x;
-    int y;
-    int z;
-}
+@interface CBKVOTestClassOne : NSObject
 
 @property (nonatomic, assign) int x;
 @property (nonatomic, assign) int y;
 @property (nonatomic, assign) int z;
+@property (nonatomic, strong) NSString *str;
 
 @end

@@ -10,6 +10,5 @@
 #import <objc/runtime.h>
 
 @implementation CBKVOTestClassOne
-@synthesize x, y, z;
 
 @end
