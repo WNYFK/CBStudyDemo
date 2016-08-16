@@ -13,6 +13,9 @@
 		378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378176861D61E2380092C6A4 /* CBSwiftNormal.swift */; };
 		3781768A1D61E2A70092C6A4 /* CBNormalInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176891D61E2A70092C6A4 /* CBNormalInputSource.m */; };
 		3781768E1D61E4980092C6A4 /* CBThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3781768D1D61E4980092C6A4 /* CBThread.m */; };
+		378176931D62A9100092C6A4 /* CBKVORealizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176921D62A9100092C6A4 /* CBKVORealizeViewController.m */; };
+		378176961D62A9600092C6A4 /* CBKVOBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176951D62A9600092C6A4 /* CBKVOBlockViewController.m */; };
+		378176991D62AB980092C6A4 /* CBKVOTestClassOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176981D62AB980092C6A4 /* CBKVOTestClassOne.m */; };
 		37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4041D5DC6CA00C3CB1F /* main.m */; };
 		37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */; };
 		37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */; };
@@ -43,6 +46,12 @@
 		378176891D61E2A70092C6A4 /* CBNormalInputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNormalInputSource.m; sourceTree = "<group>"; };
 		3781768C1D61E4980092C6A4 /* CBThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBThread.h; sourceTree = "<group>"; };
 		3781768D1D61E4980092C6A4 /* CBThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBThread.m; sourceTree = "<group>"; };
+		378176911D62A9100092C6A4 /* CBKVORealizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBKVORealizeViewController.h; sourceTree = "<group>"; };
+		378176921D62A9100092C6A4 /* CBKVORealizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBKVORealizeViewController.m; sourceTree = "<group>"; };
+		378176941D62A9600092C6A4 /* CBKVOBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBKVOBlockViewController.h; sourceTree = "<group>"; };
+		378176951D62A9600092C6A4 /* CBKVOBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBKVOBlockViewController.m; sourceTree = "<group>"; };
+		378176971D62AB980092C6A4 /* CBKVOTestClassOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBKVOTestClassOne.h; sourceTree = "<group>"; };
+		378176981D62AB980092C6A4 /* CBKVOTestClassOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBKVOTestClassOne.m; sourceTree = "<group>"; };
 		37F3C4001D5DC6CA00C3CB1F /* CBStudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStudyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3C4041D5DC6CA00C3CB1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +108,19 @@
 				3781768D1D61E4980092C6A4 /* CBThread.m */,
 			);
 			name = "Multi-Thread";
+			sourceTree = "<group>";
+		};
+		378176901D62A8E10092C6A4 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				378176911D62A9100092C6A4 /* CBKVORealizeViewController.h */,
+				378176921D62A9100092C6A4 /* CBKVORealizeViewController.m */,
+				378176971D62AB980092C6A4 /* CBKVOTestClassOne.h */,
+				378176981D62AB980092C6A4 /* CBKVOTestClassOne.m */,
+				378176941D62A9600092C6A4 /* CBKVOBlockViewController.h */,
+				378176951D62A9600092C6A4 /* CBKVOBlockViewController.m */,
+			);
+			name = KVO;
 			sourceTree = "<group>";
 		};
 		37F3C3F71D5DC6CA00C3CB1F = {
@@ -179,6 +201,7 @@
 		37F3C41F1D5DD31100C3CB1F /* Principle */ = {
 			isa = PBXGroup;
 			children = (
+				378176901D62A8E10092C6A4 /* KVO */,
 				37F3C4261D5DD35900C3CB1F /* CBHomePrincipleViewController.h */,
 				37F3C4271D5DD35900C3CB1F /* CBHomePrincipleViewController.m */,
 			);
@@ -329,12 +352,15 @@
 				37F3C42E1D5DD66000C3CB1F /* CBSkipItem.m in Sources */,
 				378176811D61DA180092C6A4 /* CBBaseViewController.m in Sources */,
 				37F3C41C1D5DD1A800C3CB1F /* CBTabbarController.m in Sources */,
+				378176931D62A9100092C6A4 /* CBKVORealizeViewController.m in Sources */,
 				37F3C4251D5DD34900C3CB1F /* CBHomeKitViewController.m in Sources */,
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
 				3781767E1D61DA050092C6A4 /* CBNSRunLoopViewController.m in Sources */,
 				37F3C42B1D5DD46E00C3CB1F /* CBNavigationController.m in Sources */,
+				378176961D62A9600092C6A4 /* CBKVOBlockViewController.m in Sources */,
 				37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */,
 				378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */,
+				378176991D62AB980092C6A4 /* CBKVOTestClassOne.m in Sources */,
 				378176841D61DA3F0092C6A4 /* CBCFRunLoopViewController.m in Sources */,
 				37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */,
 			);
