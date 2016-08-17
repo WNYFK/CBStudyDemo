@@ -12,6 +12,9 @@
 #import "CBRunTimeVIewController.h"
 #import "CBCoreDataViewController.h"
 #import "CBCoreDataThirdLibUseViewController.h"
+#import "CBGCDViewController.h"
+#import "CBOperationViewController.h"
+#import "CBThreadViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -24,7 +27,6 @@
     [super viewDidLoad];
     self.navigationItem.title = @"基本用法";
     [self setupBaseData];
-    [self.tableView reloadData];
 }
 
 - (void)setupBaseData {
@@ -34,6 +36,9 @@
     [self.dataArr addObject:runloopSectionItem];
     
     CBSectionItem *multiThreadSectionItem = [[CBSectionItem alloc] initWithTitle:@"Multi-Thread"];
+    [multiThreadSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"GCD" destinationClass:[CBGCDViewController class]]];
+    [multiThreadSectionItem.cellItems addObject: [[CBSkipItem alloc] initWithTitle:@"Operation" destinationClass:[CBOperationViewController class]]];
+    [multiThreadSectionItem.cellItems addObject: [[CBSkipItem alloc] initWithTitle:@"Thread" destinationClass:[CBThreadViewController class]]];
     [self.dataArr addObject:multiThreadSectionItem];
     
     CBSectionItem *runtimeSectionItem = [[CBSectionItem alloc] initWithTitle:@"Runtime"];
