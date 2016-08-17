@@ -19,6 +19,9 @@
 		3781769C1D62CEF10092C6A4 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3781769B1D62CEF10092C6A4 /* NSObject+KVO.m */; };
 		378176A11D633D740092C6A4 /* CBKVCRealizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176A01D633D740092C6A4 /* CBKVCRealizeViewController.m */; };
 		378176A41D633EC00092C6A4 /* CBObject+KVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176A31D633EC00092C6A4 /* CBObject+KVC.m */; };
+		378176A81D63FD6F0092C6A4 /* CBRunTimeVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176A71D63FD6F0092C6A4 /* CBRunTimeVIewController.m */; };
+		378176AC1D63FE020092C6A4 /* CBCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176AB1D63FE020092C6A4 /* CBCoreDataViewController.m */; };
+		378176AF1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176AE1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.m */; };
 		37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4041D5DC6CA00C3CB1F /* main.m */; };
 		37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */; };
 		37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */; };
@@ -62,6 +65,12 @@
 		378176A01D633D740092C6A4 /* CBKVCRealizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBKVCRealizeViewController.m; sourceTree = "<group>"; };
 		378176A21D633EC00092C6A4 /* CBObject+KVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBObject+KVC.h"; sourceTree = "<group>"; };
 		378176A31D633EC00092C6A4 /* CBObject+KVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBObject+KVC.m"; sourceTree = "<group>"; };
+		378176A61D63FD6F0092C6A4 /* CBRunTimeVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRunTimeVIewController.h; sourceTree = "<group>"; };
+		378176A71D63FD6F0092C6A4 /* CBRunTimeVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunTimeVIewController.m; sourceTree = "<group>"; };
+		378176AA1D63FE020092C6A4 /* CBCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataViewController.h; sourceTree = "<group>"; };
+		378176AB1D63FE020092C6A4 /* CBCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataViewController.m; sourceTree = "<group>"; };
+		378176AD1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataThirdLibUseViewController.h; sourceTree = "<group>"; };
+		378176AE1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataThirdLibUseViewController.m; sourceTree = "<group>"; };
 		37F3C4001D5DC6CA00C3CB1F /* CBStudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStudyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3C4041D5DC6CA00C3CB1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,6 +156,26 @@
 			name = KVC;
 			sourceTree = "<group>";
 		};
+		378176A51D63FD460092C6A4 /* RunTime */ = {
+			isa = PBXGroup;
+			children = (
+				378176A61D63FD6F0092C6A4 /* CBRunTimeVIewController.h */,
+				378176A71D63FD6F0092C6A4 /* CBRunTimeVIewController.m */,
+			);
+			name = RunTime;
+			sourceTree = "<group>";
+		};
+		378176A91D63FDEF0092C6A4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				378176AA1D63FE020092C6A4 /* CBCoreDataViewController.h */,
+				378176AB1D63FE020092C6A4 /* CBCoreDataViewController.m */,
+				378176AD1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.h */,
+				378176AE1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		37F3C3F71D5DC6CA00C3CB1F = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +234,8 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
+				378176A91D63FDEF0092C6A4 /* CoreData */,
+				378176A51D63FD460092C6A4 /* RunTime */,
 				3781768B1D61E40B0092C6A4 /* Multi-Thread */,
 				3781767A1D61D8FE0092C6A4 /* RunLoop */,
 				37F3C4201D5DD33100C3CB1F /* CBBasicUseViewController.h */,
@@ -370,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378176A81D63FD6F0092C6A4 /* CBRunTimeVIewController.m in Sources */,
 				37F3C4221D5DD33100C3CB1F /* CBBasicUseViewController.m in Sources */,
 				3781768E1D61E4980092C6A4 /* CBThread.m in Sources */,
 				3781768A1D61E2A70092C6A4 /* CBNormalInputSource.m in Sources */,
@@ -390,6 +422,8 @@
 				378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */,
 				378176991D62AB980092C6A4 /* CBKVOTestClassOne.m in Sources */,
 				378176841D61DA3F0092C6A4 /* CBCFRunLoopViewController.m in Sources */,
+				378176AC1D63FE020092C6A4 /* CBCoreDataViewController.m in Sources */,
+				378176AF1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.m in Sources */,
 				37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

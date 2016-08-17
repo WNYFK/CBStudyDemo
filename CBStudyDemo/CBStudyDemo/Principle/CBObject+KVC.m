@@ -9,6 +9,8 @@
 #import "CBObject+KVC.h"
 #import <objc/runtime.h>
 
+// https://github.com/mikeash/MAObject
+
 @implementation CBObject_KVC
 
 - (id)valueForKey:(NSString *)key {

@@ -9,6 +9,9 @@
 #import "CBBasicUseViewController.h"
 #import "CBNSRunLoopViewController.h"
 #import "CBCFRunLoopViewController.h" 
+#import "CBRunTimeVIewController.h"
+#import "CBCoreDataViewController.h"
+#import "CBCoreDataThirdLibUseViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -32,6 +35,15 @@
     
     CBSectionItem *multiThreadSectionItem = [[CBSectionItem alloc] initWithTitle:@"Multi-Thread"];
     [self.dataArr addObject:multiThreadSectionItem];
+    
+    CBSectionItem *runtimeSectionItem = [[CBSectionItem alloc] initWithTitle:@"Runtime"];
+    [runtimeSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"运行时" destinationClass:[CBRunTimeVIewController class]]];
+    [self.dataArr addObject:runtimeSectionItem];
+    
+    CBSectionItem *coreDataSectionItem = [[CBSectionItem alloc] initWithTitle:@"CoreData"];
+    [coreDataSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CoreData 使用" destinationClass:[CBCoreDataViewController class]]];
+    [coreDataSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CoreData 第三方库使用" destinationClass:[CBCoreDataThirdLibUseViewController class]]];
+    [self.dataArr addObject:coreDataSectionItem];
 }
 
 @end
