@@ -235,6 +235,38 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		37B2AFBC1D66083800EC731D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				37F3C42F1D5DD6C300C3CB1F /* CBBaseTableViewController.h */,
+				37F3C4301D5DD6C300C3CB1F /* CBBaseTableViewController.m */,
+				37F3C42C1D5DD66000C3CB1F /* CBSkipItem.h */,
+				37F3C42D1D5DD66000C3CB1F /* CBSkipItem.m */,
+				3716213D1D65B7FB00CC2D4A /* CBConstant.h */,
+				3781767F1D61DA180092C6A4 /* CBBaseViewController.h */,
+				378176801D61DA180092C6A4 /* CBBaseViewController.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		37B2AFBD1D66085300EC731D /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				37F3C41A1D5DD1A800C3CB1F /* CBTabbarController.h */,
+				37F3C41B1D5DD1A800C3CB1F /* CBTabbarController.m */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
+		37B2AFBE1D6608D100EC731D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				37F3C4291D5DD46E00C3CB1F /* CBNavigationController.h */,
+				37F3C42A1D5DD46E00C3CB1F /* CBNavigationController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		37F3C3F71D5DC6CA00C3CB1F = {
 			isa = PBXGroup;
 			children = (
@@ -259,20 +291,12 @@
 				37F3C41D1D5DD31100C3CB1F /* BasicUse */,
 				37F3C41E1D5DD31100C3CB1F /* CBKit */,
 				37F3C41F1D5DD31100C3CB1F /* Principle */,
+				37B2AFBC1D66083800EC731D /* Common */,
+				37B2AFBD1D66085300EC731D /* Tabbar */,
+				37B2AFBE1D6608D100EC731D /* Navigation */,
+				378176861D61E2380092C6A4 /* CBSwiftNormal.swift */,
 				37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */,
 				37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */,
-				37F3C41A1D5DD1A800C3CB1F /* CBTabbarController.h */,
-				37F3C41B1D5DD1A800C3CB1F /* CBTabbarController.m */,
-				37F3C42C1D5DD66000C3CB1F /* CBSkipItem.h */,
-				37F3C42D1D5DD66000C3CB1F /* CBSkipItem.m */,
-				37F3C42F1D5DD6C300C3CB1F /* CBBaseTableViewController.h */,
-				37F3C4301D5DD6C300C3CB1F /* CBBaseTableViewController.m */,
-				3781767F1D61DA180092C6A4 /* CBBaseViewController.h */,
-				378176801D61DA180092C6A4 /* CBBaseViewController.m */,
-				37F3C4291D5DD46E00C3CB1F /* CBNavigationController.h */,
-				37F3C42A1D5DD46E00C3CB1F /* CBNavigationController.m */,
-				378176861D61E2380092C6A4 /* CBSwiftNormal.swift */,
-				3716213D1D65B7FB00CC2D4A /* CBConstant.h */,
 				37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */,
 				37F3C4111D5DC6CA00C3CB1F /* LaunchScreen.storyboard */,
 				37F3C4141D5DC6CA00C3CB1F /* Info.plist */,
