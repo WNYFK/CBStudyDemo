@@ -8,14 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "CBWebImageCompat.h"
+#import "CBWebImageOperation.h"
 
-@protocol CBWebImageOperation <NSObject>
-
-- (void)cancel;
-
-@end
-
-@interface CBWebImageDownloaderOperation : NSOperation
+@interface CBWebImageDownloaderOperation : NSOperation<CBWebImageOperation>
 
 @property (nonatomic, strong, readonly) NSURLRequest *request;
 @property (nonatomic, strong, readonly) NSURLSessionTask *dataTask;

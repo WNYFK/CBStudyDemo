@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CBWebImageCompat.h"
+#import "CBWebImageOperation.h"
 
 @class CBWebImageDownloader, CBWebImageDownloaderOperation;
 
@@ -17,6 +18,6 @@
 
 + (CBWebImageManager *)sharedManager;
 
-- (CBWebImageDownloaderOperation *)downloadImageWithURL:(NSURL *)url progress:(CBWebImageDownloaderProgressBlock)progresssBlock completed:(CBWebImageDownloaderCompletedBlock)completedBlock;
+- (id <CBWebImageOperation>)downloadImageWithURL:(NSURL *)url progress:(CBWebImageDownloaderProgressBlock)progresssBlock completed:(CBWebImageDownloaderCompletedBlock)completedBlock;
 
 @end
