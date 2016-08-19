@@ -85,7 +85,7 @@ static NSString *const KCompletedCallbackKey = @"completed";
                     if (callback) callback(receivedSize, expectedSize);
                 });
             }
-        } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+        } completed:^(UIImage *image, NSData *data, CBImageCacheType cacheType, NSError *error, BOOL finished, NSURL *url) {
             CBWebImageDownloader *sself = wself;
             if (!sself) return ;
             __block NSArray *callbakcsForURL;
@@ -97,7 +97,7 @@ static NSString *const KCompletedCallbackKey = @"completed";
             });
             for (NSDictionary *callbacks in callbakcsForURL) {
                 CBWebImageDownloaderCompletedBlock callback = callbacks[KCompletedCallbackKey];
-                if (callback) callback(image, data, error, finished);
+                if (callback) callback(image, data, CBImageCacheTypeNone, error, finished, url);
             }
         } cancelled:^{
             CBWebImageDownloader *sself = wself;
@@ -115,7 +115,7 @@ static NSString *const KCompletedCallbackKey = @"completed";
 - (void)addProgressCallback:(CBWebImageDownloaderProgressBlock)progressCallback completedBlock:(CBWebImageDownloaderCompletedBlock)completedBlock forURL:(NSURL *)url createCallback:(CBWebImageNoParamsBlock)createCallback {
     if (url == nil) {
         if (completedBlock != nil) {
-            completedBlock(nil, nil, nil, nil);
+            completedBlock(nil, nil, CBImageCacheTypeNone, nil, nil, nil);
         }
         return;
     }

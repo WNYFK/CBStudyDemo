@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CBImageCache.h"
 
 typedef void(^CBWebImageDownloaderProgressBlock)(NSInteger receivedSize, NSInteger expectedSize);
-typedef void(^CBWebImageDownloaderCompletedBlock)(UIImage *image, NSData *data, NSError *error, BOOL finished);
+typedef void(^CBWebImageDownloaderCompletedBlock)(UIImage *image, NSData *data, CBImageCacheType cacheType, NSError *error, BOOL finished, NSURL *url);
 typedef void(^CBWebImageNoParamsBlock)();
 
 

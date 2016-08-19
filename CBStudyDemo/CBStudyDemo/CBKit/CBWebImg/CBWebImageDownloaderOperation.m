@@ -164,7 +164,7 @@
             [self.dataTask cancel];
         }
         if (self.completedBlock) {
-            self.completedBlock(nil, nil, [NSError errorWithDomain:NSURLErrorDomain code:code userInfo:nil], YES);
+            self.completedBlock(nil, nil, CBImageCacheTypeNone, [NSError errorWithDomain:NSURLErrorDomain code:code userInfo:nil], YES, self.request.URL);
         }
         [self done];
     }
@@ -215,7 +215,7 @@
                 CGImageRelease(partialImageRef);
                 CB_dispatch_main_sync_safe(^{
                     if (self.completedBlock) {
-                        self.completedBlock(image, nil, nil, NO);
+                        self.completedBlock(image, nil, CBImageCacheTypeNone, nil, NO, self.request.URL);
                     }
                 });
             }
@@ -247,7 +247,7 @@
     }
     if (error) {
         if (self.completedBlock) {
-            self.completedBlock(nil, nil, error, YES);
+            self.completedBlock(nil, nil, CBImageCacheTypeNone, error, YES, self.request.URL);
         }
     } else {
         CBWebImageDownloaderCompletedBlock completionBlock = self.completedBlock;
@@ -256,16 +256,16 @@
         }
         if (completionBlock) {
             if (responseFromCached) {
-                completionBlock(nil, nil, nil, YES);
+                completionBlock(nil, nil, CBImageCacheTypeNone, nil, YES, self.request.URL);
             } else if (self.imageData) {
                 UIImage *image = [UIImage imageWithData:self.imageData];
                 if (CGSizeEqualToSize(image.size, CGSizeZero)) {
-                    completionBlock(nil, nil, [NSError errorWithDomain:@"Error" code:0 userInfo:@{NSLocalizedDescriptionKey : @"Downloaded image has 0 pixels"}], YES);
+                    completionBlock(nil, nil, CBImageCacheTypeNone, [NSError errorWithDomain:@"Error" code:0 userInfo:@{NSLocalizedDescriptionKey : @"Downloaded image has 0 pixels"}], YES, self.request.URL);
                 } else {
-                    completionBlock(image, self.imageData, nil, YES);
+                    completionBlock(image, self.imageData, CBImageCacheTypeNone, nil, YES, self.request.URL);
                 }
             } else {
-                completionBlock(nil, nil, [NSError errorWithDomain:@"Error" code:0 userInfo:@{NSLocalizedDescriptionKey : @"Image data is nil"}], YES);
+                completionBlock(nil, nil, CBImageCacheTypeNone, [NSError errorWithDomain:@"Error" code:0 userInfo:@{NSLocalizedDescriptionKey : @"Image data is nil"}], YES, self.request.URL);
             }
         }
     }

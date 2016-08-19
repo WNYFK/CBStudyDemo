@@ -12,6 +12,7 @@
 		371621391D658C0800CC2D4A /* CBWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621361D658C0800CC2D4A /* CBWebImageDownloaderOperation.m */; };
 		3716213C1D65AC5D00CC2D4A /* CBWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3716213B1D65AC5D00CC2D4A /* CBWebImageManager.m */; };
 		371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621401D65B93B00CC2D4A /* UIView+Layout.m */; };
+		371621441D65CFE000CC2D4A /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621431D65CFE000CC2D4A /* CBImageCache.m */; };
 		37726A181D6447AB00294575 /* CBWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37726A171D6447AB00294575 /* CBWebImageViewController.m */; };
 		37726A211D64581300294575 /* CBGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37726A201D64581300294575 /* CBGCDViewController.m */; };
 		37726A241D64582800294575 /* CBOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37726A231D64582800294575 /* CBOperationViewController.m */; };
@@ -59,6 +60,8 @@
 		3716213D1D65B7FB00CC2D4A /* CBConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBConstant.h; sourceTree = "<group>"; };
 		3716213F1D65B93B00CC2D4A /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		371621401D65B93B00CC2D4A /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		371621421D65CFE000CC2D4A /* CBImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBImageCache.h; sourceTree = "<group>"; };
+		371621431D65CFE000CC2D4A /* CBImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBImageCache.m; sourceTree = "<group>"; };
 		37726A161D6447AB00294575 /* CBWebImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBWebImageViewController.h; sourceTree = "<group>"; };
 		37726A171D6447AB00294575 /* CBWebImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBWebImageViewController.m; sourceTree = "<group>"; };
 		37726A1F1D64581300294575 /* CBGCDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGCDViewController.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				371621341D658C0800CC2D4A /* CBWebImageDownloader.m */,
 				371621351D658C0800CC2D4A /* CBWebImageDownloaderOperation.h */,
 				371621361D658C0800CC2D4A /* CBWebImageDownloaderOperation.m */,
+				371621421D65CFE000CC2D4A /* CBImageCache.h */,
+				371621431D65CFE000CC2D4A /* CBImageCache.m */,
 			);
 			path = CBWebImg;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */,
 				378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */,
 				378176991D62AB980092C6A4 /* CBKVOTestClassOne.m in Sources */,
+				371621441D65CFE000CC2D4A /* CBImageCache.m in Sources */,
 				378176841D61DA3F0092C6A4 /* CBCFRunLoopViewController.m in Sources */,
 				378176AC1D63FE020092C6A4 /* CBCoreDataViewController.m in Sources */,
 				371621391D658C0800CC2D4A /* CBWebImageDownloaderOperation.m in Sources */,

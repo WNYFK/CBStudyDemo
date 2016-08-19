@@ -47,6 +47,9 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
   - MBProgressHUD (1.0.0)
   - PINCache (3.0.1-beta)
   - PINRemoteImage/Core (3.0.0-beta.3):
@@ -75,6 +78,7 @@ DEPENDENCIES:
   - FMDB
   - JSPatch
   - MagicalRecord
+  - Mantle
   - MBProgressHUD
   - ReactiveCocoa
   - RxCocoa (~> 2.0)
@@ -91,6 +95,7 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PINCache: 6911fe422a633e18b3d3ddf2bd4f0e55e36e2892
   PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
