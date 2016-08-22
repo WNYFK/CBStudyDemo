@@ -18,7 +18,7 @@
 }
 
 - (void)setupBasicData {
-    CBSectionItem *SDWebImageSectionItem = [[CBSectionItem alloc] initWithTitle:@"SDWebImage 轮子"];
+    CBSectionItem *SDWebImageSectionItem = [[CBSectionItem alloc] initWithTitle:@"WebImage 轮子"];
     [SDWebImageSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"SDWebImage" destinationClass:[CBWebImageViewController class]]];
     [self.dataArr addObject:SDWebImageSectionItem];
 }

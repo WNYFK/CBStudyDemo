@@ -38,5 +38,7 @@ typedef void(^CBWebImageCalculateSizeBlock)(NSUInteger fileCount, NSUInteger tot
 - (void)storeImage:(UIImage *)image recalculateFromImage:(BOOL)recalculate imageData:(NSData *)imageData forKey:(NSString *)key toDisk:(BOOL)toDisk;
 
 - (NSString *)makeDiskCachePath:(NSString *)fullNamespace;
+- (void)cleanDisk;
+- (void)clearMemory;
 
 @end
