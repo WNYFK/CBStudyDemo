@@ -41,6 +41,8 @@
 		378176A81D63FD6F0092C6A4 /* CBRunTimeVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176A71D63FD6F0092C6A4 /* CBRunTimeVIewController.m */; };
 		378176AC1D63FE020092C6A4 /* CBCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176AB1D63FE020092C6A4 /* CBCoreDataViewController.m */; };
 		378176AF1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176AE1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.m */; };
+		37B2AFC21D6DEB4400EC731D /* CBHomePerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B2AFC11D6DEB4400EC731D /* CBHomePerformanceViewController.m */; };
+		37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B2AFC41D6DEBD700EC731D /* CBCatonObserver.m */; };
 		37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4041D5DC6CA00C3CB1F /* main.m */; };
 		37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */; };
 		37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */; };
@@ -130,6 +132,10 @@
 		378176AB1D63FE020092C6A4 /* CBCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataViewController.m; sourceTree = "<group>"; };
 		378176AD1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataThirdLibUseViewController.h; sourceTree = "<group>"; };
 		378176AE1D63FEEE0092C6A4 /* CBCoreDataThirdLibUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataThirdLibUseViewController.m; sourceTree = "<group>"; };
+		37B2AFC01D6DEB4400EC731D /* CBHomePerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHomePerformanceViewController.h; sourceTree = "<group>"; };
+		37B2AFC11D6DEB4400EC731D /* CBHomePerformanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHomePerformanceViewController.m; sourceTree = "<group>"; };
+		37B2AFC31D6DEBD700EC731D /* CBCatonObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCatonObserver.h; sourceTree = "<group>"; };
+		37B2AFC41D6DEBD700EC731D /* CBCatonObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCatonObserver.m; sourceTree = "<group>"; };
 		37F3C4001D5DC6CA00C3CB1F /* CBStudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStudyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3C4041D5DC6CA00C3CB1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -331,6 +337,17 @@
 			name = Navigation;
 			sourceTree = "<group>";
 		};
+		37B2AFBF1D6DEB1900EC731D /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+				37B2AFC01D6DEB4400EC731D /* CBHomePerformanceViewController.h */,
+				37B2AFC11D6DEB4400EC731D /* CBHomePerformanceViewController.m */,
+				37B2AFC31D6DEBD700EC731D /* CBCatonObserver.h */,
+				37B2AFC41D6DEBD700EC731D /* CBCatonObserver.m */,
+			);
+			path = Performance;
+			sourceTree = "<group>";
+		};
 		37F3C3F71D5DC6CA00C3CB1F = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +369,7 @@
 		37F3C4021D5DC6CA00C3CB1F /* CBStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				37B2AFBF1D6DEB1900EC731D /* Performance */,
 				376203381D6D696E0079DAA0 /* Hole */,
 				37F3C41D1D5DD31100C3CB1F /* BasicUse */,
 				37F3C41E1D5DD31100C3CB1F /* CBKit */,
@@ -566,6 +584,7 @@
 				3781768E1D61E4980092C6A4 /* CBThread.m in Sources */,
 				37726A241D64582800294575 /* CBOperationViewController.m in Sources */,
 				3781768A1D61E2A70092C6A4 /* CBNormalInputSource.m in Sources */,
+				37B2AFC21D6DEB4400EC731D /* CBHomePerformanceViewController.m in Sources */,
 				37F3C4281D5DD35900C3CB1F /* CBHomePrincipleViewController.m in Sources */,
 				37F3C42E1D5DD66000C3CB1F /* CBSkipItem.m in Sources */,
 				376203311D6AD7590079DAA0 /* CBWebImageViewController_YY.m in Sources */,
@@ -583,6 +602,7 @@
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
 				376203271D6ACC030079DAA0 /* UIView+CBWebCacheOperation.m in Sources */,
 				37726A181D6447AB00294575 /* CBWebImageViewController.m in Sources */,
+				37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */,
 				376203341D6C4F1F0079DAA0 /* CBImageCache_YY.m in Sources */,
 				378176A11D633D740092C6A4 /* CBKVCRealizeViewController.m in Sources */,
 				376203221D6ACC030079DAA0 /* CBWebImageCompat.m in Sources */,
