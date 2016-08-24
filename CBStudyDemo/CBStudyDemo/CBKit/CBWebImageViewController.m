@@ -7,9 +7,9 @@
 //
 
 #import "CBWebImageViewController.h"
-#import "CBWebImg/CBWebImageManager.h"
+#import "CBWebImageManager.h"
 #import "UIImageView+CBWebCache.h"
-#import "CBWebImg/CBImageCache.h"
+#import "CBImageCache.h"
 
 @interface CBWebImageViewController ()
 

@@ -11,6 +11,7 @@
 #import "CBBasicUseViewController.h"
 #import "CBHomeKitViewController.h"
 #import "CBHomePrincipleViewController.h"
+#import "CBHomeHoleViewController.h"
 
 @implementation CBTabbarController
 
@@ -23,10 +24,13 @@
         kitViewController.title = @"造轮子";
         CBHomePrincipleViewController *principleViewController = [[CBHomePrincipleViewController alloc] init];
         principleViewController.title = @"原理";
+        CBHomeHoleViewController *holeViewController = [[CBHomeHoleViewController alloc] init];
+        holeViewController.title = @"坑";
         self.viewControllers = @[
                                  [[CBNavigationController alloc] initWithRootViewController:basicUseViewController],
                                  [[CBNavigationController alloc] initWithRootViewController:kitViewController],
-                                 [[CBNavigationController alloc] initWithRootViewController:principleViewController]
+                                 [[CBNavigationController alloc] initWithRootViewController:principleViewController],
+                                 [[CBNavigationController alloc] initWithRootViewController:holeViewController]
                                  ];
     }
     return self;
