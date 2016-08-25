@@ -29,13 +29,11 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.catonThread = [[CBCatonThread alloc] initWithTarget:self selector:@selector(catonThreadStart) object:nil];
+        self.catonThread = [[CBCatonThread alloc] init];
     }
     return self;
 }
 
-- (void)catonThreadStart {
-}
 
 + (CBCatonObserver *)sharedInstance {
     static CBCatonObserver *catonObserver;
