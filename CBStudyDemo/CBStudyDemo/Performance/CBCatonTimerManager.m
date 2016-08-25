@@ -9,6 +9,9 @@
 #import "CBCatonTimerManager.h"
 #include <mach/mach.h>
 #include <sys/sysctl.h>
+#import <execinfo.h>
+#include <pthread.h>
+
 
 #define KCBHighCPUValue 70
 #define KCBHighCPUWarningSecond 5
@@ -50,6 +53,7 @@
 
 - (void)startObserverCPU {
     if (self.cpuTimer) return;
+    NSLog(@"%@",[NSThread callStackSymbols]);
     self.cpuTimer = [NSTimer bk_timerWithTimeInterval:0.5 block:^(NSTimer *timer) {
         float curCpuUsage = [self cpu_usage];
         if (curCpuUsage > KCBHighCPUValue) {
@@ -59,9 +63,26 @@
         }
         if (self.presistSecondHighCpu > KCBHighCPUWarningSecond && self.highCpuBlock) {
             self.highCpuBlock(curCpuUsage, self.presistSecondHighCpu);
+            NSLog(@"%@",[NSThread callStackReturnAddresses]);
         }
+        PrintBacktrace();
     } repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.cpuTimer forMode:NSRunLoopCommonModes];
+}
+
+void PrintBacktrace ( void )
+{
+    void *callstack[1280];
+    int frameCount = backtrace(callstack, 1280);
+    char **frameStrings = backtrace_symbols(callstack, frameCount);
+    
+    if ( frameStrings != NULL ) {
+        // Start with frame 1 because frame 0 is PrintBacktrace()
+        for ( int i = 1; i < frameCount; i++ ) {
+            printf("%s\n", frameStrings[i]);
+        }
+        free(frameStrings);
+    }
 }
 
 - (float)cpu_usage {
