@@ -54,6 +54,8 @@
 		37F3C42B1D5DD46E00C3CB1F /* CBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C42A1D5DD46E00C3CB1F /* CBNavigationController.m */; };
 		37F3C42E1D5DD66000C3CB1F /* CBSkipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C42D1D5DD66000C3CB1F /* CBSkipItem.m */; };
 		37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4301D5DD6C300C3CB1F /* CBBaseTableViewController.m */; };
+		37F879BB1D6EEAF200779AC5 /* CBCatonTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879BA1D6EEAF200779AC5 /* CBCatonTestViewController.m */; };
+		37F879BE1D6EEDD900779AC5 /* CBCatonTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879BD1D6EEDD900779AC5 /* CBCatonTimerManager.m */; };
 		3E73405939781273C26D607B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0357BF4552C0992C83D90A5D /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +159,10 @@
 		37F3C42D1D5DD66000C3CB1F /* CBSkipItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSkipItem.m; sourceTree = "<group>"; };
 		37F3C42F1D5DD6C300C3CB1F /* CBBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBaseTableViewController.h; sourceTree = "<group>"; };
 		37F3C4301D5DD6C300C3CB1F /* CBBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBaseTableViewController.m; sourceTree = "<group>"; };
+		37F879B91D6EEAF200779AC5 /* CBCatonTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCatonTestViewController.h; sourceTree = "<group>"; };
+		37F879BA1D6EEAF200779AC5 /* CBCatonTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCatonTestViewController.m; sourceTree = "<group>"; };
+		37F879BC1D6EEDD900779AC5 /* CBCatonTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCatonTimerManager.h; sourceTree = "<group>"; };
+		37F879BD1D6EEDD900779AC5 /* CBCatonTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCatonTimerManager.m; sourceTree = "<group>"; };
 		867089A0BBE77A50F49D6D32 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -342,8 +348,12 @@
 			children = (
 				37B2AFC01D6DEB4400EC731D /* CBHomePerformanceViewController.h */,
 				37B2AFC11D6DEB4400EC731D /* CBHomePerformanceViewController.m */,
+				37F879B91D6EEAF200779AC5 /* CBCatonTestViewController.h */,
+				37F879BA1D6EEAF200779AC5 /* CBCatonTestViewController.m */,
 				37B2AFC31D6DEBD700EC731D /* CBCatonObserver.h */,
 				37B2AFC41D6DEBD700EC731D /* CBCatonObserver.m */,
+				37F879BC1D6EEDD900779AC5 /* CBCatonTimerManager.h */,
+				37F879BD1D6EEDD900779AC5 /* CBCatonTimerManager.m */,
 			);
 			path = Performance;
 			sourceTree = "<group>";
@@ -597,7 +607,9 @@
 				378176A41D633EC00092C6A4 /* CBObject+KVC.m in Sources */,
 				37F3C4251D5DD34900C3CB1F /* CBHomeKitViewController.m in Sources */,
 				3781769C1D62CEF10092C6A4 /* NSObject+KVO.m in Sources */,
+				37F879BE1D6EEDD900779AC5 /* CBCatonTimerManager.m in Sources */,
 				376203261D6ACC030079DAA0 /* UIImageView+CBWebCache.m in Sources */,
+				37F879BB1D6EEAF200779AC5 /* CBCatonTestViewController.m in Sources */,
 				376203241D6ACC030079DAA0 /* CBWebImageDownloaderOperation.m in Sources */,
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
 				376203271D6ACC030079DAA0 /* UIView+CBWebCacheOperation.m in Sources */,
