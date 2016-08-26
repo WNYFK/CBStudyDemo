@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSTimer *cpuTimer;
 @property (nonatomic, assign) NSTimeInterval presistSecondHighCpu;
+@property (nonatomic, assign) BOOL hadHandleHighCpu;
 
 @end
 
@@ -57,11 +58,13 @@
         float curCpuUsage = [self cpu_usage];
         if (curCpuUsage > KCBHighCPUValue) {
             self.presistSecondHighCpu += 0.5;
+            if (!self.hadHandleHighCpu && self.presistSecondHighCpu > KCBHighCPUWarningSecond && self.highCpuBlock) {
+                self.hadHandleHighCpu = YES;
+                self.highCpuBlock(curCpuUsage, self.presistSecondHighCpu);
+            }
         } else {
+            self.hadHandleHighCpu = NO;
             self.presistSecondHighCpu = 0;
-        }
-        if (self.presistSecondHighCpu > KCBHighCPUWarningSecond && self.highCpuBlock) {
-            self.highCpuBlock(curCpuUsage, self.presistSecondHighCpu);
         }
     } repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.cpuTimer forMode:NSRunLoopCommonModes];

@@ -84,8 +84,11 @@ void mainRunLoopObserver(CFRunLoopObserverRef observer, CFRunLoopActivity activi
 
 - (void)setupTimerManager {
     self.catonTimerManager = [[CBCatonTimerManager alloc] init];
+    @weakify(self);
     self.catonTimerManager.longTimeBlock = ^(NSTimeInterval persistSecond){
+        @strongify(self);
         NSLog(@"警告MainLoop执行时间过长！持续时间 %f s",persistSecond);
+        NSLog(@"当前堆栈：%@",[self getAllStack]);
     };
     
     self.catonTimerManager.lowFpsBlock = ^(NSInteger fpsUsage) {
@@ -93,15 +96,21 @@ void mainRunLoopObserver(CFRunLoopObserverRef observer, CFRunLoopActivity activi
     };
     
     self.catonTimerManager.highCpuBlock = ^(CGFloat cpuUsage, NSTimeInterval presistSeond) {
+        @strongify(self);
         NSLog(@"当时cpu使用: %f===持续时间：%f",cpuUsage, presistSeond);
-        NSData *lagData = [[[PLCrashReporter alloc]
-                            initWithConfiguration:[[PLCrashReporterConfig alloc] initWithSignalHandlerType:PLCrashReporterSignalHandlerTypeBSD symbolicationStrategy:PLCrashReporterSymbolicationStrategyAll]] generateLiveReport];
-        PLCrashReport *lagReport = [[PLCrashReport alloc] initWithData:lagData error:NULL];
-        NSString *lagReportString = [PLCrashReportTextFormatter stringValueForCrashReport:lagReport withTextFormat:PLCrashReportTextFormatiOS];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"MMddHHmmss";
-        [[CBLocalCacheManager sharedInstance] saveObject:lagReportString withPath:@"hightCpuUsage" withKey:[[formatter stringFromDate:[NSDate date]] stringByAppendingFormat:@"_%.0f_%.1f",cpuUsage, presistSeond] withCacheType:CBLocalCacheTypePublich];
+        NSString *logReportString = [self getAllStack];
+        [[CBLocalCacheManager sharedInstance] saveObject:logReportString withPath:@"hightCpuUsage" withKey:[[formatter stringFromDate:[NSDate date]] stringByAppendingFormat:@"_%.0f_%.1f",cpuUsage, presistSeond] withCacheType:CBLocalCacheTypePublich];
     };
+}
+
+- (NSString *)getAllStack {
+    NSData *lagData = [[[PLCrashReporter alloc]
+                        initWithConfiguration:[[PLCrashReporterConfig alloc] initWithSignalHandlerType:PLCrashReporterSignalHandlerTypeBSD symbolicationStrategy:PLCrashReporterSymbolicationStrategyAll]] generateLiveReport];
+    PLCrashReport *lagReport = [[PLCrashReport alloc] initWithData:lagData error:NULL];
+    NSString *lagReportString = [PLCrashReportTextFormatter stringValueForCrashReport:lagReport withTextFormat:PLCrashReportTextFormatiOS];
+    return lagReportString;
 }
 
 - (void)main {

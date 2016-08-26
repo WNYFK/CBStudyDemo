@@ -16,6 +16,7 @@
 #import "UIView+Layout.h"
 #import "BlocksKit.h"
 #import "CBLocalCacheManager.h"
+#import "ReactiveCocoa.h"
 //#import "ReactiveCocoa.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
