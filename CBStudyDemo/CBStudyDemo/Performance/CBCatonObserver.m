@@ -98,6 +98,9 @@ void mainRunLoopObserver(CFRunLoopObserverRef observer, CFRunLoopActivity activi
                             initWithConfiguration:[[PLCrashReporterConfig alloc] initWithSignalHandlerType:PLCrashReporterSignalHandlerTypeBSD symbolicationStrategy:PLCrashReporterSymbolicationStrategyAll]] generateLiveReport];
         PLCrashReport *lagReport = [[PLCrashReport alloc] initWithData:lagData error:NULL];
         NSString *lagReportString = [PLCrashReportTextFormatter stringValueForCrashReport:lagReport withTextFormat:PLCrashReportTextFormatiOS];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"MMddHHmmss";
+        [[CBLocalCacheManager sharedInstance] saveObject:lagReportString withPath:@"hightCpuUsage" withKey:[[formatter stringFromDate:[NSDate date]] stringByAppendingFormat:@"_%.0f_%.1f",cpuUsage, presistSeond] withCacheType:CBLocalCacheTypePublich];
     };
 }
 
