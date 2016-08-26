@@ -10,6 +10,23 @@
 
 static const void * const kCBDispatchQueueSpecificKey = &kCBDispatchQueueSpecificKey;
 
+@interface CBGcdApply : NSObject
+
+@property (nonatomic, copy) NSString *title;
+
+@end
+
+@implementation CBGcdApply
+
+- (instancetype)initWithTitle:(NSString *)title {
+    if (self = [super init]) {
+        self.title = title;
+    }
+    return self;
+}
+
+@end
+
 
 @interface CBGCDViewController ()
 
@@ -70,6 +87,21 @@ static const void * const kCBDispatchQueueSpecificKey = &kCBDispatchQueueSpecifi
         
         dispatch_async(concurrentQueue, secondBlock);
         dispatch_block_cancel(secondBlock);
+    }];
+    
+    
+    UIButton *applyBtn = createBtn(@"apply", CGRectMake(mainQueueBtn.x, dispatchBlockBtn.bottom + 20, mainQueueBtn.width, mainQueueBtn.height));
+    [self.view addSubview:applyBtn];
+    [[applyBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        dispatch_queue_t queue = dispatch_queue_create("com.chenbin.apply.queue", DISPATCH_QUEUE_CONCURRENT);
+        NSMutableArray<CBGcdApply *> *array = [NSMutableArray array];
+        for (int i = 0; i < 30; i++) {
+            [array addObject:[[CBGcdApply alloc] initWithTitle:[NSString stringWithFormat:@"title:%d",i]]];
+        }
+        dispatch_apply(array.count, queue, ^(size_t index) {
+            NSLog(@"%@",array[index].title);
+        });
+        NSLog(@"完成");
     }];
 }
 
