@@ -31,6 +31,7 @@ static const void * const kCBDispatchQueueSpecificKey = &kCBDispatchQueueSpecifi
 @interface CBGCDViewController ()
 
 @property (nonatomic, strong) dispatch_queue_t queue;
+@property (nonatomic, strong) dispatch_source_t source;
 
 @end
 
@@ -89,7 +90,6 @@ static const void * const kCBDispatchQueueSpecificKey = &kCBDispatchQueueSpecifi
         dispatch_block_cancel(secondBlock);
     }];
     
-    
     UIButton *applyBtn = createBtn(@"apply", CGRectMake(mainQueueBtn.x, dispatchBlockBtn.bottom + 20, mainQueueBtn.width, mainQueueBtn.height));
     [self.view addSubview:applyBtn];
     [[applyBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -102,6 +102,18 @@ static const void * const kCBDispatchQueueSpecificKey = &kCBDispatchQueueSpecifi
             NSLog(@"%@",array[index].title);
         });
         NSLog(@"完成");
+    }];
+    
+    UIButton *sourceBtn = createBtn(@"sourceTimer", CGRectMake(mainQueueBtn.x, applyBtn.bottom + 20, mainQueueBtn.width, mainQueueBtn.height));
+    [self.view addSubview:sourceBtn];
+    [[sourceBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        dispatch_source_t source = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER,0, 0, DISPATCH_TARGET_QUEUE_DEFAULT);
+        dispatch_source_set_event_handler(source, ^(){
+            NSLog(@"Time flies.");
+        });
+        self.source = source;
+        dispatch_source_set_timer(source, DISPATCH_TIME_NOW, 5ull * NSEC_PER_SEC,100ull * NSEC_PER_MSEC);
+        dispatch_resume(source);
     }];
 }
 
