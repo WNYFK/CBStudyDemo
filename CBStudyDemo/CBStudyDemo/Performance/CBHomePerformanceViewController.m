@@ -14,7 +14,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[CBCatonObserver sharedInstance] startObserver];
     [self setupBaseDataArr];
 }
 

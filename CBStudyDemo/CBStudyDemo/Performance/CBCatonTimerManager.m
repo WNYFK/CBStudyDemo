@@ -53,7 +53,6 @@
 
 - (void)startObserverCPU {
     if (self.cpuTimer) return;
-    NSLog(@"%@",[NSThread callStackSymbols]);
     self.cpuTimer = [NSTimer bk_timerWithTimeInterval:0.5 block:^(NSTimer *timer) {
         float curCpuUsage = [self cpu_usage];
         if (curCpuUsage > KCBHighCPUValue) {
@@ -63,9 +62,7 @@
         }
         if (self.presistSecondHighCpu > KCBHighCPUWarningSecond && self.highCpuBlock) {
             self.highCpuBlock(curCpuUsage, self.presistSecondHighCpu);
-            NSLog(@"%@",[NSThread callStackReturnAddresses]);
         }
-        PrintBacktrace();
     } repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.cpuTimer forMode:NSRunLoopCommonModes];
 }

@@ -8,6 +8,7 @@
 
 #import "CBCatonObserver.h"
 #import "CBCatonTimerManager.h"
+#import <CrashReporter/CrashReporter.h>
 
 @interface CBCatonThread : NSThread
 
@@ -93,6 +94,10 @@ void mainRunLoopObserver(CFRunLoopObserverRef observer, CFRunLoopActivity activi
     
     self.catonTimerManager.highCpuBlock = ^(CGFloat cpuUsage, NSTimeInterval presistSeond) {
         NSLog(@"当时cpu使用: %f===持续时间：%f",cpuUsage, presistSeond);
+        NSData *lagData = [[[PLCrashReporter alloc]
+                            initWithConfiguration:[[PLCrashReporterConfig alloc] initWithSignalHandlerType:PLCrashReporterSignalHandlerTypeBSD symbolicationStrategy:PLCrashReporterSymbolicationStrategyAll]] generateLiveReport];
+        PLCrashReport *lagReport = [[PLCrashReport alloc] initWithData:lagData error:NULL];
+        NSString *lagReportString = [PLCrashReportTextFormatter stringValueForCrashReport:lagReport withTextFormat:PLCrashReportTextFormatiOS];
     };
 }
 

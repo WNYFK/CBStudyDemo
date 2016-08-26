@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CBTabbarController.h"
+#import "CBCatonObserver.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,8 @@
     self.tabbarController = [[CBTabbarController alloc] init];
     self.window.rootViewController = self.tabbarController;
     [self.window makeKeyAndVisible];
+    
+    [[CBCatonObserver sharedInstance] startObserver];
     return YES;
 }
 

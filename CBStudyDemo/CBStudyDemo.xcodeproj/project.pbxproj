@@ -379,6 +379,7 @@
 		37F3C4021D5DC6CA00C3CB1F /* CBStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				37F879BF1D6FE1CD00779AC5 /* LocalStorage */,
 				37B2AFBF1D6DEB1900EC731D /* Performance */,
 				376203381D6D696E0079DAA0 /* Hole */,
 				37F3C41D1D5DD31100C3CB1F /* BasicUse */,
@@ -446,6 +447,13 @@
 				37F3C4271D5DD35900C3CB1F /* CBHomePrincipleViewController.m */,
 			);
 			path = Principle;
+			sourceTree = "<group>";
+		};
+		37F879BF1D6FE1CD00779AC5 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 		9DCA10EDD75C0CC0C2F459E7 /* Pods */ = {

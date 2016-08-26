@@ -95,7 +95,7 @@
         while (YES) {
             i++;
             if (i % 10000 == 0){
-                sleep(1);
+//                sleep(1);
             }
         }
     });
@@ -104,7 +104,7 @@
         while (YES) {
             i++;
             if (i % 10000 == 0){
-                sleep(1);
+//                sleep(1);
             }
         }
     });
@@ -113,7 +113,7 @@
         while (YES) {
             i++;
             if (i % 10000 == 0){
-                sleep(1);
+//                sleep(1);
             }
         }
     });
