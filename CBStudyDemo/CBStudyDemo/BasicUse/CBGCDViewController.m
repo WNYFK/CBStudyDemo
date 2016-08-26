@@ -53,6 +53,7 @@ static const void * const kCBDispatchQueueSpecificKey = &kCBDispatchQueueSpecifi
     UIButton *mainQueueBtn = createBtn(@"mainQueue", CGRectMake(100, 60, 200, 50));
     [self.view addSubview:mainQueueBtn];
     [[mainQueueBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
         CBGCDViewController *gcdViewController = (__bridge CBGCDViewController *)dispatch_get_specific(kCBDispatchQueueSpecificKey);
         if (gcdViewController) {
             NSLog(@"mainqueue: %@", gcdViewController);

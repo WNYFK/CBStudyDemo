@@ -57,6 +57,7 @@
 		37F879BB1D6EEAF200779AC5 /* CBCatonTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879BA1D6EEAF200779AC5 /* CBCatonTestViewController.m */; };
 		37F879BE1D6EEDD900779AC5 /* CBCatonTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879BD1D6EEDD900779AC5 /* CBCatonTimerManager.m */; };
 		37F879C21D6FE3BA00779AC5 /* CBLocalCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879C11D6FE3BA00779AC5 /* CBLocalCacheManager.m */; };
+		37F879E31D704FE200779AC5 /* UIApplication+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879E21D704FE200779AC5 /* UIApplication+Category.m */; };
 		3E73405939781273C26D607B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0357BF4552C0992C83D90A5D /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +167,8 @@
 		37F879BD1D6EEDD900779AC5 /* CBCatonTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCatonTimerManager.m; sourceTree = "<group>"; };
 		37F879C01D6FE3BA00779AC5 /* CBLocalCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLocalCacheManager.h; sourceTree = "<group>"; };
 		37F879C11D6FE3BA00779AC5 /* CBLocalCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLocalCacheManager.m; sourceTree = "<group>"; };
+		37F879E11D704FE200779AC5 /* UIApplication+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Category.h"; sourceTree = "<group>"; };
+		37F879E21D704FE200779AC5 /* UIApplication+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Category.m"; sourceTree = "<group>"; };
 		867089A0BBE77A50F49D6D32 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +397,8 @@
 				378176861D61E2380092C6A4 /* CBSwiftNormal.swift */,
 				37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */,
 				37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */,
+				37F879E11D704FE200779AC5 /* UIApplication+Category.h */,
+				37F879E21D704FE200779AC5 /* UIApplication+Category.m */,
 				37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */,
 				37F3C4111D5DC6CA00C3CB1F /* LaunchScreen.storyboard */,
 				37F3C4141D5DC6CA00C3CB1F /* Info.plist */,
@@ -616,6 +621,7 @@
 				371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */,
 				3762033B1D6D69900079DAA0 /* CBHomeHoleViewController.m in Sources */,
 				37F3C41C1D5DD1A800C3CB1F /* CBTabbarController.m in Sources */,
+				37F879E31D704FE200779AC5 /* UIApplication+Category.m in Sources */,
 				37726A271D64583500294575 /* CBThreadViewController.m in Sources */,
 				378176931D62A9100092C6A4 /* CBKVORealizeViewController.m in Sources */,
 				378176A41D633EC00092C6A4 /* CBObject+KVC.m in Sources */,
