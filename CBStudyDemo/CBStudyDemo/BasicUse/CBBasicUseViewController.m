@@ -16,6 +16,7 @@
 #import "CBOperationViewController.h"
 #import "CBThreadViewController.h"
 #import "CBMoGuJieDetailViewController.h"
+#import "CBStrechableTestViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -53,6 +54,7 @@
     
     CBSectionItem *mgjDetailStructureItem = [[CBSectionItem alloc] initWithTitle:@"蘑菇街、微博个人详情页结构相关"];
     [mgjDetailStructureItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"蘑菇街详情页结构" destinationClass:[CBMoGuJieDetailViewController class]]];
+    [mgjDetailStructureItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"结构测试" destinationClass:[CBStrechableTestViewController class]]];
     [self.dataArr addObject:mgjDetailStructureItem];
 }
 
