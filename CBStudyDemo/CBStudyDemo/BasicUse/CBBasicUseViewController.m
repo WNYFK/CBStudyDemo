@@ -15,6 +15,7 @@
 #import "CBGCDViewController.h"
 #import "CBOperationViewController.h"
 #import "CBThreadViewController.h"
+#import "CBMoGuJieDetailViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -49,6 +50,10 @@
     [coreDataSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CoreData 使用" destinationClass:[CBCoreDataViewController class]]];
     [coreDataSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CoreData 第三方库使用" destinationClass:[CBCoreDataThirdLibUseViewController class]]];
     [self.dataArr addObject:coreDataSectionItem];
+    
+    CBSectionItem *mgjDetailStructureItem = [[CBSectionItem alloc] initWithTitle:@"蘑菇街、微博个人详情页结构相关"];
+    [mgjDetailStructureItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"蘑菇街详情页结构" destinationClass:[CBMoGuJieDetailViewController class]]];
+    [self.dataArr addObject:mgjDetailStructureItem];
 }
 
 @end

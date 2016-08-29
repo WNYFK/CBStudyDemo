@@ -114,12 +114,6 @@
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    if (object != self.horizontalScrollView) {
-        
-    }
-}
-
 #pragma mark tableview delegate and datasource
 
 - (UITableView *)createTableView:(NSInteger)tag {
@@ -129,7 +123,6 @@
     tableView.tag = tag;
     tableView.backgroundColor = [UIColor clearColor];
     tableView.clipsToBounds = YES;
-    [self addObserver:tableView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     return tableView;
 }
 
