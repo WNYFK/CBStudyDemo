@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621401D65B93B00CC2D4A /* UIView+Layout.m */; };
+		371AA8CB1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA8CA1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m */; };
 		376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203131D6ACC030079DAA0 /* CBImageCache.m */; };
 		376203221D6ACC030079DAA0 /* CBWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203151D6ACC030079DAA0 /* CBWebImageCompat.m */; };
 		376203231D6ACC030079DAA0 /* CBWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203171D6ACC030079DAA0 /* CBWebImageDownloader.m */; };
@@ -67,6 +68,8 @@
 		3716213D1D65B7FB00CC2D4A /* CBConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBConstant.h; sourceTree = "<group>"; };
 		3716213F1D65B93B00CC2D4A /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		371621401D65B93B00CC2D4A /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		371AA8C91D74649800C4D1B1 /* CBMoGuJieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMoGuJieDetailViewController.h; sourceTree = "<group>"; };
+		371AA8CA1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMoGuJieDetailViewController.m; sourceTree = "<group>"; };
 		376203121D6ACC030079DAA0 /* CBImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBImageCache.h; sourceTree = "<group>"; };
 		376203131D6ACC030079DAA0 /* CBImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBImageCache.m; sourceTree = "<group>"; };
 		376203141D6ACC030079DAA0 /* CBWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBWebImageCompat.h; sourceTree = "<group>"; };
@@ -193,6 +196,15 @@
 			name = CBUIKit;
 			path = CBStudyDemo/CBUIKit;
 			sourceTree = SOURCE_ROOT;
+		};
+		371AA8C81D74646F00C4D1B1 /* MoJieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				371AA8C91D74649800C4D1B1 /* CBMoGuJieDetailViewController.h */,
+				371AA8CA1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m */,
+			);
+			name = MoJieDetail;
+			sourceTree = "<group>";
 		};
 		376203111D6ACC030079DAA0 /* CBWebImg_SD */ = {
 			isa = PBXGroup;
@@ -420,6 +432,7 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
+				371AA8C81D74646F00C4D1B1 /* MoJieDetail */,
 				3716213E1D65B8EF00CC2D4A /* CBUIKit */,
 				378176A91D63FDEF0092C6A4 /* CoreData */,
 				378176A51D63FD460092C6A4 /* RunTime */,
@@ -633,6 +646,7 @@
 				376203241D6ACC030079DAA0 /* CBWebImageDownloaderOperation.m in Sources */,
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
 				376203271D6ACC030079DAA0 /* UIView+CBWebCacheOperation.m in Sources */,
+				371AA8CB1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m in Sources */,
 				37726A181D6447AB00294575 /* CBWebImageViewController.m in Sources */,
 				37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */,
 				376203341D6C4F1F0079DAA0 /* CBImageCache_YY.m in Sources */,
