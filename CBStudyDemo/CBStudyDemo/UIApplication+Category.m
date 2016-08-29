@@ -21,7 +21,7 @@
 //}
 //
 //- (void)setStatusBarHidden:(BOOL)statusBarHidden {
-//    NSLog(@"setStatusBarHidden");
+    //    NSLog(@"setStatusBarHidden");
 //}
 
 @end
