@@ -26,10 +26,7 @@
 
 - (void)viewDidLoad {
     self.viewControllers = @[[[CBStrechableFirstViewController alloc] init], [[CBStrechableSecViewController alloc] init]];
-    self.commonHeaderView = [[CBStrechableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)];
-    self.commonHeaderView.backgroundColor = [UIColor yellowColor];
-    self.commonSegmentView = [[CBStrechableSegmentBaseView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)];
-    self.commonSegmentView.backgroundColor = [UIColor orangeColor];
+    [self updateCommonHeader:[[CBStrechableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)] segmentView:[[CBStrechableSegmentBaseView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)]];
     [super viewDidLoad];
 }
 

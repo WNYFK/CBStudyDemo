@@ -78,7 +78,7 @@
     if (scrollView == self.horizontalScrollView) {
         CGFloat x = scrollView.contentOffset.x;
         self.tableViewHeaderView.x = x > 0 ? x : 0;
-        if ((int)scrollView.contentOffset.x % (int)scrollView.width == 0.0) {
+        if (!scrollView.decelerating && (int)scrollView.contentOffset.x % (int)scrollView.width == 0.0) {
             self.curSelectedIndex = scrollView.contentOffset.x / scrollView.width;
             [self updateHeaderToCurTableView];
         }

@@ -13,28 +13,38 @@
 @property (nonatomic, strong) UIScrollView *horizontalScrollView;
 @property (nonatomic, strong) UIView *commonContentView;
 @property (nonatomic, assign) NSUInteger curSelectedIndex;
+@property (nonatomic, strong) UIView *commonHeaderView;
+@property (nonatomic, strong) UIView *commonSegmentView;
 
 @end
 
 @implementation CBStrechableHeaderViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.commonContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 0)];
-    [self.commonContentView addSubview:self.commonHeaderView];
-    [self.commonContentView addSubview:self.commonSegmentView];
-    self.commonHeaderView.y = 0;
-    self.commonSegmentView.y = self.commonHeaderView.bottom;
-    self.commonContentView.height = self.commonSegmentView.bottom;
-    
-    self.horizontalScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    self.horizontalScrollView.delegate = self;
-    self.horizontalScrollView.pagingEnabled = YES;
-    [self.view addSubview:self.horizontalScrollView];
-    self.horizontalScrollView.contentSize = CGSizeMake(self.horizontalScrollView.width * self.viewControllers.count, self.horizontalScrollView.height);
-    
-    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+- (UIView *)commonContentView {
+    if (!_commonContentView) {
+        _commonContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 0)];
+    }
+    return _commonContentView;
+}
+
+- (UIScrollView *)horizontalScrollView {
+    if (!_horizontalScrollView) {
+        self.commonContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 0)];
+        
+        _horizontalScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        _horizontalScrollView.delegate = self;
+        _horizontalScrollView.pagingEnabled = YES;
+        _horizontalScrollView.bounces = NO;
+        _horizontalScrollView.showsHorizontalScrollIndicator = NO;
+        [self.view addSubview:_horizontalScrollView];
+    }
+    return _horizontalScrollView;
+}
+
+- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers {
+    _viewControllers = viewControllers;
+    self.horizontalScrollView.contentSize = CGSizeMake(self.horizontalScrollView.width * viewControllers.count, self.horizontalScrollView.height);
+    [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self addChildViewController:obj];
         id<CBStrechableHeaderProtocol> delegate = (id<CBStrechableHeaderProtocol>)obj;
         if ([delegate respondsToSelector:@selector(contentScrollView)]) {
@@ -42,44 +52,60 @@
             [obj didMoveToParentViewController:self];
             obj.view.x = idx * self.horizontalScrollView.width;
             UIScrollView *ctScrollView = [delegate contentScrollView];
-            ctScrollView.contentInset = UIEdgeInsetsMake(self.commonContentView.height, 0, 0, 0);
+            ctScrollView.contentInset = UIEdgeInsetsMake(self.commonHeaderView.height, ctScrollView.contentInset.left, ctScrollView.contentInset.bottom, ctScrollView.contentInset.right);
         }
     }];
-    [self updateHeaderToCurScrollView];
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self addChildViewController:obj];
+    }];
+}
+
+- (void)updateCommonHeader:(UIView *)headerView segmentView:(UIView *)segment {
+    self.commonHeaderView = headerView;
+    self.commonSegmentView= segment;
+    [self.commonContentView addSubview:self.commonHeaderView];
+    [self.commonContentView addSubview:self.commonSegmentView];
+    self.commonHeaderView.y = 0;
+    self.commonSegmentView.y = self.commonHeaderView.bottom;
+    self.commonContentView.height = self.commonSegmentView.bottom;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        id<CBStrechableHeaderProtocol> delegate = (id<CBStrechableHeaderProtocol>)obj;
-        if ([delegate respondsToSelector:@selector(contentScrollView)]) {
-            UIScrollView *ctScrollView = [delegate contentScrollView];
-            [self addObserverSubViewControllerScrollView:ctScrollView];
-        }
-    }];
+    [self updateHeaderToCurScrollView];
 }
 
-- (void)addObserverSubViewControllerScrollView:(UIScrollView *)scrollView {
-    @weakify(self);
-    [RACObserve(scrollView, contentOffset) subscribeNext:^(NSValue *x) {
-        @strongify(self);
-        CGPoint point = [x CGPointValue];
-        if (point.y - scrollView.contentInset.top > self.commonHeaderView.height) {
-            self.commonContentView.y = point.y - scrollView.contentInset.top - self.commonHeaderView.height;
-        } else {
-            self.commonHeaderView.y = -scrollView.contentInset.top;
-        }
-        [scrollView bringSubviewToFront:self.commonContentView];
-        [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (self.curSelectedIndex != idx) {
-                id<CBStrechableHeaderProtocol> delegate = (id<CBStrechableHeaderProtocol>)obj;
-                if ([delegate respondsToSelector:@selector(contentScrollView)]) {
-                    UIScrollView *ctScrollView = [delegate contentScrollView];
-                    ctScrollView.contentOffset = point;
-                }
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self updateHeaderToCurScrollView];
+}
+
+- (void)addObserverSubViewController:(UIViewController *)viewController {
+    id<CBStrechableHeaderProtocol> delegate = (id<CBStrechableHeaderProtocol>)viewController;
+    if ([delegate respondsToSelector:@selector(contentScrollView)]) {
+        @weakify(self);
+        UIScrollView *scrollView = [delegate contentScrollView];
+        [RACObserve(scrollView, contentOffset) subscribeNext:^(NSValue *value) {
+            @strongify(self);
+            if ([self.viewControllers indexOfObject:viewController] != self.curSelectedIndex) return;
+            CGPoint point = [value CGPointValue];
+            if (point.y - scrollView.contentInset.top > self.commonHeaderView.height) {
+                self.commonContentView.y = point.y - scrollView.contentInset.top - self.commonHeaderView.height;
+            } else {
+                self.commonContentView.y = -scrollView.contentInset.top;
             }
+            [scrollView bringSubviewToFront:self.commonContentView];
+            [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (self.curSelectedIndex != idx) {
+                    id<CBStrechableHeaderProtocol> delegate = (id<CBStrechableHeaderProtocol>)obj;
+                    if ([delegate respondsToSelector:@selector(contentScrollView)]) {
+                        UIScrollView *ctScrollView = [delegate contentScrollView];
+                        ctScrollView.contentOffset = point;
+                    }
+                }
+            }];
         }];
-    }];
+    }
 }
 
 - (void)updateHeaderToCurScrollView {
