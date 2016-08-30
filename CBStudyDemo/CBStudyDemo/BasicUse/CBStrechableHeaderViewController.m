@@ -15,6 +15,8 @@
 @property (nonatomic, assign) NSUInteger curSelectedIndex;
 @property (nonatomic, strong) UIView *commonHeaderView;
 @property (nonatomic, strong) UIView *commonSegmentView;
+@property (nonatomic, copy) NSArray<UIViewController *> *viewControllers;
+@property (nonatomic, assign) BOOL isEndDraging;
 
 @end
 
@@ -29,8 +31,6 @@
 
 - (UIScrollView *)horizontalScrollView {
     if (!_horizontalScrollView) {
-        self.commonContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 0)];
-        
         _horizontalScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
         _horizontalScrollView.delegate = self;
         _horizontalScrollView.pagingEnabled = YES;
@@ -41,8 +41,18 @@
     return _horizontalScrollView;
 }
 
-- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers {
-    _viewControllers = viewControllers;
+- (void)updateCommonHeader:(UIView *)headerView segmentView:(UIView *)segment subViewControllers:(NSArray<UIViewController *> *)viewControllers {
+    self.viewControllers = viewControllers;
+    self.commonHeaderView = headerView;
+    self.commonHeaderView.backgroundColor = [UIColor redColor];
+    self.commonSegmentView = segment;
+    self.commonSegmentView.backgroundColor = [UIColor greenColor];
+    [self.commonContentView addSubview:self.commonHeaderView];
+    [self.commonContentView addSubview:self.commonSegmentView];
+    self.commonHeaderView.y = 0;
+    self.commonSegmentView.y = self.commonHeaderView.bottom;
+    self.commonContentView.height = self.commonSegmentView.bottom;
+    
     self.horizontalScrollView.contentSize = CGSizeMake(self.horizontalScrollView.width * viewControllers.count, self.horizontalScrollView.height);
     [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self addChildViewController:obj];
@@ -56,28 +66,9 @@
         }
     }];
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self addChildViewController:obj];
+        [self addObserverSubViewController:obj];
     }];
-}
-
-- (void)updateCommonHeader:(UIView *)headerView segmentView:(UIView *)segment {
-    self.commonHeaderView = headerView;
-    self.commonSegmentView= segment;
-    [self.commonContentView addSubview:self.commonHeaderView];
-    [self.commonContentView addSubview:self.commonSegmentView];
-    self.commonHeaderView.y = 0;
-    self.commonSegmentView.y = self.commonHeaderView.bottom;
-    self.commonContentView.height = self.commonSegmentView.bottom;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self updateHeaderToCurScrollView];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self updateHeaderToCurScrollView];
+    [self updateHeaderToCurScrollView];  
 }
 
 - (void)addObserverSubViewController:(UIViewController *)viewController {
@@ -89,8 +80,8 @@
             @strongify(self);
             if ([self.viewControllers indexOfObject:viewController] != self.curSelectedIndex) return;
             CGPoint point = [value CGPointValue];
-            if (point.y - scrollView.contentInset.top > self.commonHeaderView.height) {
-                self.commonContentView.y = point.y - scrollView.contentInset.top - self.commonHeaderView.height;
+            if ((point.y + scrollView.contentInset.top) >  self.commonHeaderView.height) {
+                self.commonContentView.y = point.y - self.commonHeaderView.height;
             } else {
                 self.commonContentView.y = -scrollView.contentInset.top;
             }
@@ -115,8 +106,9 @@
         UIScrollView *curScrollView = [delegate contentScrollView];
         [curScrollView addSubview:self.commonContentView];
         self.commonContentView.x = 0;
-        if (curScrollView.contentOffset.y - curScrollView.contentInset.top > self.commonHeaderView.height) {
-            self.commonContentView.y = curScrollView.contentOffset.y - curScrollView.contentInset.top - self.commonContentView.height;
+        CGPoint point = curScrollView.contentOffset;
+        if ((point.y + curScrollView.contentInset.top) >  self.commonHeaderView.height) {
+            self.commonContentView.y = point.y - self.commonHeaderView.height;
         } else {
             self.commonContentView.y = -curScrollView.contentInset.top;
         }
@@ -140,26 +132,30 @@
     if (scrollView == self.horizontalScrollView) {
         CGFloat x = scrollView.contentOffset.x;
         self.commonContentView.x = x > 0 ? x : 0;
-        if ((int)scrollView.contentOffset.x % (int)scrollView.width == 0.0) {
-            self.curSelectedIndex = scrollView.contentOffset.x / scrollView.width;
+        if (self.isEndDraging && (int)scrollView.contentOffset.x % (int)scrollView.width <= 1) {
+            NSUInteger newPageIndex = floor((scrollView.contentOffset.x - scrollView.frame.size.width / 2)) / scrollView.frame.size.width + 1;
+            self.curSelectedIndex = newPageIndex;
             [self updateHeaderToCurScrollView];
         }
     }
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    self.isEndDraging = YES;
+}
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    if (scrollView == self.horizontalScrollView) {
-        if (self.commonContentView.superview != self.horizontalScrollView) {
-            
-            CGFloat y = -((UIScrollView *)self.commonContentView.superview).contentOffset.y;
-            if (-y > self.commonHeaderView.height) {
-                y = -self.commonHeaderView.height;
-            }
-            [self.horizontalScrollView addSubview:self.commonContentView];
-            self.commonContentView.y = y;
-            self.commonContentView.x = scrollView.contentOffset.x;
-            [self.horizontalScrollView bringSubviewToFront:self.commonContentView];
+    if (scrollView == self.horizontalScrollView && self.commonContentView.superview != self.horizontalScrollView) {
+        UIScrollView *superScrollView = (UIScrollView *)self.commonContentView.superview;
+        CGFloat y = -(superScrollView.contentOffset.y + superScrollView.contentInset.top);
+        if (y < -self.commonHeaderView.height) {
+            y = -self.commonHeaderView.height;
         }
+        [self.horizontalScrollView addSubview:self.commonContentView];
+        self.commonContentView.y = y;
+        self.commonContentView.x = scrollView.contentOffset.x;
+        [self.horizontalScrollView bringSubviewToFront:self.commonContentView];
+        self.isEndDraging = NO;
     }
 }
 

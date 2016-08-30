@@ -23,6 +23,14 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)];
+    headerView.backgroundColor = [UIColor orangeColor];
+    UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 200, 30)];
+    titleLab.text = @"tableview 1的私有header啊啊啊";
+    titleLab.textColor = [UIColor blackColor];
+    [headerView addSubview:titleLab];
+    self.tableView.tableHeaderView = headerView;
 }
 
 #pragma mark CBStrechableHeaderProtocol 

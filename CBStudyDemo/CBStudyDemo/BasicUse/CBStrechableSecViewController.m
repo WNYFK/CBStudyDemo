@@ -51,7 +51,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"tableView1===Cell:%ld",(long)indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"tableView2===Cell:%ld",(long)indexPath.row];
     return cell;
 }
 

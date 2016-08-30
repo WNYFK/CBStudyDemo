@@ -18,9 +18,7 @@
 
 @interface CBStrechableHeaderViewController : CBBaseViewController
 
-@property (nonatomic, copy) NSArray<UIViewController *> *viewControllers;
-
 - (void)selectViewControllerWithIndex:(NSUInteger)index;
-- (void)updateCommonHeader:(UIView *)headerView segmentView:(UIView *)segment;
+- (void)updateCommonHeader:(UIView *)headerView segmentView:(UIView *)segment subViewControllers:(NSArray<UIViewController *> *)viewControllers;
 
 @end
