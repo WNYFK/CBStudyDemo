@@ -159,13 +159,14 @@
         UIViewController<CBStrechableHeaderProtocol> *lastViewController = self.viewControllers[self.curSelectedIndex];
         lastViewController.contentScrollView.scrollsToTop = NO;
     }
+    
     UIViewController<CBStrechableHeaderProtocol> *curViewController = self.viewControllers[index];
     if ([curViewController respondsToSelector:@selector(contentScrollView)]) {
         UIScrollView *curScrollView = [curViewController contentScrollView];
         curScrollView.scrollsToTop = YES;
-        if (curScrollView != self.commonHeaderView.superview) {
+        self.commonContentView.x = 0;
+        if (curScrollView != self.commonContentView.superview) {
             [curScrollView addSubview:self.commonContentView];
-            self.commonContentView.x = 0;
             CGPoint point = curScrollView.contentOffset;
             CGFloat top = curScrollView.contentInset.top;
             self.commonContentView.y = point.y + top > self.commonHeaderView.height ? point.y - self.commonHeaderView.height : -top;
@@ -173,6 +174,7 @@
             if ([self.delegate respondsToSelector:@selector(selectedViewControllerWithIndex:viewController:)]) {
                 [self.delegate selectedViewControllerWithIndex:index viewController:curViewController];
             }
+            self.horizontalScrollView.contentOffset = CGPointMake(index * self.horizontalScrollView.width, self.horizontalScrollView.contentOffset.y);
         }
     }
     self.curSelectedIndex = index;
@@ -188,8 +190,10 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView == self.horizontalScrollView) {
-        CGFloat x = scrollView.contentOffset.x;
-        self.commonContentView.x = x > 0 ? x : 0;
+        if (self.commonContentView.superview == self.horizontalScrollView) {
+            CGFloat x = scrollView.contentOffset.x;
+            self.commonContentView.x = x > 0 ? x : 0;
+        }
         if (self.isEndDraging && (int)scrollView.contentOffset.x % (int)scrollView.width <= 1) {
             NSUInteger newPageIndex = floor((scrollView.contentOffset.x - scrollView.frame.size.width / 2)) / scrollView.frame.size.width + 1;
             [self updateHeaderToCurScrollView:newPageIndex];

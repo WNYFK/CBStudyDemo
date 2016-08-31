@@ -34,6 +34,7 @@
     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithTitle:@"删除头部" style:UIBarButtonItemStylePlain target:self
                                                                                action:@selector(deleteCommHeader)], [[UIBarButtonItem alloc] initWithTitle:@"添加头部" style:UIBarButtonItemStylePlain target:self
                                                                                                                                                     action:@selector(addCommonHeader)]];
+    [self selectViewControllerWithIndex:1];
 }
 
 - (void)addCommonHeader {
