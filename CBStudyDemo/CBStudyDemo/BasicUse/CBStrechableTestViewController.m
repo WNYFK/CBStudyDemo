@@ -9,13 +9,12 @@
 #import "CBStrechableTestViewController.h"
 #import "CBStrechableFirstViewController.h"
 #import "CBStrechableSecViewController.h"
+#import "CBStrechableScrollViewController.h"
 
 @interface CBStrechableHeaderView : UIView
-
 @end
 
 @interface CBStrechableSegmentBaseView : UIView
-
 @end
 
 @interface CBStrechableTestViewController ()
@@ -26,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateCommonHeader:[[CBStrechableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)] segmentView:[[CBStrechableSegmentBaseView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)] subViewControllers:@[[[CBStrechableFirstViewController alloc] init], [[CBStrechableSecViewController alloc] init]]];
+    [self updateCommonHeader:[[CBStrechableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)] segmentView:[[CBStrechableSegmentBaseView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)] subViewControllers:@[[[CBStrechableFirstViewController alloc] init], [[CBStrechableSecViewController alloc] init], [[CBStrechableScrollViewController alloc] init]]];
 }
 
 @end
