@@ -31,8 +31,13 @@
     self.commonSegmentView = [[CBStrechableSegmentBaseView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)];
     self.commonSegmentView.backgroundColor = [UIColor brownColor];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"删除头部" style:UIBarButtonItemStylePlain target:self
-                                                                             action:@selector(deleteCommHeader)];
+    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithTitle:@"删除头部" style:UIBarButtonItemStylePlain target:self
+                                                                               action:@selector(deleteCommHeader)], [[UIBarButtonItem alloc] initWithTitle:@"添加头部" style:UIBarButtonItemStylePlain target:self
+                                                                                                                                                    action:@selector(addCommonHeader)]];
+}
+
+- (void)addCommonHeader {
+    self.commonHeaderView = [[CBStrechableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)];
 }
 
 - (void)deleteCommHeader {
