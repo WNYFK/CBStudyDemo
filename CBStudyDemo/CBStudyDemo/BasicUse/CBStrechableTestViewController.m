@@ -25,7 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateCommonHeader:[[CBStrechableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)] segmentView:[[CBStrechableSegmentBaseView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)] subViewControllers:@[[[CBStrechableFirstViewController alloc] init], [[CBStrechableSecViewController alloc] init], [[CBStrechableScrollViewController alloc] init]]];
+    self.viewControllers = @[[[CBStrechableFirstViewController alloc] init], [[CBStrechableSecViewController alloc] init], [[CBStrechableScrollViewController alloc] init]];
+    self.commonHeaderView = [[CBStrechableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
 }
 
 @end
@@ -41,6 +42,7 @@
 }
 
 - (void)setupBaseSubViews {
+    self.backgroundColor = [UIColor yellowColor];
     UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 200, 30)];
     titleLab.text = @"公共头部啊啊啊";
     titleLab.textColor = [UIColor blackColor];

@@ -12,13 +12,21 @@
 
 - (UIScrollView *)contentScrollView;
 
-- (void)selectedViewControllerWithIndex:(NSUInteger)index viewController:(UIViewController *)viewController;
+@end
+
+@protocol CBStrechableHandleDelegate <NSObject>
+
+- (void)selectedViewControllerWithIndex:(NSUInteger)index viewController:(UIViewController<CBStrechableHeaderProtocol> *)viewController;
 
 @end
 
 @interface CBStrechableHeaderViewController : CBBaseViewController
 
+@property (nonatomic, weak) id<CBStrechableHandleDelegate> delegate;
+@property (nonatomic, copy) NSArray<UIViewController<CBStrechableHeaderProtocol> *> *viewControllers;
+@property (nonatomic, strong) UIView *commonHeaderView;
+@property (nonatomic, strong) UIView *commonSegmentView;
+
 - (void)selectViewControllerWithIndex:(NSUInteger)index;
-- (void)updateCommonHeader:(UIView *)headerView segmentView:(UIView *)segment subViewControllers:(NSArray<UIViewController *> *)viewControllers;
 
 @end
