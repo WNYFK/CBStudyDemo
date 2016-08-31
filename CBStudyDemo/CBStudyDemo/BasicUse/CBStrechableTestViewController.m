@@ -27,6 +27,16 @@
     [super viewDidLoad];
     self.viewControllers = @[[[CBStrechableFirstViewController alloc] init], [[CBStrechableSecViewController alloc] init], [[CBStrechableScrollViewController alloc] init]];
     self.commonHeaderView = [[CBStrechableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
+    self.commonHeaderView.backgroundColor = [UIColor yellowColor];
+    self.commonSegmentView = [[CBStrechableSegmentBaseView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)];
+    self.commonSegmentView.backgroundColor = [UIColor brownColor];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"删除头部" style:UIBarButtonItemStylePlain target:self
+                                                                             action:@selector(deleteCommHeader)];
+}
+
+- (void)deleteCommHeader {
+    self.commonHeaderView = nil;
 }
 
 @end

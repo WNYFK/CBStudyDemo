@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIView *commonContentView;
 @property (nonatomic, assign) NSInteger curSelectedIndex;
 @property (nonatomic, assign) BOOL isEndDraging;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *originSubSViewInsetTopValueArr;
 
 @end
 
@@ -24,6 +25,13 @@
         self.curSelectedIndex = -1;
     }
     return self;
+}
+
+- (NSMutableArray<NSNumber *> *)originSubSViewInsetTopValueArr {
+    if (!_originSubSViewInsetTopValueArr) {
+        _originSubSViewInsetTopValueArr = [NSMutableArray array];
+    }
+    return _originSubSViewInsetTopValueArr;
 }
 
 - (UIView *)commonContentView {
@@ -46,26 +54,11 @@
     return _horizontalScrollView;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    @weakify(self);
-    [[[self rac_signalForSelector:@selector(viewDidAppear:)] take:1] subscribeNext:^(id x) {
-        @strongify(self);
-        [self setupBaseViews];
-        [self updateHeaderToCurScrollView:self.curSelectedIndex > 0 ? self.curSelectedIndex : 0];
-        UIViewController<CBStrechableHeaderProtocol> *vc = self.viewControllers[self.curSelectedIndex];
-        vc.contentScrollView.contentOffset = CGPointMake(0, -vc.contentScrollView.contentInset.top);
-    }];
-}
-
-- (void)setupBaseViews {
-    self.commonHeaderView = self.commonHeaderView != nil ? self.commonHeaderView : [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.horizontalScrollView.width, 0)];
-    self.commonSegmentView = self.commonSegmentView != nil ? self.commonSegmentView : [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.horizontalScrollView.width, 0)];
-    [self.commonContentView addSubview:self.commonHeaderView];
-    [self.commonContentView addSubview:self.commonSegmentView];
-    self.commonSegmentView.y = self.commonHeaderView.bottom;
-    self.commonContentView.height = self.commonSegmentView.bottom;
-    self.horizontalScrollView.contentSize = CGSizeMake(self.horizontalScrollView.width * self.viewControllers.count, self.horizontalScrollView.height);
+- (void)setViewControllers:(NSArray<UIViewController<CBStrechableHeaderProtocol> *> *)viewControllers {
+    if (_viewControllers == viewControllers) return;
+    _viewControllers = viewControllers;
+    [self.originSubSViewInsetTopValueArr removeAllObjects];
+    self.horizontalScrollView.contentSize = CGSizeMake(self.horizontalScrollView.width * viewControllers.count, self.horizontalScrollView.height);
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController<CBStrechableHeaderProtocol> * _Nonnull vc, NSUInteger idx, BOOL * _Nonnull stop) {
         [self addChildViewController:vc];
         if ([vc respondsToSelector:@selector(contentScrollView)]) {
@@ -73,12 +66,69 @@
             [vc didMoveToParentViewController:self];
             vc.view.x = idx * self.horizontalScrollView.width;
             UIScrollView *ctScrollView = [vc contentScrollView];
-            ctScrollView.contentInset = UIEdgeInsetsMake(self.commonHeaderView.height, ctScrollView.contentInset.left, ctScrollView.contentInset.bottom, ctScrollView.contentInset.right);
             ctScrollView.scrollsToTop = NO;
+            [self.originSubSViewInsetTopValueArr addObject:@(ctScrollView.contentInset.top)];
         }
     }];
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController<CBStrechableHeaderProtocol> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self addObserverSubViewController:obj];
+    }];
+}
+
+- (void)setCommonHeaderView:(UIView *)commonHeaderView {
+    if (_commonHeaderView != commonHeaderView) {
+        [_commonHeaderView removeFromSuperview];
+        _commonHeaderView = commonHeaderView != nil ? commonHeaderView : [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.horizontalScrollView.width, 0)];
+        [self.commonContentView addSubview:commonHeaderView];
+        [self checkHeaderPosition];
+    } else if (_commonHeaderView.height != commonHeaderView.height) {
+        [self checkHeaderPosition];
+    }
+}
+
+- (void)setCommonSegmentView:(UIView *)commonSegmentView {
+    if (_commonSegmentView != commonSegmentView) {
+        [_commonSegmentView removeFromSuperview];
+        _commonSegmentView = commonSegmentView != nil ? commonSegmentView : [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.horizontalScrollView.width, 0)];
+        [self.commonContentView addSubview:commonSegmentView];
+        [self checkHeaderPosition];
+    } else if (_commonSegmentView.height != commonSegmentView.height) {
+        [self checkHeaderPosition];
+    }
+}
+
+- (void)checkHeaderPosition {
+    self.commonHeaderView.y = 0;
+    self.commonSegmentView.y = self.commonHeaderView.bottom;
+    if (self.commonContentView.height != self.commonSegmentView.bottom) {
+        self.commonContentView.height = self.commonSegmentView.bottom;
+        [self updateSubScrollViewContentInset];
+    }
+}
+
+- (void)updateSubScrollViewContentInset {
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController<CBStrechableHeaderProtocol> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIScrollView *ctScrollView = [obj contentScrollView];
+        if ([ctScrollView isKindOfClass:[UIScrollView class]]) {
+            CGFloat top = 0;
+            if (self.originSubSViewInsetTopValueArr.count > idx) {
+                top = [self.originSubSViewInsetTopValueArr[idx] floatValue];
+            } else {
+                top = ctScrollView.contentInset.top;
+                [self.originSubSViewInsetTopValueArr addObject:@(top)];
+            }
+            ctScrollView.contentInset = UIEdgeInsetsMake(top + self.commonContentView.height, ctScrollView.contentInset.left, ctScrollView.contentInset.bottom, ctScrollView.contentInset.right);
+            ctScrollView.contentOffset = CGPointMake(0, -ctScrollView.contentInset.top);
+        }
+    }];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    @weakify(self);
+    [[[self rac_signalForSelector:@selector(viewDidAppear:)] take:1] subscribeNext:^(id x) {
+        @strongify(self);
+        [self updateHeaderToCurScrollView:self.curSelectedIndex > 0 ? self.curSelectedIndex : 0];
     }];
 }
 
