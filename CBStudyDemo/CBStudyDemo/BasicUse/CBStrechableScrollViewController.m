@@ -33,7 +33,7 @@
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.scrollView];
     self.scrollView.contentSize = CGSizeMake(self.view.width, 2 * self.view.height);
-    UILabel *lab1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, self.view.width, 40)];
+    UILabel *lab1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, self.view.width, 40)];
     lab1.backgroundColor = [UIColor orangeColor];
     lab1.text = @"我是scrollView 啊啊啊啊啊";
     [self.scrollView addSubview:lab1];
