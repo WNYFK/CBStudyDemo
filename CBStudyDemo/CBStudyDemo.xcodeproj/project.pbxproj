@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		370B1F481D77F1FA00CFB9FC /* CBRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370B1F471D77F1FA00CFB9FC /* CBRefreshViewController.m */; };
 		371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621401D65B93B00CC2D4A /* UIView+Layout.m */; };
 		371AA8CB1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA8CA1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m */; };
 		376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203131D6ACC030079DAA0 /* CBImageCache.m */; };
@@ -91,8 +90,6 @@
 /* Begin PBXFileReference section */
 		0357BF4552C0992C83D90A5D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B811628CA54DA3748105F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		370B1F461D77F1FA00CFB9FC /* CBRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRefreshViewController.h; sourceTree = "<group>"; };
-		370B1F471D77F1FA00CFB9FC /* CBRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRefreshViewController.m; sourceTree = "<group>"; };
 		3716213D1D65B7FB00CC2D4A /* CBConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBConstant.h; sourceTree = "<group>"; };
 		3716213F1D65B93B00CC2D4A /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		371621401D65B93B00CC2D4A /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
@@ -265,15 +262,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		370B1F451D77F1D600CFB9FC /* MJRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				370B1F461D77F1FA00CFB9FC /* CBRefreshViewController.h */,
-				370B1F471D77F1FA00CFB9FC /* CBRefreshViewController.m */,
-			);
-			name = MJRefresh;
-			sourceTree = "<group>";
-		};
 		3716213E1D65B8EF00CC2D4A /* CBUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,7 +613,6 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
-				370B1F451D77F1D600CFB9FC /* MJRefresh */,
 				371AA8C81D74646F00C4D1B1 /* MoJieDetail */,
 				3716213E1D65B8EF00CC2D4A /* CBUIKit */,
 				378176A91D63FDEF0092C6A4 /* CoreData */,
@@ -812,7 +799,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				370B1F481D77F1FA00CFB9FC /* CBRefreshViewController.m in Sources */,
 				378176A81D63FD6F0092C6A4 /* CBRunTimeVIewController.m in Sources */,
 				376203251D6ACC030079DAA0 /* CBWebImageManager.m in Sources */,
 				37F3C4221D5DD33100C3CB1F /* CBBasicUseViewController.m in Sources */,
