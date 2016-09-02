@@ -1,27 +1,26 @@
 //
-//  CBStrechableSecViewController.m
+//  CBRefreshViewController.m
 //  CBStudyDemo
 //
-//  Created by chenbin on 16/8/29.
+//  Created by ChenBin on 16/9/1.
 //  Copyright © 2016年 ChenBin. All rights reserved.
 //
 
-#import "CBStrechableSecViewController.h"
+#import "CBRefreshViewController.h"
 #import "UIScrollView+MJRefresh.h"
 #import "MJRefreshNormalHeader.h"
 
-
-@interface CBStrechableSecViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface CBRefreshViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
+
 @end
 
-@implementation CBStrechableSecViewController
+@implementation CBRefreshViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64) style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;

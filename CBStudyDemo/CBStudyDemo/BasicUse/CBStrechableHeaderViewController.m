@@ -136,13 +136,17 @@
     id<CBStrechableHeaderProtocol> vcDelegate = (id<CBStrechableHeaderProtocol>)viewController;
     if ([vcDelegate respondsToSelector:@selector(contentScrollView)]) {
         @weakify(self);
-        UIScrollView *scrollView = [vcDelegate contentScrollView];
+       __weak UIScrollView *scrollView = [vcDelegate contentScrollView];
         [RACObserve(scrollView, contentOffset) subscribeNext:^(NSValue *value) {
             @strongify(self);
             if ([self.viewControllers indexOfObject:viewController] != self.curSelectedIndex) return;
             CGPoint point = [value CGPointValue];
             CGFloat top = scrollView.contentInset.top;
-            self.commonContentView.y = point.y + top > self.commonHeaderView.height ? point.y - self.commonHeaderView.height : -top;
+            if (top > self.commonContentView.height) {
+                self.commonContentView.y = - self.commonContentView.height;
+            } else {
+                self.commonContentView.y = point.y + top > self.commonHeaderView.height ? point.y - self.commonHeaderView.height : -top;
+            }
             [scrollView bringSubviewToFront:self.commonContentView];
             [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController<CBStrechableHeaderProtocol> * _Nonnull vc, NSUInteger idx, BOOL * _Nonnull stop) {
                 if (self.curSelectedIndex != idx && [vc respondsToSelector:@selector(contentScrollView)]) {
