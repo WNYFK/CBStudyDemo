@@ -71,6 +71,7 @@
 		37C47D2F1D77D61800A182C6 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C47D191D77D61800A182C6 /* UIScrollView+MJExtension.m */; };
 		37C47D301D77D61800A182C6 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C47D1B1D77D61800A182C6 /* UIScrollView+MJRefresh.m */; };
 		37C47D311D77D61800A182C6 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C47D1D1D77D61800A182C6 /* UIView+MJExtension.m */; };
+		37F09D721D7C63EF00853F71 /* CBGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */; };
 		37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4041D5DC6CA00C3CB1F /* main.m */; };
 		37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */; };
 		37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */; };
@@ -224,6 +225,8 @@
 		37C47D1B1D77D61800A182C6 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		37C47D1C1D77D61800A182C6 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		37C47D1D1D77D61800A182C6 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		37F09D701D7C63EF00853F71 /* CBGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureRecognizer.h; sourceTree = "<group>"; };
+		37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGestureRecognizer.m; sourceTree = "<group>"; };
 		37F3C4001D5DC6CA00C3CB1F /* CBStudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStudyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3C4041D5DC6CA00C3CB1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -481,6 +484,8 @@
 			children = (
 				37BD55F31D7ABF6E0075FFB4 /* CBGestureViewController.h */,
 				37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */,
+				37F09D701D7C63EF00853F71 /* CBGestureRecognizer.h */,
+				37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */,
 			);
 			path = GestureRecognizer;
 			sourceTree = "<group>";
@@ -863,6 +868,7 @@
 				37F879BB1D6EEAF200779AC5 /* CBCatonTestViewController.m in Sources */,
 				376203241D6ACC030079DAA0 /* CBWebImageDownloaderOperation.m in Sources */,
 				37C47D2F1D77D61800A182C6 /* UIScrollView+MJExtension.m in Sources */,
+				37F09D721D7C63EF00853F71 /* CBGestureRecognizer.m in Sources */,
 				37BD55F21D7A9DFA0075FFB4 /* CBRACViewController.m in Sources */,
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
 				37C47D1F1D77D61800A182C6 /* MJRefreshBackFooter.m in Sources */,
