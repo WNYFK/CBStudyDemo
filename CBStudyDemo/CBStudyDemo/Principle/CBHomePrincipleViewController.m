@@ -10,6 +10,7 @@
 #import "CBKVORealizeViewController.h"
 #import "CBKVOBlockViewController.h"
 #import "CBKVCRealizeViewController.h"
+#import "CBGestureViewController.h"
 
 @implementation CBHomePrincipleViewController
 
@@ -28,6 +29,10 @@
     CBSectionItem *kvcSectionItem = [[CBSectionItem alloc] initWithTitle:@"KVC"];
     [kvcSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"KVC实现" destinationClass:[CBKVCRealizeViewController class]]];
     [self.dataArr addObject:kvcSectionItem];
+    
+    CBSectionItem *gestureSectionItem = [[CBSectionItem alloc] initWithTitle:@"手势相关"];
+    [gestureSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"手势" destinationClass:[CBGestureViewController class]]];
+    [self.dataArr addObject:gestureSectionItem];
 }
 
 @end

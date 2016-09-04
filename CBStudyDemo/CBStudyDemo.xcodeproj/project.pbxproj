@@ -49,6 +49,8 @@
 		37BD55E71D7483810075FFB4 /* CBStrechableSecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55E61D7483810075FFB4 /* CBStrechableSecViewController.m */; };
 		37BD55EA1D74856E0075FFB4 /* CBStrechableTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55E91D74856E0075FFB4 /* CBStrechableTestViewController.m */; };
 		37BD55ED1D7661130075FFB4 /* CBStrechableScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55EC1D7661130075FFB4 /* CBStrechableScrollViewController.m */; };
+		37BD55F21D7A9DFA0075FFB4 /* CBRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */; };
+		37BD55F51D7ABF6E0075FFB4 /* CBGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */; };
 		37C47D1E1D77D61800A182C6 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C47CF21D77D61800A182C6 /* MJRefreshAutoFooter.m */; };
 		37C47D1F1D77D61800A182C6 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C47CF41D77D61800A182C6 /* MJRefreshBackFooter.m */; };
 		37C47D201D77D61800A182C6 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C47CF61D77D61800A182C6 /* MJRefreshComponent.m */; };
@@ -178,6 +180,10 @@
 		37BD55E91D74856E0075FFB4 /* CBStrechableTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStrechableTestViewController.m; sourceTree = "<group>"; };
 		37BD55EB1D7661130075FFB4 /* CBStrechableScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStrechableScrollViewController.h; sourceTree = "<group>"; };
 		37BD55EC1D7661130075FFB4 /* CBStrechableScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStrechableScrollViewController.m; sourceTree = "<group>"; };
+		37BD55F01D7A9DFA0075FFB4 /* CBRACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRACViewController.h; sourceTree = "<group>"; };
+		37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRACViewController.m; sourceTree = "<group>"; };
+		37BD55F31D7ABF6E0075FFB4 /* CBGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureViewController.h; sourceTree = "<group>"; };
+		37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGestureViewController.m; sourceTree = "<group>"; };
 		37C47CF11D77D61800A182C6 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		37C47CF21D77D61800A182C6 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		37C47CF31D77D61800A182C6 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -461,6 +467,24 @@
 			path = Performance;
 			sourceTree = "<group>";
 		};
+		37BD55EE1D7A9D720075FFB4 /* RAC */ = {
+			isa = PBXGroup;
+			children = (
+				37BD55F01D7A9DFA0075FFB4 /* CBRACViewController.h */,
+				37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */,
+			);
+			path = RAC;
+			sourceTree = "<group>";
+		};
+		37BD55EF1D7A9DAD0075FFB4 /* GestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				37BD55F31D7ABF6E0075FFB4 /* CBGestureViewController.h */,
+				37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */,
+			);
+			path = GestureRecognizer;
+			sourceTree = "<group>";
+		};
 		37C47CEF1D77D61800A182C6 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +637,7 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
+				37BD55EE1D7A9D720075FFB4 /* RAC */,
 				371AA8C81D74646F00C4D1B1 /* MoJieDetail */,
 				3716213E1D65B8EF00CC2D4A /* CBUIKit */,
 				378176A91D63FDEF0092C6A4 /* CoreData */,
@@ -643,6 +668,7 @@
 		37F3C41F1D5DD31100C3CB1F /* Principle */ = {
 			isa = PBXGroup;
 			children = (
+				37BD55EF1D7A9DAD0075FFB4 /* GestureRecognizer */,
 				3781769E1D633D570092C6A4 /* KVC */,
 				378176901D62A8E10092C6A4 /* KVO */,
 				37F3C4261D5DD35900C3CB1F /* CBHomePrincipleViewController.h */,
@@ -837,6 +863,7 @@
 				37F879BB1D6EEAF200779AC5 /* CBCatonTestViewController.m in Sources */,
 				376203241D6ACC030079DAA0 /* CBWebImageDownloaderOperation.m in Sources */,
 				37C47D2F1D77D61800A182C6 /* UIScrollView+MJExtension.m in Sources */,
+				37BD55F21D7A9DFA0075FFB4 /* CBRACViewController.m in Sources */,
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
 				37C47D1F1D77D61800A182C6 /* MJRefreshBackFooter.m in Sources */,
 				376203271D6ACC030079DAA0 /* UIView+CBWebCacheOperation.m in Sources */,
@@ -849,6 +876,7 @@
 				376203341D6C4F1F0079DAA0 /* CBImageCache_YY.m in Sources */,
 				37F879C21D6FE3BA00779AC5 /* CBLocalCacheManager.m in Sources */,
 				378176A11D633D740092C6A4 /* CBKVCRealizeViewController.m in Sources */,
+				37BD55F51D7ABF6E0075FFB4 /* CBGestureViewController.m in Sources */,
 				37C47D2A1D77D61800A182C6 /* MJRefreshNormalHeader.m in Sources */,
 				37C47D251D77D61800A182C6 /* MJRefreshAutoStateFooter.m in Sources */,
 				37C47D211D77D61800A182C6 /* MJRefreshFooter.m in Sources */,
