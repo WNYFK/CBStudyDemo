@@ -18,6 +18,10 @@
     return self.frame.origin.y;
 }
 
+- (CGFloat)right {
+    return self.x + self.width;
+}
+
 - (CGFloat)height {
     return self.frame.size.height;
 }
@@ -36,6 +40,10 @@
 
 - (void)setY:(CGFloat)y {
     self.frame = CGRectMake(self.x, y, self.width, self.height);
+}
+
+- (void)setRight:(CGFloat)right {
+    self.frame = CGRectMake(right - self.width, self.y, self.width, self.height);
 }
 
 - (void)setWidth:(CGFloat)width {

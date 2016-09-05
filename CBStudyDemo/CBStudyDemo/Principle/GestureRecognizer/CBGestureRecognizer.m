@@ -8,6 +8,7 @@
 
 #import "CBGestureRecognizer.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
+#import "CBGestureScrollView.h"
 
 @interface CBGestureRecognizer ()
 
@@ -90,7 +91,7 @@
 {
     [super touchesMoved:touches withEvent:event];
     
-//    if (![self.view isKindOfClass:[MAYHorizontalListView class]]) return;
+    if (![self.view isKindOfClass:[CBGestureScrollView class]]) return;
     
     if (self.state != UIGestureRecognizerStatePossible) return;
     
@@ -101,7 +102,7 @@
     CGPoint prevLocation = [touch previousLocationInView:self.view];
     
     UIGestureRecognizerState newState = UIGestureRecognizerStatePossible;
-//    MAYHorizontalListView *listView = (MAYHorizontalListView *)self.view;
+    CBGestureScrollView *listView = (CBGestureScrollView *)self.view;
     
 //    switch (self.type) {
 //            
@@ -119,7 +120,5 @@
 //    }
     self.state = newState;
 }
-
-
 
 @end
