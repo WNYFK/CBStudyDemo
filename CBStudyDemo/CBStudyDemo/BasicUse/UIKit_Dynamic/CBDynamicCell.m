@@ -66,4 +66,13 @@
     NSLog(@"长按");
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *view = [super hitTest:point withEvent:event];
+    NSLog(@"%ld",(long)event.type);
+    if (view == self.dynamicView) {
+        return nil;
+    }
+    return self;
+}
+
 @end
