@@ -79,6 +79,7 @@
 		37F09D721D7C63EF00853F71 /* CBGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */; };
 		37F09D751D7DA8A700853F71 /* CBGestureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D741D7DA8A700853F71 /* CBGestureScrollView.m */; };
 		37F09D781D7DA9A400853F71 /* CBHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D771D7DA9A400853F71 /* CBHorizontalView.m */; };
+		37F09D7B1D7F0F9E00853F71 /* CBTouchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D7A1D7F0F9E00853F71 /* CBTouchTestViewController.m */; };
 		37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4041D5DC6CA00C3CB1F /* main.m */; };
 		37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */; };
 		37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F3C40F1D5DC6CA00C3CB1F /* Assets.xcassets */; };
@@ -248,6 +249,8 @@
 		37F09D741D7DA8A700853F71 /* CBGestureScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGestureScrollView.m; sourceTree = "<group>"; };
 		37F09D761D7DA9A400853F71 /* CBHorizontalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHorizontalView.h; sourceTree = "<group>"; };
 		37F09D771D7DA9A400853F71 /* CBHorizontalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHorizontalView.m; sourceTree = "<group>"; };
+		37F09D791D7F0F9E00853F71 /* CBTouchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTouchTestViewController.h; sourceTree = "<group>"; };
+		37F09D7A1D7F0F9E00853F71 /* CBTouchTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTouchTestViewController.m; sourceTree = "<group>"; };
 		37F3C4001D5DC6CA00C3CB1F /* CBStudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStudyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3C4041D5DC6CA00C3CB1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -528,6 +531,8 @@
 				37F09D741D7DA8A700853F71 /* CBGestureScrollView.m */,
 				37F09D701D7C63EF00853F71 /* CBGestureRecognizer.h */,
 				37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */,
+				37F09D791D7F0F9E00853F71 /* CBTouchTestViewController.h */,
+				37F09D7A1D7F0F9E00853F71 /* CBTouchTestViewController.m */,
 			);
 			path = GestureRecognizer;
 			sourceTree = "<group>";
@@ -890,6 +895,7 @@
 				37BD55E11D74747C0075FFB4 /* CBStrechableHeaderViewController.m in Sources */,
 				376203311D6AD7590079DAA0 /* CBWebImageViewController_YY.m in Sources */,
 				37C47D261D77D61800A182C6 /* MJRefreshBackGifFooter.m in Sources */,
+				37F09D7B1D7F0F9E00853F71 /* CBTouchTestViewController.m in Sources */,
 				378176811D61DA180092C6A4 /* CBBaseViewController.m in Sources */,
 				371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */,
 				3762033B1D6D69900079DAA0 /* CBHomeHoleViewController.m in Sources */,

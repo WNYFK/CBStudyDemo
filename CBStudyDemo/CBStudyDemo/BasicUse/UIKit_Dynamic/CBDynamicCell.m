@@ -12,7 +12,7 @@
 
 @interface CBDynamicCell ()
 
-@property (nonatomic, strong) CBHorizontalSwipView *dynamicView;
+@property (nonatomic, strong) UIScrollView *dynamicView;
 @property (nonatomic, strong) UIView *leftContentView;
 @property (nonatomic, strong) UILabel *firstColumnLab;
 
@@ -39,7 +39,15 @@
     self.firstColumnLab.textColor = [UIColor blackColor];
     [self.leftContentView addSubview:self.firstColumnLab];
     
-    self.dynamicView = [[CBHorizontalSwipView alloc] initWithFrame:CGRectMake(self.leftContentView.right, 0, 700, self.leftContentView.height)];
+    self.dynamicView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.leftContentView.right, 0, [UIScreen mainScreen].bounds.size.width - self.leftContentView.width, self.leftContentView.height)];
+    self.dynamicView.showsHorizontalScrollIndicator = NO;
+    self.dynamicView.contentSize = CGSizeMake(600, 0);
+    
+    UILongPressGestureRecognizer *longPressGessture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    [self.dynamicView addGestureRecognizer:longPressGessture];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandle:)];
+    [self.dynamicView addGestureRecognizer:tap];
     for (int i = 0; i < 5; i++) {
         UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(i * 100 + (i == 0 ? 0 : 20), 0, 100, self.dynamicView.height)];
         titleLab.text = [NSString stringWithFormat:@"啊啊aaaaaa：%d",i];
@@ -48,6 +56,14 @@
     [self.contentView addSubview:self.dynamicView];
     [self.contentView addSubview:self.leftContentView];
     
+}
+
+- (void)tapHandle:(UITapGestureRecognizer *)tapGesture {
+    NSLog(@"点击啊");
+}
+
+- (void)longPress:(UILongPressGestureRecognizer *)longPressGesture {
+    NSLog(@"长按");
 }
 
 @end

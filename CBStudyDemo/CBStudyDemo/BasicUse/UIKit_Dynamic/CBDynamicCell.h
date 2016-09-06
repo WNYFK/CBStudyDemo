@@ -14,6 +14,6 @@
 @interface CBDynamicCell : UITableViewCell
 
 @property (nonatomic, assign) NSInteger row;
-@property (nonatomic, strong, readonly) CBHorizontalSwipView *dynamicView;
+@property (nonatomic, strong, readonly) UIScrollView *dynamicView;
 
 @end

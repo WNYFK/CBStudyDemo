@@ -11,6 +11,7 @@
 #import "CBKVOBlockViewController.h"
 #import "CBKVCRealizeViewController.h"
 #import "CBGestureViewController.h"
+#import "CBTouchTestViewController.h"
 
 @implementation CBHomePrincipleViewController
 
@@ -32,6 +33,7 @@
     
     CBSectionItem *gestureSectionItem = [[CBSectionItem alloc] initWithTitle:@"手势相关"];
     [gestureSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"手势" destinationClass:[CBGestureViewController class]]];
+    [gestureSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"touch" destinationClass:[CBTouchTestViewController class]]];
     [self.dataArr addObject:gestureSectionItem];
 }
 

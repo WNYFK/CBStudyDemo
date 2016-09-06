@@ -48,14 +48,26 @@
     return cell;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(self.tableView == scrollView) {
+        return;
+    }
+    NSArray<CBDynamicCell *> *visibleCells = self.tableView.visibleCells;
+    [visibleCells enumerateObjectsUsingBlock:^(CBDynamicCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.dynamicView != scrollView) {
+            obj.dynamicView.contentOffset = scrollView.contentOffset;
+        }
+    }];
+}
+
 #pragma mark headerViewDelegate
 
 - (CGPoint)minDynamicViewPosition {
-    return CGPointZero;
+    return CGPointMake(100, 0);
 }
 
 - (CGPoint)maxDynamicViewPosition {
-    return CGPointZero;
+    return CGPointMake(300, 0);
 }
 
 - (void)headerViewDidFrameChanged:(UIView *)headerView {
