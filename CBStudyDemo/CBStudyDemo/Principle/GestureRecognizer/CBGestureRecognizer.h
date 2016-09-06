@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, CBGestureRecognizerType) {
+    CBGestureRecognizerTypeNone,
+    CBGestureRecognizerTypeTap,
+    CBGestureRecognizerTypeSwipToRight,
+    CBGestureRecognizerTypeSwipToLeft,
+    CBGestureRecognizerTypeSwipToUp,
+    CBGestureRecognizerTypeSwipToDown,
+    CBGestureRecognizerTypeSwipToOtherDirection
+};
+
 @interface CBGestureRecognizer : UIGestureRecognizer
+
+@property(nonatomic, assign, readonly) CBGestureRecognizerType gestureRecognizerType;
 
 @end

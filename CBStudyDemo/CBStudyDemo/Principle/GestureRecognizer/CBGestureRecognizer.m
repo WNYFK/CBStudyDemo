@@ -13,6 +13,7 @@
 @interface CBGestureRecognizer ()
 
 @property(nonatomic, assign) UIGestureRecognizerState state;
+@property(nonatomic, assign) CBGestureRecognizerType gestureRecognizerType;
 
 @end
 
@@ -90,9 +91,6 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesMoved:touches withEvent:event];
-    
-    if (![self.view isKindOfClass:[CBGestureScrollView class]]) return;
-    
     if (self.state != UIGestureRecognizerStatePossible) return;
     
     UITouch *touch = [touches anyObject];
@@ -100,6 +98,7 @@
     
     CGPoint location = [touch locationInView:self.view];
     CGPoint prevLocation = [touch previousLocationInView:self.view];
+    NSLog(@"diffX:%f====diffY:%f",location.x - prevLocation.x, location.y - prevLocation.y);
     
     UIGestureRecognizerState newState = UIGestureRecognizerStatePossible;
     CBGestureScrollView *listView = (CBGestureScrollView *)self.view;

@@ -18,6 +18,7 @@
 #import "CBMoGuJieDetailViewController.h"
 #import "CBStrechableTestViewController.h"
 #import "CBRACViewController.h"
+#import "CBDynamicViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -61,6 +62,10 @@
     CBSectionItem *RACSectionItem = [[CBSectionItem alloc] initWithTitle:@"RAC相关"];
     [RACSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"RAC基础使用" destinationClass:[CBRACViewController class]]];
     [self.dataArr addObject:RACSectionItem];
+    
+    CBSectionItem *KitDynamicSectionItem = [[CBSectionItem alloc] initWithTitle:@"Kit_Dynamic"];
+    [KitDynamicSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"dynamic" destinationClass:[CBDynamicViewController class]]];
+    [self.dataArr addObject:KitDynamicSectionItem];
 }
 
 @end

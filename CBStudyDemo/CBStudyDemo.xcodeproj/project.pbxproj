@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3710315F1D7EBB10001A9AD7 /* CBDynamicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710315E1D7EBB10001A9AD7 /* CBDynamicView.m */; };
+		371031621D7EC51D001A9AD7 /* CBDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031611D7EC51D001A9AD7 /* CBDynamicViewController.m */; };
+		371031651D7EC635001A9AD7 /* CBDynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031641D7EC635001A9AD7 /* CBDynamicCell.m */; };
+		371031681D7EE18D001A9AD7 /* CBHorizontalSwipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031671D7EE18D001A9AD7 /* CBHorizontalSwipView.m */; };
+		3710316B1D7EE4EA001A9AD7 /* CBDynamicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710316A1D7EE4EA001A9AD7 /* CBDynamicItem.m */; };
 		371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621401D65B93B00CC2D4A /* UIView+Layout.m */; };
 		371AA8CB1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA8CA1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m */; };
 		376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203131D6ACC030079DAA0 /* CBImageCache.m */; };
@@ -95,6 +100,16 @@
 /* Begin PBXFileReference section */
 		0357BF4552C0992C83D90A5D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B811628CA54DA3748105F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3710315D1D7EBB10001A9AD7 /* CBDynamicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicView.h; sourceTree = "<group>"; };
+		3710315E1D7EBB10001A9AD7 /* CBDynamicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicView.m; sourceTree = "<group>"; };
+		371031601D7EC51D001A9AD7 /* CBDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicViewController.h; sourceTree = "<group>"; };
+		371031611D7EC51D001A9AD7 /* CBDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicViewController.m; sourceTree = "<group>"; };
+		371031631D7EC635001A9AD7 /* CBDynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicCell.h; sourceTree = "<group>"; };
+		371031641D7EC635001A9AD7 /* CBDynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicCell.m; sourceTree = "<group>"; };
+		371031661D7EE18D001A9AD7 /* CBHorizontalSwipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHorizontalSwipView.h; sourceTree = "<group>"; };
+		371031671D7EE18D001A9AD7 /* CBHorizontalSwipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHorizontalSwipView.m; sourceTree = "<group>"; };
+		371031691D7EE4EA001A9AD7 /* CBDynamicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicItem.h; sourceTree = "<group>"; };
+		3710316A1D7EE4EA001A9AD7 /* CBDynamicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicItem.m; sourceTree = "<group>"; };
 		3716213D1D65B7FB00CC2D4A /* CBConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBConstant.h; sourceTree = "<group>"; };
 		3716213F1D65B93B00CC2D4A /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		371621401D65B93B00CC2D4A /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
@@ -277,6 +292,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3710315C1D7EBAFF001A9AD7 /* UIKit_Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				3710315D1D7EBB10001A9AD7 /* CBDynamicView.h */,
+				3710315E1D7EBB10001A9AD7 /* CBDynamicView.m */,
+				371031691D7EE4EA001A9AD7 /* CBDynamicItem.h */,
+				3710316A1D7EE4EA001A9AD7 /* CBDynamicItem.m */,
+				371031661D7EE18D001A9AD7 /* CBHorizontalSwipView.h */,
+				371031671D7EE18D001A9AD7 /* CBHorizontalSwipView.m */,
+				371031601D7EC51D001A9AD7 /* CBDynamicViewController.h */,
+				371031611D7EC51D001A9AD7 /* CBDynamicViewController.m */,
+				371031631D7EC635001A9AD7 /* CBDynamicCell.h */,
+				371031641D7EC635001A9AD7 /* CBDynamicCell.m */,
+			);
+			path = UIKit_Dynamic;
+			sourceTree = "<group>";
+		};
 		3716213E1D65B8EF00CC2D4A /* CBUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,6 +684,7 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
+				3710315C1D7EBAFF001A9AD7 /* UIKit_Dynamic */,
 				37BD55EE1D7A9D720075FFB4 /* RAC */,
 				371AA8C81D74646F00C4D1B1 /* MoJieDetail */,
 				3716213E1D65B8EF00CC2D4A /* CBUIKit */,
@@ -868,6 +901,7 @@
 				37C47D2D1D77D61800A182C6 /* MJRefreshConst.m in Sources */,
 				37C47D1E1D77D61800A182C6 /* MJRefreshAutoFooter.m in Sources */,
 				37F09D751D7DA8A700853F71 /* CBGestureScrollView.m in Sources */,
+				371031681D7EE18D001A9AD7 /* CBHorizontalSwipView.m in Sources */,
 				378176A41D633EC00092C6A4 /* CBObject+KVC.m in Sources */,
 				37F3C4251D5DD34900C3CB1F /* CBHomeKitViewController.m in Sources */,
 				37BD55E41D7483720075FFB4 /* CBStrechableFirstViewController.m in Sources */,
@@ -876,7 +910,9 @@
 				37C47D291D77D61800A182C6 /* MJRefreshGifHeader.m in Sources */,
 				37BD55ED1D7661130075FFB4 /* CBStrechableScrollViewController.m in Sources */,
 				37C47D301D77D61800A182C6 /* UIScrollView+MJRefresh.m in Sources */,
+				371031621D7EC51D001A9AD7 /* CBDynamicViewController.m in Sources */,
 				376203261D6ACC030079DAA0 /* UIImageView+CBWebCache.m in Sources */,
+				3710316B1D7EE4EA001A9AD7 /* CBDynamicItem.m in Sources */,
 				37F879BB1D6EEAF200779AC5 /* CBCatonTestViewController.m in Sources */,
 				376203241D6ACC030079DAA0 /* CBWebImageDownloaderOperation.m in Sources */,
 				37C47D2F1D77D61800A182C6 /* UIScrollView+MJExtension.m in Sources */,
@@ -885,8 +921,10 @@
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
 				37C47D1F1D77D61800A182C6 /* MJRefreshBackFooter.m in Sources */,
 				376203271D6ACC030079DAA0 /* UIView+CBWebCacheOperation.m in Sources */,
+				371031651D7EC635001A9AD7 /* CBDynamicCell.m in Sources */,
 				371AA8CB1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m in Sources */,
 				37C47D201D77D61800A182C6 /* MJRefreshComponent.m in Sources */,
+				3710315F1D7EBB10001A9AD7 /* CBDynamicView.m in Sources */,
 				37C47D2B1D77D61800A182C6 /* MJRefreshStateHeader.m in Sources */,
 				37726A181D6447AB00294575 /* CBWebImageViewController.m in Sources */,
 				37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */,

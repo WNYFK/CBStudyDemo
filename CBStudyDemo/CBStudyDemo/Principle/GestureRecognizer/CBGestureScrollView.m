@@ -23,7 +23,7 @@
 #pragma mark uiscrollview delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%s",__FUNCTION__);
+//    NSLog(@"%s",__FUNCTION__);
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
