@@ -6,8 +6,8 @@
 //  Copyright © 2016年 ChenBin. All rights reserved.
 //
 
-#import "CBBaseViewController.h"
+#import "CBBaseTableViewController.h"
 
-@interface CBRACViewController : CBBaseViewController
+@interface CBRACViewController : CBBaseTableViewController
 
 @end
