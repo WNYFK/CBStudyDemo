@@ -36,7 +36,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 50;
+    return self.dataArr[section].title.length > 0 ? 50 : 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -63,9 +63,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CBSectionItem *sectionItem = self.dataArr[indexPath.section];
     CBSkipItem *cellItem = sectionItem.cellItems[indexPath.row];
-    UIViewController *viewController = [cellItem.destinationClass new];
-    viewController.navigationItem.title = cellItem.title;
-    [self.navigationController pushViewController:viewController animated:YES];
+    if (cellItem.destinationClass) {
+        UIViewController *viewController = [cellItem.destinationClass new];
+        viewController.navigationItem.title = cellItem.title;
+        [self.navigationController pushViewController:viewController animated:YES];
+    } else if (cellItem.callBack) {
+        cellItem.callBack();
+    }
+    
 }
 
 @end

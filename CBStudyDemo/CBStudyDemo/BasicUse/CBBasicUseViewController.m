@@ -19,6 +19,8 @@
 #import "CBStrechableTestViewController.h"
 #import "CBRACViewController.h"
 #import "CBDynamicViewController.h"
+#import "CBRACTestVIewController.h"
+#import "CBCompositeRACViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -61,6 +63,8 @@
     
     CBSectionItem *RACSectionItem = [[CBSectionItem alloc] initWithTitle:@"RAC相关"];
     [RACSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"RAC基础使用" destinationClass:[CBRACViewController class]]];
+    [RACSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"RAC使用" destinationClass:[CBRACTestVIewController class]]];
+    [RACSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"RAC综合使用" destinationClass:[CBCompositeRACViewController class]]];
     [self.dataArr addObject:RACSectionItem];
     
     CBSectionItem *KitDynamicSectionItem = [[CBSectionItem alloc] initWithTitle:@"Kit_Dynamic"];

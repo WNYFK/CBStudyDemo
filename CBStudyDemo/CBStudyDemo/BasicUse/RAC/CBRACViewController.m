@@ -54,7 +54,7 @@
     
     //btn1 点击后如果30秒内没点击，则调用timeOutLog
     RACSignal *timeOutSingle = [[[[RACSignal empty]
-                                  delay:20]
+                                  throttle:20]
                                  concat:[RACSignal return:@NO]]
                                 startWith:@YES];
     RACSignal *btn1ClickedSingle = [[[self rac_signalForSelector:@selector(btnClicked:)]

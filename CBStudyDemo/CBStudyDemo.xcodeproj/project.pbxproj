@@ -13,6 +13,8 @@
 		371031681D7EE18D001A9AD7 /* CBHorizontalSwipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031671D7EE18D001A9AD7 /* CBHorizontalSwipView.m */; };
 		3710316B1D7EE4EA001A9AD7 /* CBDynamicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710316A1D7EE4EA001A9AD7 /* CBDynamicItem.m */; };
 		371031C51D7FBB83001A9AD7 /* CBDynamicPanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031C41D7FBB83001A9AD7 /* CBDynamicPanCell.m */; };
+		371031C81D7FEB40001A9AD7 /* CBRACTestVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031C71D7FEB40001A9AD7 /* CBRACTestVIewController.m */; };
+		371031CB1D803D6F001A9AD7 /* CBCompositeRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031CA1D803D6F001A9AD7 /* CBCompositeRACViewController.m */; };
 		371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621401D65B93B00CC2D4A /* UIView+Layout.m */; };
 		371AA8CB1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA8CA1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m */; };
 		376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203131D6ACC030079DAA0 /* CBImageCache.m */; };
@@ -114,6 +116,10 @@
 		3710316A1D7EE4EA001A9AD7 /* CBDynamicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicItem.m; sourceTree = "<group>"; };
 		371031C31D7FBB83001A9AD7 /* CBDynamicPanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicPanCell.h; sourceTree = "<group>"; };
 		371031C41D7FBB83001A9AD7 /* CBDynamicPanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicPanCell.m; sourceTree = "<group>"; };
+		371031C61D7FEB40001A9AD7 /* CBRACTestVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRACTestVIewController.h; sourceTree = "<group>"; };
+		371031C71D7FEB40001A9AD7 /* CBRACTestVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRACTestVIewController.m; sourceTree = "<group>"; };
+		371031C91D803D6F001A9AD7 /* CBCompositeRACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCompositeRACViewController.h; sourceTree = "<group>"; };
+		371031CA1D803D6F001A9AD7 /* CBCompositeRACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCompositeRACViewController.m; sourceTree = "<group>"; };
 		3716213D1D65B7FB00CC2D4A /* CBConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBConstant.h; sourceTree = "<group>"; };
 		3716213F1D65B93B00CC2D4A /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		371621401D65B93B00CC2D4A /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
@@ -521,6 +527,10 @@
 			children = (
 				37BD55F01D7A9DFA0075FFB4 /* CBRACViewController.h */,
 				37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */,
+				371031C61D7FEB40001A9AD7 /* CBRACTestVIewController.h */,
+				371031C71D7FEB40001A9AD7 /* CBRACTestVIewController.m */,
+				371031C91D803D6F001A9AD7 /* CBCompositeRACViewController.h */,
+				371031CA1D803D6F001A9AD7 /* CBCompositeRACViewController.m */,
 			);
 			path = RAC;
 			sourceTree = "<group>";
@@ -889,6 +899,7 @@
 				376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */,
 				3762032B1D6ACF860079DAA0 /* CBWebImageOperation_YY.m in Sources */,
 				3762032E1D6AD09E0079DAA0 /* CBWebImageManager_YY.m in Sources */,
+				371031C81D7FEB40001A9AD7 /* CBRACTestVIewController.m in Sources */,
 				3781768E1D61E4980092C6A4 /* CBThread.m in Sources */,
 				37726A241D64582800294575 /* CBOperationViewController.m in Sources */,
 				3781768A1D61E2A70092C6A4 /* CBNormalInputSource.m in Sources */,
@@ -917,6 +928,7 @@
 				378176A41D633EC00092C6A4 /* CBObject+KVC.m in Sources */,
 				37F3C4251D5DD34900C3CB1F /* CBHomeKitViewController.m in Sources */,
 				37BD55E41D7483720075FFB4 /* CBStrechableFirstViewController.m in Sources */,
+				371031CB1D803D6F001A9AD7 /* CBCompositeRACViewController.m in Sources */,
 				3781769C1D62CEF10092C6A4 /* NSObject+KVO.m in Sources */,
 				37F879BE1D6EEDD900779AC5 /* CBCatonTimerManager.m in Sources */,
 				37C47D291D77D61800A182C6 /* MJRefreshGifHeader.m in Sources */,

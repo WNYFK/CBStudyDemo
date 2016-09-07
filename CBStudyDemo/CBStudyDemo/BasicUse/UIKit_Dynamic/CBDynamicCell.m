@@ -32,6 +32,7 @@
 }
 
 - (void)setupSubView {
+
     self.leftContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 60)];
     self.leftContentView.backgroundColor = [UIColor whiteColor];
     
@@ -55,8 +56,6 @@
     }
     [self.contentView addSubview:self.dynamicView];
     [self.contentView addSubview:self.leftContentView];
-    
-    
     
 }
 
@@ -93,10 +92,10 @@
 //- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
 //    UIView *view = [super hitTest:point withEvent:event];
 //    NSLog(@"%ld",(long)event.type);
-//    if (view == self.dynamicView) {
-//        return nil;
-//    }
-//    return self;
+//    UITouch *touch = [event.allTouches anyObject];
+//    NSLog(@"%ld",(long)touch.phase);
+//    NSLog(@"手势:%@",touch.gestureRecognizers);
+//    return view;
 //}
 
 @end

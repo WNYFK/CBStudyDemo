@@ -98,10 +98,10 @@
     
     CGPoint location = [touch locationInView:self.view];
     CGPoint prevLocation = [touch previousLocationInView:self.view];
-    NSLog(@"diffX:%f====diffY:%f",location.x - prevLocation.x, location.y - prevLocation.y);
+    CGFloat diffX = location.x - prevLocation.x;
+    CGFloat diffY = location.y - prevLocation.y;
     
     UIGestureRecognizerState newState = UIGestureRecognizerStatePossible;
-    CBGestureScrollView *listView = (CBGestureScrollView *)self.view;
     
 //    switch (self.type) {
 //            

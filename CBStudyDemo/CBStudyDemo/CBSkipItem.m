@@ -17,6 +17,14 @@
     }
     return self;
 }
+
+- (instancetype)initWithTitle:(NSString *)title callBack:(CBNormalCallBack)callBack {
+    if (self = [super init]) {
+        self.title = title;
+        self.callBack = callBack;
+    }
+    return self;
+}
 @end
 
 @interface CBSectionItem ()

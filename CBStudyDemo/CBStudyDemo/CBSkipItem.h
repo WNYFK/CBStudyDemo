@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^CBNormalCallBack)();
+
 @interface CBSkipItem : NSObject
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) Class destinationClass;
+@property (nonatomic, copy) CBNormalCallBack callBack;
 
 - (instancetype)initWithTitle:(NSString *)title destinationClass:(Class)dClass;
+- (instancetype)initWithTitle:(NSString *)title callBack:(CBNormalCallBack)callBack;
 
 @end
 
