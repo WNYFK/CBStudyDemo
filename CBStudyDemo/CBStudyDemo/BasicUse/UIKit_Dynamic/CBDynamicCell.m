@@ -56,6 +56,8 @@
     [self.contentView addSubview:self.dynamicView];
     [self.contentView addSubview:self.leftContentView];
     
+    
+    
 }
 
 - (void)tapHandle:(UITapGestureRecognizer *)tapGesture {
@@ -64,15 +66,37 @@
 
 - (void)longPress:(UILongPressGestureRecognizer *)longPressGesture {
     NSLog(@"长按");
+    switch (longPressGesture.state) {
+        case UIGestureRecognizerStateBegan:
+            NSLog(@"Began");
+            break;
+        case UIGestureRecognizerStateCancelled:
+            NSLog(@"cancel");
+            break;
+        case UIGestureRecognizerStateChanged:
+            NSLog(@"changed");
+            break;
+        case UIGestureRecognizerStateEnded:
+            NSLog(@"ended");
+            break;
+        case UIGestureRecognizerStateFailed:
+            NSLog(@"failed");
+            break;
+        case UIGestureRecognizerStatePossible:
+            NSLog(@"possible");
+            break;
+        default:
+            break;
+    }
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    UIView *view = [super hitTest:point withEvent:event];
-    NSLog(@"%ld",(long)event.type);
-    if (view == self.dynamicView) {
-        return nil;
-    }
-    return self;
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    UIView *view = [super hitTest:point withEvent:event];
+//    NSLog(@"%ld",(long)event.type);
+//    if (view == self.dynamicView) {
+//        return nil;
+//    }
+//    return self;
+//}
 
 @end

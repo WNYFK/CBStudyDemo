@@ -11,7 +11,7 @@
 
 @interface CBHorizontalSwipView ()<UIDynamicAnimatorDelegate>
 
-@property (nonatomic, strong) UISwipeGestureRecognizer *horizontalSwipGestureRecognizer;
+@property (nonatomic, strong) UIPanGestureRecognizer *horizontalPanGestureRecognizer;
 @property (nonatomic, strong) UIDynamicAnimator *animator;
 @property (nonatomic, strong) UIPushBehavior *pushBehavior;
 @property (nonatomic, strong) UIDynamicItemBehavior *decelerationBehavior;
@@ -30,47 +30,33 @@
 }
 
 - (void)commonInit {
-    self.horizontalSwipGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipGesture:)];
-    self.horizontalSwipGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
-    [self addGestureRecognizer:self.horizontalSwipGestureRecognizer];
+    self.horizontalPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    [self addGestureRecognizer:self.horizontalPanGestureRecognizer];
     
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
     self.animator.delegate = self;
     self.dynamicItem = [[CBDynamicItem alloc] init];
 }
 
-- (void)handleSwipGesture:(UISwipeGestureRecognizer *)swipGesture {
-    CGPoint point1 = [swipGesture locationInView:self];
-    NSLog(@"啊啊啊啊:%f",point1.x);
-
-    switch (swipGesture.state) {
-        case UIGestureRecognizerStateBegan: {
-            [self endDecelerating];
-        }
-        case UIGestureRecognizerStateChanged: {
-            CGRect frame = self.frame;
-            CGPoint minPosition = [self minDynamicViewPosition];
-            CGPoint maxPosition = [self maxDynamicViewPosition];
+- (void)handlePanGesture:(UIPanGestureRecognizer *)panGesture {
+    NSLog(@"PanGesture");
+    switch (panGesture.state) {
+        case UIGestureRecognizerStateBegan:
+            [self.animator removeAllBehaviors];
+            break;
             
-        }
-        case UIGestureRecognizerStateEnded: {
-            CGPoint point = [swipGesture locationInView:self];
-            point.y = 0;
-            self.dynamicItem.center = self.frame.origin;
-            self.decelerationBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.dynamicItem]];
-            [self.decelerationBehavior addLinearVelocity:point forItem:self.dynamicItem];
-            self.decelerationBehavior.resistance = 2;
-            __weak typeof(self) weakSelf = self;
-            self.decelerationBehavior.action = ^{
-                CGPoint center = weakSelf.dynamicItem.center;
-                center.y = weakSelf.frame.origin.y;
-                CGRect frame = weakSelf.frame;
-                frame.origin = center;
-                weakSelf.newFrame = frame;
-            };
+        case UIGestureRecognizerStateChanged:
             
-            [self.animator addBehavior:self.decelerationBehavior];
-        }
+            break;
+            
+        case UIGestureRecognizerStateEnded:
+            
+            break;
+            
+        case UIGestureRecognizerStatePossible:
+            
+            break;
+            
         default:
             break;
     }

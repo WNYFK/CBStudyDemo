@@ -12,6 +12,7 @@
 		371031651D7EC635001A9AD7 /* CBDynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031641D7EC635001A9AD7 /* CBDynamicCell.m */; };
 		371031681D7EE18D001A9AD7 /* CBHorizontalSwipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031671D7EE18D001A9AD7 /* CBHorizontalSwipView.m */; };
 		3710316B1D7EE4EA001A9AD7 /* CBDynamicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710316A1D7EE4EA001A9AD7 /* CBDynamicItem.m */; };
+		371031C51D7FBB83001A9AD7 /* CBDynamicPanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031C41D7FBB83001A9AD7 /* CBDynamicPanCell.m */; };
 		371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621401D65B93B00CC2D4A /* UIView+Layout.m */; };
 		371AA8CB1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA8CA1D74649800C4D1B1 /* CBMoGuJieDetailViewController.m */; };
 		376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203131D6ACC030079DAA0 /* CBImageCache.m */; };
@@ -111,6 +112,8 @@
 		371031671D7EE18D001A9AD7 /* CBHorizontalSwipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHorizontalSwipView.m; sourceTree = "<group>"; };
 		371031691D7EE4EA001A9AD7 /* CBDynamicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicItem.h; sourceTree = "<group>"; };
 		3710316A1D7EE4EA001A9AD7 /* CBDynamicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicItem.m; sourceTree = "<group>"; };
+		371031C31D7FBB83001A9AD7 /* CBDynamicPanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicPanCell.h; sourceTree = "<group>"; };
+		371031C41D7FBB83001A9AD7 /* CBDynamicPanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicPanCell.m; sourceTree = "<group>"; };
 		3716213D1D65B7FB00CC2D4A /* CBConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBConstant.h; sourceTree = "<group>"; };
 		3716213F1D65B93B00CC2D4A /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		371621401D65B93B00CC2D4A /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				371031611D7EC51D001A9AD7 /* CBDynamicViewController.m */,
 				371031631D7EC635001A9AD7 /* CBDynamicCell.h */,
 				371031641D7EC635001A9AD7 /* CBDynamicCell.m */,
+				371031C31D7FBB83001A9AD7 /* CBDynamicPanCell.h */,
+				371031C41D7FBB83001A9AD7 /* CBDynamicPanCell.m */,
 			);
 			path = UIKit_Dynamic;
 			sourceTree = "<group>";
@@ -900,6 +905,7 @@
 				371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */,
 				3762033B1D6D69900079DAA0 /* CBHomeHoleViewController.m in Sources */,
 				37F3C41C1D5DD1A800C3CB1F /* CBTabbarController.m in Sources */,
+				371031C51D7FBB83001A9AD7 /* CBDynamicPanCell.m in Sources */,
 				37C47D231D77D61800A182C6 /* MJRefreshAutoGifFooter.m in Sources */,
 				37F879E31D704FE200779AC5 /* UIApplication+Category.m in Sources */,
 				37726A271D64583500294575 /* CBThreadViewController.m in Sources */,

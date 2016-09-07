@@ -10,6 +10,7 @@
 #import "CBDynamicCell.h"
 #import "CBDynamicView.h"
 #import "CBHorizontalSwipView.h"
+#import "CBDynamicPanCell.h"
 
 @interface CBDynamicViewController ()<UITableViewDelegate, UITableViewDataSource, CBHorizontalScrollDelegate>
 

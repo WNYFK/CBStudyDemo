@@ -20,7 +20,7 @@
 
 @interface CBHorizontalSwipView : UIView
 
-@property (nonatomic, strong, readonly) UISwipeGestureRecognizer *horizontalSwipGestureRecognizer;
+@property (nonatomic, strong, readonly) UIPanGestureRecognizer *horizontalPanGestureRecognizer;
 @property (nonatomic, weak) id<CBHorizontalScrollDelegate> delegate;
 
 @end
