@@ -26,7 +26,6 @@
 		372C47F01D828B94002DB575 /* CBThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47EC1D828B94002DB575 /* CBThreadViewController.m */; };
 		372C47F41D828BC8002DB575 /* CBRunTimeVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47F31D828BC8002DB575 /* CBRunTimeVIewController.m */; };
 		372C48021D828C06002DB575 /* CBCoreDataThirdLibUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47F71D828C06002DB575 /* CBCoreDataThirdLibUseViewController.m */; };
-		372C48031D828C06002DB575 /* CBCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47F91D828C06002DB575 /* CBCoreDataViewController.m */; };
 		372C48041D828C06002DB575 /* CBFetchedResultsControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47FB1D828C06002DB575 /* CBFetchedResultsControllerDataSource.m */; };
 		372C48051D828C06002DB575 /* CBManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47FD1D828C06002DB575 /* CBManagedObject.m */; };
 		372C48061D828C06002DB575 /* CBPresistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47FF1D828C06002DB575 /* CBPresistentStack.m */; };
@@ -41,6 +40,7 @@
 		372C48211D829C4F002DB575 /* UIControl+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C48201D829C4F002DB575 /* UIControl+Create.m */; };
 		372C48241D829E2F002DB575 /* UIButton+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C48231D829E2F002DB575 /* UIButton+Create.m */; };
 		372C48271D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 372C48251D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld */; };
+		372C482A1D82B979002DB575 /* CBCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C48291D82B979002DB575 /* CBCoreDataViewController.m */; };
 		376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203131D6ACC030079DAA0 /* CBImageCache.m */; };
 		376203221D6ACC030079DAA0 /* CBWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203151D6ACC030079DAA0 /* CBWebImageCompat.m */; };
 		376203231D6ACC030079DAA0 /* CBWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203171D6ACC030079DAA0 /* CBWebImageDownloader.m */; };
@@ -132,8 +132,6 @@
 		372C47F31D828BC8002DB575 /* CBRunTimeVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunTimeVIewController.m; sourceTree = "<group>"; };
 		372C47F61D828C06002DB575 /* CBCoreDataThirdLibUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataThirdLibUseViewController.h; sourceTree = "<group>"; };
 		372C47F71D828C06002DB575 /* CBCoreDataThirdLibUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataThirdLibUseViewController.m; sourceTree = "<group>"; };
-		372C47F81D828C06002DB575 /* CBCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataViewController.h; sourceTree = "<group>"; };
-		372C47F91D828C06002DB575 /* CBCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataViewController.m; sourceTree = "<group>"; };
 		372C47FA1D828C06002DB575 /* CBFetchedResultsControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBFetchedResultsControllerDataSource.h; sourceTree = "<group>"; };
 		372C47FB1D828C06002DB575 /* CBFetchedResultsControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBFetchedResultsControllerDataSource.m; sourceTree = "<group>"; };
 		372C47FC1D828C06002DB575 /* CBManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBManagedObject.h; sourceTree = "<group>"; };
@@ -161,6 +159,8 @@
 		372C48221D829E2F002DB575 /* UIButton+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Create.h"; sourceTree = "<group>"; };
 		372C48231D829E2F002DB575 /* UIButton+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Create.m"; sourceTree = "<group>"; };
 		372C48261D82ACB0002DB575 /* CBStudyDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CBStudyDemo.xcdatamodel; sourceTree = "<group>"; };
+		372C48281D82B979002DB575 /* CBCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataViewController.h; sourceTree = "<group>"; };
+		372C48291D82B979002DB575 /* CBCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataViewController.m; sourceTree = "<group>"; };
 		376203121D6ACC030079DAA0 /* CBImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBImageCache.h; sourceTree = "<group>"; };
 		376203131D6ACC030079DAA0 /* CBImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBImageCache.m; sourceTree = "<group>"; };
 		376203141D6ACC030079DAA0 /* CBWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBWebImageCompat.h; sourceTree = "<group>"; };
@@ -383,6 +383,8 @@
 		372C481B1D828C7A002DB575 /* BaseUse */ = {
 			isa = PBXGroup;
 			children = (
+				372C48281D82B979002DB575 /* CBCoreDataViewController.h */,
+				372C48291D82B979002DB575 /* CBCoreDataViewController.m */,
 				372C47FA1D828C06002DB575 /* CBFetchedResultsControllerDataSource.h */,
 				372C47FB1D828C06002DB575 /* CBFetchedResultsControllerDataSource.m */,
 				372C47FC1D828C06002DB575 /* CBManagedObject.h */,
@@ -391,8 +393,6 @@
 				372C47FF1D828C06002DB575 /* CBPresistentStack.m */,
 				372C48001D828C06002DB575 /* CBStore.h */,
 				372C48011D828C06002DB575 /* CBStore.m */,
-				372C47F81D828C06002DB575 /* CBCoreDataViewController.h */,
-				372C47F91D828C06002DB575 /* CBCoreDataViewController.m */,
 				372C48251D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld */,
 			);
 			name = BaseUse;
@@ -821,6 +821,7 @@
 				371031C51D7FBB83001A9AD7 /* CBDynamicPanCell.m in Sources */,
 				372C481E1D829617002DB575 /* UIBarButtonItem+Create.m in Sources */,
 				372C47E21D828B4F002DB575 /* CBNormalInputSource.m in Sources */,
+				372C482A1D82B979002DB575 /* CBCoreDataViewController.m in Sources */,
 				37F879E31D704FE200779AC5 /* UIApplication+Category.m in Sources */,
 				378176931D62A9100092C6A4 /* CBKVORealizeViewController.m in Sources */,
 				37F09D751D7DA8A700853F71 /* CBGestureScrollView.m in Sources */,
@@ -867,7 +868,6 @@
 				372C47EE1D828B94002DB575 /* CBOperationViewController.m in Sources */,
 				378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */,
 				372C48181D828C3B002DB575 /* CBStrechableScrollViewController.m in Sources */,
-				372C48031D828C06002DB575 /* CBCoreDataViewController.m in Sources */,
 				376203231D6ACC030079DAA0 /* CBWebImageDownloader.m in Sources */,
 				378176991D62AB980092C6A4 /* CBKVOTestClassOne.m in Sources */,
 				372C47F41D828BC8002DB575 /* CBRunTimeVIewController.m in Sources */,
