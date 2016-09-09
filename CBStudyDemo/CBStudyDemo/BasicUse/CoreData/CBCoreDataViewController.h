@@ -1,13 +1,12 @@
 //
-//  CBCoreDataViewController.m
+//  CBCoreDataViewController.h
 //  CBStudyDemo
 //
 //  Created by ChenBin on 16/8/17.
 //  Copyright © 2016年 ChenBin. All rights reserved.
 //
 
-#import "CBCoreDataViewController.h"
 
-@implementation CBCoreDataViewController
+@interface CBCoreDataViewController : UITableViewController
 
 @end
