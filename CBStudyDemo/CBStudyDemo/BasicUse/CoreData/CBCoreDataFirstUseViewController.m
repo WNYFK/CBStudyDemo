@@ -33,7 +33,7 @@
     UIBarButtonItem *addBarButtonItem = [UIBarButtonItem creatBarButtonWithTitle:@"添加" callBack:^(UIBarButtonItem *buttonItem) {
         NSString *name = [NSString stringWithFormat:@"chenbin:%lu",sectionItem.cellItems.count + 1];
         NSString *result = [NSString stringWithFormat:@"添加失败--%@", name];
-        if ([self.coreDataConnect insertEntityName:@"User" attributeInfo:@{@"name": name}] ) {
+        if ([self.coreDataConnect insertEntityName:@"User" attributeInfo:@{@"name": name}]) {
             [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:name destinationClass:nil]];
             [self.tableView reloadData];
             result = [NSString stringWithFormat:@"添加成功--%@",name];
@@ -54,6 +54,16 @@
         [CRToastManager showNotificationWithMessage:result completionBlock:nil];
     }];
     
+    UIBarButtonItem *clearBarButtonItem = [UIBarButtonItem creatBarButtonWithTitle:@"清空" callBack:^(UIBarButtonItem *buttonItem) {
+        NSString *result = @"清空失败";
+        if ([self.coreDataConnect deleteWithEntityName:@"User" predicate:nil]) {
+            result = @"清空成功";
+            [sectionItem.cellItems removeAllObjects];
+            [self.tableView reloadData];
+        }
+        [CRToastManager showNotificationWithMessage:result completionBlock:nil];
+    }];
+    
     UIBarButtonItem *updateBarButtonItem = [UIBarButtonItem creatBarButtonWithTitle:@"更新" callBack:^(UIBarButtonItem *buttonItem) {
         if (sectionItem.cellItems.count == 0) return;
         CBSkipItem *cellItem = [sectionItem.cellItems objectAtIndex: (sectionItem.cellItems.count > 1) ? rand() % (sectionItem.cellItems.count - 1) : 0];
@@ -66,6 +76,6 @@
         }
         [CRToastManager showNotificationWithMessage:result completionBlock:nil];
     }];
-    self.navigationItem.rightBarButtonItems = @[addBarButtonItem, deleteBarButtonItem, updateBarButtonItem];
+    self.navigationItem.rightBarButtonItems = @[addBarButtonItem, deleteBarButtonItem, updateBarButtonItem, clearBarButtonItem];
 }
 @end

@@ -30,7 +30,7 @@ static CBManagedObjectContextManager *instance = nil;
 
 - (NSManagedObjectContext *)managedObjectContext {
     if (!_managedObjectContext) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         _managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
     }
     return _managedObjectContext;

@@ -89,6 +89,7 @@
 		37F873C31D86590E00316311 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F873C11D86590E00316311 /* User.m */; };
 		37F873C61D865A0100316311 /* CBCoreDataConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F873C51D865A0100316311 /* CBCoreDataConnect.m */; };
 		37F873C91D86841900316311 /* CBManagedObjectContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F873C81D86841900316311 /* CBManagedObjectContextManager.m */; };
+		37F873CD1D86989000316311 /* CBCoreDataMultiThreadUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F873CC1D86989000316311 /* CBCoreDataMultiThreadUseViewController.m */; };
 		37F879BB1D6EEAF200779AC5 /* CBCatonTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879BA1D6EEAF200779AC5 /* CBCatonTestViewController.m */; };
 		37F879BE1D6EEDD900779AC5 /* CBCatonTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879BD1D6EEDD900779AC5 /* CBCatonTimerManager.m */; };
 		37F879C21D6FE3BA00779AC5 /* CBLocalCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879C11D6FE3BA00779AC5 /* CBLocalCacheManager.m */; };
@@ -264,6 +265,8 @@
 		37F873C51D865A0100316311 /* CBCoreDataConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataConnect.m; sourceTree = "<group>"; };
 		37F873C71D86841900316311 /* CBManagedObjectContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBManagedObjectContextManager.h; sourceTree = "<group>"; };
 		37F873C81D86841900316311 /* CBManagedObjectContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBManagedObjectContextManager.m; sourceTree = "<group>"; };
+		37F873CB1D86989000316311 /* CBCoreDataMultiThreadUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataMultiThreadUseViewController.h; sourceTree = "<group>"; };
+		37F873CC1D86989000316311 /* CBCoreDataMultiThreadUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataMultiThreadUseViewController.m; sourceTree = "<group>"; };
 		37F879B91D6EEAF200779AC5 /* CBCatonTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCatonTestViewController.h; sourceTree = "<group>"; };
 		37F879BA1D6EEAF200779AC5 /* CBCatonTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCatonTestViewController.m; sourceTree = "<group>"; };
 		37F879BC1D6EEDD900779AC5 /* CBCatonTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCatonTimerManager.h; sourceTree = "<group>"; };
@@ -371,14 +374,15 @@
 		372C47F51D828C06002DB575 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				37F873C41D865A0100316311 /* CBCoreDataConnect.h */,
-				37F873C51D865A0100316311 /* CBCoreDataConnect.m */,
-				37F873C71D86841900316311 /* CBManagedObjectContextManager.h */,
-				37F873C81D86841900316311 /* CBManagedObjectContextManager.m */,
+				37F873CA1D86984D00316311 /* MultiThread */,
 				37F873B71D8657A900316311 /* First */,
 				372C481B1D828C7A002DB575 /* BaseUse */,
 				372C47F61D828C06002DB575 /* CBCoreDataThirdLibUseViewController.h */,
 				372C47F71D828C06002DB575 /* CBCoreDataThirdLibUseViewController.m */,
+				37F873C41D865A0100316311 /* CBCoreDataConnect.h */,
+				37F873C51D865A0100316311 /* CBCoreDataConnect.m */,
+				37F873C71D86841900316311 /* CBManagedObjectContextManager.h */,
+				37F873C81D86841900316311 /* CBManagedObjectContextManager.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -684,6 +688,15 @@
 			name = First;
 			sourceTree = "<group>";
 		};
+		37F873CA1D86984D00316311 /* MultiThread */ = {
+			isa = PBXGroup;
+			children = (
+				37F873CB1D86989000316311 /* CBCoreDataMultiThreadUseViewController.h */,
+				37F873CC1D86989000316311 /* CBCoreDataMultiThreadUseViewController.m */,
+			);
+			name = MultiThread;
+			sourceTree = "<group>";
+		};
 		37F879BF1D6FE1CD00779AC5 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,6 +857,7 @@
 				372C48051D828C06002DB575 /* CBManagedObject.m in Sources */,
 				371031C81D7FEB40001A9AD7 /* CBRACTestVIewController.m in Sources */,
 				37F09D781D7DA9A400853F71 /* CBHorizontalView.m in Sources */,
+				37F873CD1D86989000316311 /* CBCoreDataMultiThreadUseViewController.m in Sources */,
 				37B2AFC21D6DEB4400EC731D /* CBHomePerformanceViewController.m in Sources */,
 				37F3C4281D5DD35900C3CB1F /* CBHomePrincipleViewController.m in Sources */,
 				372C47D91D828B22002DB575 /* CBCollectionHomeViewController.m in Sources */,

@@ -22,6 +22,7 @@
 #import "CBRACTestVIewController.h"
 #import "CBCompositeRACViewController.h"
 #import "CBCoreDataFirstUseViewController.h"
+#import "CBCoreDataMultiThreadUseViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -54,6 +55,7 @@
     
     CBSectionItem *coreDataSectionItem = [[CBSectionItem alloc] initWithTitle:@"CoreData"];
     [coreDataSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CoreData基本用法" destinationClass:[CBCoreDataFirstUseViewController class]]];
+    [coreDataSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CoreData多线程" destinationClass:[CBCoreDataMultiThreadUseViewController class]]];
     [coreDataSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CoreData 使用" destinationClass:[CBCoreDataViewController class]]];
     [coreDataSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CoreData 第三方库使用" destinationClass:[CBCoreDataThirdLibUseViewController class]]];
     [self.dataArr addObject:coreDataSectionItem];

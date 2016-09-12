@@ -19,6 +19,7 @@
 + (instancetype)createButtonWithTitle:(NSString *)title frame:(CGRect)frame callBack:(CBButtonClickCallBackBlock)callBack {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:title forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     btn.frame = frame;
     [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
     btn.callBack = callBack;
