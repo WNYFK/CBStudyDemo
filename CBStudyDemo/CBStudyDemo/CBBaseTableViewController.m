@@ -70,7 +70,6 @@
     } else if (cellItem.callBack) {
         cellItem.callBack();
     }
-    
 }
 
 @end

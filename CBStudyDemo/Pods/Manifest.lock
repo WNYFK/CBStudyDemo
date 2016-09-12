@@ -38,6 +38,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CRToast (0.0.9)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - Aspects
   - AsyncDisplayKit
   - BlocksKit
+  - CRToast
   - FMDB
   - JSPatch
   - MagicalRecord
@@ -94,6 +96,7 @@ SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AsyncDisplayKit: 011ea22a76a79a5bbfc14501fede6e0196a3c2f0
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
