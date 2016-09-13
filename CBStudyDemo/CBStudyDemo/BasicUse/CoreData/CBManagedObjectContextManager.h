@@ -13,5 +13,6 @@
 + (CBManagedObjectContextManager *)sharedInstance;
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong, readonly) NSManagedObjectContext *backgroundObjectContext;
 
 @end

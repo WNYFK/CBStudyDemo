@@ -33,6 +33,9 @@
 }
 
 - (BOOL)insertEntityName:(NSString *)entityName attributeInfo:(NSDictionary<NSString *,id> *)attributeInfo {
+    [self.managedObjectContext performBlock:^{
+        
+    }];
     NSManagedObject *insetData = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.managedObjectContext];
     [attributeInfo enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id _Nonnull value, BOOL * _Nonnull stop) {
         [insetData setValue:value forKey:key];

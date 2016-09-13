@@ -13,6 +13,7 @@ static CBManagedObjectContextManager *instance = nil;
 
 @interface CBManagedObjectContextManager ()
 
+@property (nonatomic, strong) NSManagedObjectContext *backgroundObjectContext;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
@@ -30,7 +31,7 @@ static CBManagedObjectContextManager *instance = nil;
 
 - (NSManagedObjectContext *)managedObjectContext {
     if (!_managedObjectContext) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         _managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
     }
     return _managedObjectContext;
@@ -44,6 +45,14 @@ static CBManagedObjectContextManager *instance = nil;
         [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error];
     }
     return _persistentStoreCoordinator;
+}
+
+- (NSManagedObjectContext *)backgroundObjectContext {
+    if (!_backgroundObjectContext) {
+        _backgroundObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        _backgroundObjectContext.parentContext = self.managedObjectContext;
+    }
+    return _backgroundObjectContext;
 }
 
 - (NSURL *)applicationDocumentsDirectory {
