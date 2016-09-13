@@ -40,12 +40,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)pause;
 - (BOOL)isPlaying;
 
-@property (nullable, atomic, strong, readwrite) AVAsset *asset;
-@property (nullable, atomic, strong, readwrite) AVVideoComposition *videoComposition;
-@property (nullable, atomic, strong, readwrite) AVAudioMix *audioMix;
+@property (nullable, nonatomic, strong, readwrite) AVAsset *asset;
+/**
+ ** @abstract The URL with which the asset was initialized.
+ ** @discussion Setting the URL will overwrite the current asset with a newly created AVURLAsset created from the given URL, and AVAsset *asset will point to that newly created AVURLAsset.  Please don't set both assetURL and asset.
+ ** @return Current URL the asset was initialized or nil if no URL was given.
+ **/
+@property (nullable, nonatomic, strong, readwrite) NSURL *assetURL;
+@property (nullable, nonatomic, strong, readwrite) AVVideoComposition *videoComposition;
+@property (nullable, nonatomic, strong, readwrite) AVAudioMix *audioMix;
 
-@property (nullable, atomic, strong, readonly) AVPlayer *player;
-@property (nullable, atomic, strong, readonly) AVPlayerItem *currentItem;
+@property (nullable, nonatomic, strong, readonly) AVPlayer *player;
+@property (nullable, nonatomic, strong, readonly) AVPlayerItem *currentItem;
 
 
 /**
@@ -63,9 +69,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) int32_t periodicTimeObserverTimescale;
 
 //! Defaults to AVLayerVideoGravityResizeAspect
-@property (atomic) NSString *gravity;
+@property (nonatomic) NSString *gravity;
 
-@property (nullable, atomic, weak, readwrite) id<ASVideoNodeDelegate, ASNetworkImageNodeDelegate> delegate;
+@property (nullable, nonatomic, weak, readwrite) id<ASVideoNodeDelegate, ASNetworkImageNodeDelegate> delegate;
 
 @end
 
@@ -143,3 +149,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 NS_ASSUME_NONNULL_END
 #endif
+

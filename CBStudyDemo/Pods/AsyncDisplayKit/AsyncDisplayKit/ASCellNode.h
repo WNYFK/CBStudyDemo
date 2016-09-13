@@ -77,7 +77,7 @@ typedef NS_ENUM(NSUInteger, ASCellNodeVisibilityEvent) {
 /*
  * ASTableView uses these properties when configuring UITableViewCells that host ASCellNodes.
  */
-//@property (atomic, retain) UIColor *backgroundColor;
+//@property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic) UITableViewCellSelectionStyle selectionStyle;
 
 /**
@@ -120,20 +120,10 @@ typedef NS_ENUM(NSUInteger, ASCellNodeVisibilityEvent) {
  */
 - (instancetype)initWithViewControllerBlock:(ASDisplayNodeViewControllerBlock)viewControllerBlock didLoadBlock:(nullable ASDisplayNodeDidLoadBlock)didLoadBlock;
 
-- (void)cellNodeVisibilityEvent:(ASCellNodeVisibilityEvent)event inScrollView:(UIScrollView *)scrollView withCellFrame:(CGRect)cellFrame;
+- (void)cellNodeVisibilityEvent:(ASCellNodeVisibilityEvent)event inScrollView:(nullable UIScrollView *)scrollView withCellFrame:(CGRect)cellFrame;
 
 @end
 
-@interface ASCellNode (Deprecated)
-
-/**
- * Previous versions of ASDK did not include "is" in the name of the getter for these properties.
- * These older accessor methods don't match UIKit naming, and will be removed in a future version.
- */
-- (BOOL)selected ASDISPLAYNODE_DEPRECATED;
-- (BOOL)highlighted ASDISPLAYNODE_DEPRECATED;
-
-@end
 
 /**
  * Simple label-style cell node.  Read its source for an example of custom <ASCellNode>s.

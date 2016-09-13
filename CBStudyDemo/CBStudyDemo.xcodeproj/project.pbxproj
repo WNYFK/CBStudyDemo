@@ -758,6 +758,7 @@
 					37F3C3FF1D5DC6CA00C3CB1F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6U4Q5ZVMMM;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -1045,6 +1046,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CBStudyDemo/CBStudyDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1064,6 +1066,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CBStudyDemo/CBStudyDemo-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

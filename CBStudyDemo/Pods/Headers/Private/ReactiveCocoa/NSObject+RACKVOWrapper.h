@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/NSObject+RACKVOWrapper.h
+../../../ReactiveCocoa/ReactiveCocoa/NSObject+RACKVOWrapper.h

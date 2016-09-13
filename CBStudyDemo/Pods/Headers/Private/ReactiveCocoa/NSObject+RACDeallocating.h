@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/NSObject+RACDeallocating.h
+../../../ReactiveCocoa/ReactiveCocoa/NSObject+RACDeallocating.h

@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/RACStream.h
+../../../ReactiveCocoa/ReactiveCocoa/RACStream.h

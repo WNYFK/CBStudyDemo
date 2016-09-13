@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/NSSet+RACSequenceAdditions.h
+../../../ReactiveCocoa/ReactiveCocoa/NSSet+RACSequenceAdditions.h

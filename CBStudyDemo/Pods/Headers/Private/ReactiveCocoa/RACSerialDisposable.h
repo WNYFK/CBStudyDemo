@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/RACSerialDisposable.h
+../../../ReactiveCocoa/ReactiveCocoa/RACSerialDisposable.h

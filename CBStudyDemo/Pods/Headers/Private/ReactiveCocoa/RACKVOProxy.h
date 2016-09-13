@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/RACKVOProxy.h
+../../../ReactiveCocoa/ReactiveCocoa/RACKVOProxy.h

@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/RACDelegateProxy.h
+../../../ReactiveCocoa/ReactiveCocoa/RACDelegateProxy.h

@@ -38,7 +38,6 @@ typedef NS_ENUM(NSUInteger, ASCollectionViewInvalidationStyle) {
 };
 
 static const NSUInteger kASCollectionViewAnimationNone = UITableViewRowAnimationNone;
-static const ASSizeRange kInvalidSizeRange = {CGSizeZero, CGSizeZero};
 static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 
 #pragma mark -
@@ -95,12 +94,13 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   ASCollectionDataController *_dataController;
   ASRangeController *_rangeController;
   ASCollectionViewLayoutController *_layoutController;
-  ASCollectionViewFlowLayoutInspector *_flowLayoutInspector;
+  id<ASCollectionViewLayoutInspecting> _defaultLayoutInspector;
+  id<ASCollectionViewLayoutInspecting> _layoutInspector;
   NSMutableSet *_cellsForVisibilityUpdates;
   id<ASCollectionViewLayoutFacilitatorProtocol> _layoutFacilitator;
   
   BOOL _performingBatchUpdates;
-  BOOL _superPerformingBatchUpdates;
+  NSUInteger _superBatchUpdateCount;
   NSMutableArray *_batchUpdateBlocks;
 
   BOOL _isDeallocating;
@@ -157,6 +157,11 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
     unsigned int asyncDataSourceNumberOfSectionsInCollectionView:1;
     unsigned int asyncDataSourceCollectionViewConstrainedSizeForNodeAtIndexPath:1;
   } _asyncDataSourceFlags;
+  
+  struct {
+    unsigned int layoutInspectorDidChangeCollectionViewDataSource:1;
+    unsigned int layoutInspectorDidChangeCollectionViewDelegate:1;
+  } _layoutInspectorFlags;
 }
 
 // Used only when ASCollectionView is created directly rather than through ASCollectionNode.
@@ -246,11 +251,6 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   // and should not trigger a relayout.
   _ignoreMaxSizeChange = CGSizeEqualToSize(_maxSizeForNodesConstrainedSize, CGSizeZero);
   
-  // Register the default layout inspector delegate for flow layouts only, custom layouts
-  // will need to roll their own ASCollectionViewLayoutInspecting implementation and set a layout delegate
-  if ([layout asdk_isFlowLayout]) {
-    _layoutInspector = [self flowLayoutInspector];
-  }
   _layoutFacilitator = layoutFacilitator;
   
   _proxyDelegate = [[ASCollectionViewProxy alloc] initWithTarget:nil interceptor:self];
@@ -279,19 +279,6 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   _isDeallocating = YES;
   [self setAsyncDelegate:nil];
   [self setAsyncDataSource:nil];
-}
-
-/**
- * A layout inspector implementation specific for the sizing behavior of UICollectionViewFlowLayouts
- */
-- (ASCollectionViewFlowLayoutInspector *)flowLayoutInspector
-{
-  if (_flowLayoutInspector == nil) {
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-    ASDisplayNodeAssertNotNil(layout, @"Collection view layout must be a flow layout to use the built-in inspector");
-    _flowLayoutInspector = [[ASCollectionViewFlowLayoutInspector alloc] initWithCollectionView:self flowLayout:layout];
-  }
-  return _flowLayoutInspector;
 }
 
 #pragma mark -
@@ -379,6 +366,10 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   }
   
   super.dataSource = (id<UICollectionViewDataSource>)_proxyDataSource;
+  
+  if (_layoutInspectorFlags.layoutInspectorDidChangeCollectionViewDataSource) {
+    [self.layoutInspector didChangeCollectionViewDataSource:asyncDataSource];
+  }
 }
 
 - (void)setAsyncDelegate:(id<ASCollectionViewDelegate>)asyncDelegate
@@ -411,7 +402,47 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 
   super.delegate = (id<UICollectionViewDelegate>)_proxyDelegate;
   
-  [_layoutInspector didChangeCollectionViewDelegate:asyncDelegate];
+  if (_layoutInspectorFlags.layoutInspectorDidChangeCollectionViewDelegate) {
+    [self.layoutInspector didChangeCollectionViewDelegate:asyncDelegate];
+  }
+}
+
+- (void)setCollectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
+{
+  [super setCollectionViewLayout:collectionViewLayout];
+  
+  // Trigger recreation of layout inspector with new collection view layout
+  if (_layoutInspector != nil) {
+    _layoutInspector = nil;
+    [self layoutInspector];
+  }
+}
+
+- (id<ASCollectionViewLayoutInspecting>)layoutInspector
+{
+  if (_layoutInspector == nil) {
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    if ([layout asdk_isFlowLayout]) {
+      // Register the default layout inspector delegate for flow layouts only
+      _defaultLayoutInspector = [[ASCollectionViewFlowLayoutInspector alloc] initWithCollectionView:self flowLayout:layout];
+    } else {
+      // Register the default layout inspector delegate for custom collection view layouts
+      _defaultLayoutInspector = [[ASCollectionViewLayoutInspector alloc] initWithCollectionView:self];
+    }
+    
+    // Explicitly call the setter to wire up the _layoutInspectorFlags
+    self.layoutInspector = _defaultLayoutInspector;
+  }
+
+  return _layoutInspector;
+}
+
+- (void)setLayoutInspector:(id<ASCollectionViewLayoutInspecting>)layoutInspector
+{
+  _layoutInspector = layoutInspector;
+  
+  _layoutInspectorFlags.layoutInspectorDidChangeCollectionViewDataSource = [_layoutInspector respondsToSelector:@selector(didChangeCollectionViewDataSource:)];
+  _layoutInspectorFlags.layoutInspectorDidChangeCollectionViewDelegate = [_layoutInspector respondsToSelector:@selector(didChangeCollectionViewDelegate:)];
 }
 
 - (void)setTuningParameters:(ASRangeTuningParameters)tuningParameters forRangeType:(ASLayoutRangeType)rangeType
@@ -487,11 +518,10 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 - (void)_superPerformBatchUpdates:(void(^)())updates completion:(void(^)(BOOL finished))completion
 {
   ASDisplayNodeAssertMainThread();
-  ASDisplayNodeAssert(_superPerformingBatchUpdates == NO, @"Nested batch updates being sent to UICollectionView. This is not expected.");
   
-  _superPerformingBatchUpdates = YES;
+  _superBatchUpdateCount++;
   [super performBatchUpdates:updates completion:completion];
-  _superPerformingBatchUpdates = NO;
+  _superBatchUpdateCount--;
 }
 
 #pragma mark Assertions.
@@ -639,11 +669,8 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
     [_asyncDelegate collectionView:self willDisplayNodeForItemAtIndexPath:indexPath];
   }
   
-  [_rangeController visibleNodeIndexPathsDidChangeWithScrollDirection:self.scrollDirection];
+  [_rangeController setNeedsUpdate];
   
-  if (cellNode.neverShowPlaceholders) {
-    [cellNode recursivelyEnsureDisplaySynchronously:YES];
-  }
   if (ASSubclassOverridesSelector([ASCellNode class], [cellNode class], @selector(cellNodeVisibilityEvent:inScrollView:withCellFrame:))) {
     [_cellsForVisibilityUpdates addObject:cell];
   }
@@ -651,8 +678,6 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(_ASCollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  [_rangeController visibleNodeIndexPathsDidChangeWithScrollDirection:self.scrollDirection];
-  
   ASCellNode *cellNode = [cell node];
 
   if (_asyncDelegateFlags.asyncDelegateCollectionViewDidEndDisplayingNodeForItemAtIndexPath) {
@@ -660,9 +685,9 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
     [_asyncDelegate collectionView:self didEndDisplayingNode:cellNode forItemAtIndexPath:indexPath];
   }
   
-  if ([_cellsForVisibilityUpdates containsObject:cell]) {
-    [_cellsForVisibilityUpdates removeObject:cell];
-  }
+  [_rangeController setNeedsUpdate];
+  
+  [_cellsForVisibilityUpdates removeObject:cell];
   
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -696,9 +721,10 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
+  CGPoint contentOffset = scrollView.contentOffset;
   _deceleratingVelocity = CGPointMake(
-    scrollView.contentOffset.x - ((targetContentOffset != NULL) ? targetContentOffset->x : 0),
-    scrollView.contentOffset.y - ((targetContentOffset != NULL) ? targetContentOffset->y : 0)
+    contentOffset.x - ((targetContentOffset != NULL) ? targetContentOffset->x : 0),
+    contentOffset.y - ((targetContentOffset != NULL) ? targetContentOffset->y : 0)
   );
 
   if (targetContentOffset != NULL) {
@@ -707,7 +733,7 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   }
   
   if (_asyncDelegateFlags.asyncDelegateScrollViewWillEndDraggingWithVelocityTargetContentOffset) {
-    [_asyncDelegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
+    [_asyncDelegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:(targetContentOffset ? : &contentOffset)];
   }
 }
 
@@ -823,6 +849,7 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
       } completion:nil];
       // We need to ensure the size requery is done before we update our layout.
       [self waitUntilAllUpdatesAreCommitted];
+      [self.collectionViewLayout invalidateLayout];
     }
   }
   
@@ -831,7 +858,7 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   _nextLayoutInvalidationStyle = ASCollectionViewInvalidationStyleNone;
   switch (invalidationStyle) {
     case ASCollectionViewInvalidationStyleWithAnimation:
-      if (!_superPerformingBatchUpdates) {
+      if (0 == _superBatchUpdateCount) {
         [self _superPerformBatchUpdates:^{ } completion:nil];
       }
       break;
@@ -844,6 +871,13 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   
   // To ensure _maxSizeForNodesConstrainedSize is up-to-date for every usage, this call to super must be done last
   [super layoutSubviews];
+  
+  // Update range controller immediately if possible & needed.
+  // Calling -updateIfNeeded in here with self.window == nil (early in the collection view's life)
+  // may cause UICollectionView data related crashes. We'll update in -didMoveToWindow anyway.
+  if (self.window != nil) {
+    [_rangeController updateIfNeeded];
+  }
 }
 
 
@@ -941,30 +975,7 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 
 - (ASSizeRange)dataController:(ASDataController *)dataController constrainedSizeForNodeAtIndexPath:(NSIndexPath *)indexPath
 {
-  ASSizeRange constrainedSize = kInvalidSizeRange;
-  if (_layoutInspector) {
-    constrainedSize = [_layoutInspector collectionView:self constrainedSizeForNodeAtIndexPath:indexPath];
-  }
-  
-  if (!ASSizeRangeEqualToSizeRange(constrainedSize, kInvalidSizeRange)) {
-    return constrainedSize;
-  }
-  
-  // TODO: Move this logic into the flow layout inspector. Create a simple inspector for non-flow layouts that don't
-  // implement a custom inspector.
-  if (_asyncDataSourceFlags.asyncDataSourceConstrainedSizeForNode) {
-    constrainedSize = [_asyncDataSource collectionView:self constrainedSizeForNodeAtIndexPath:indexPath];
-  } else {
-    CGSize maxSize = CGSizeEqualToSize(_maxSizeForNodesConstrainedSize, CGSizeZero) ? self.bounds.size : _maxSizeForNodesConstrainedSize;
-    if (ASScrollDirectionContainsHorizontalDirection([self scrollableDirections])) {
-      maxSize.width = FLT_MAX;
-    } else {
-      maxSize.height = FLT_MAX;
-    }
-    constrainedSize = ASSizeRangeMake(CGSizeZero, maxSize);
-  }
-  
-  return constrainedSize;
+  return [self.layoutInspector collectionView:self constrainedSizeForNodeAtIndexPath:indexPath];
 }
 
 - (NSUInteger)dataController:(ASDataController *)dataController rowsInSection:(NSUInteger)section
@@ -1004,20 +1015,17 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 
 - (ASSizeRange)dataController:(ASCollectionDataController *)dataController constrainedSizeForSupplementaryNodeOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-  ASDisplayNodeAssert(_layoutInspector != nil, @"To support supplementary nodes in ASCollectionView, it must have a layoutDelegate for layout inspection. (See ASCollectionViewFlowLayoutInspector for an example.)");
-  return [_layoutInspector collectionView:self constrainedSizeForSupplementaryNodeOfKind:kind atIndexPath:indexPath];
+  return [self.layoutInspector collectionView:self constrainedSizeForSupplementaryNodeOfKind:kind atIndexPath:indexPath];
 }
 
 - (NSUInteger)dataController:(ASCollectionDataController *)dataController supplementaryNodesOfKind:(NSString *)kind inSection:(NSUInteger)section
 {
-  ASDisplayNodeAssert(_layoutInspector != nil, @"To support supplementary nodes in ASCollectionView, it must have a layoutDelegate for layout inspection. (See ASCollectionViewFlowLayoutInspector for an example.)");
-  return [_layoutInspector collectionView:self supplementaryNodesOfKind:kind inSection:section];
+  return [self.layoutInspector collectionView:self supplementaryNodesOfKind:kind inSection:section];
 }
 
 - (NSUInteger)dataController:(ASCollectionDataController *)dataController numberOfSectionsForSupplementaryNodeOfKind:(NSString *)kind;
 {
-  ASDisplayNodeAssert(_layoutInspector != nil, @"To support supplementary nodes in ASCollectionView, it must have a layoutDelegate for layout inspection. (See ASCollectionViewFlowLayoutInspector for an example.)");
-  return [_layoutInspector collectionView:self numberOfSectionsForSupplementaryNodeOfKind:kind];
+  return [self.layoutInspector collectionView:self numberOfSectionsForSupplementaryNodeOfKind:kind];
 }
 
 #pragma mark - ASRangeControllerDataSource
@@ -1030,11 +1038,15 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 - (NSArray *)visibleNodeIndexPathsForRangeController:(ASRangeController *)rangeController
 {
   ASDisplayNodeAssertMainThread();
-  
-  // Calling visibleNodeIndexPathsForRangeController: will trigger UIKit to call reloadData if it never has, which can result
+  // Calling -indexPathsForVisibleItems will trigger UIKit to call reloadData if it never has, which can result
   // in incorrect layout if performed at zero size.  We can use the fact that nothing can be visible at zero size to return fast.
-  BOOL isZeroSized = CGRectEqualToRect(self.bounds, CGRectZero);
+  BOOL isZeroSized = CGSizeEqualToSize(self.bounds.size, CGSizeZero);
   return isZeroSized ? @[] : [self indexPathsForVisibleItems];
+}
+
+- (ASScrollDirection)scrollDirectionForRangeController:(ASRangeController *)rangeController
+{
+  return self.scrollDirection;
 }
 
 - (CGSize)viewportSizeForRangeController:(ASRangeController *)rangeController
@@ -1046,11 +1058,6 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 - (ASInterfaceState)interfaceStateForRangeController:(ASRangeController *)rangeController
 {
   return ASInterfaceStateForDisplayNode(self.collectionNode, self.window);
-}
-
-- (NSArray *)rangeController:(ASRangeController *)rangeController nodesAtIndexPaths:(NSArray *)indexPaths
-{
-  return [_dataController nodesAtIndexPaths:indexPaths];
 }
 
 - (ASDisplayNode *)rangeController:(ASRangeController *)rangeController nodeAtIndexPath:(NSIndexPath *)indexPath
@@ -1069,8 +1076,7 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
 - (void)rangeController:(ASRangeController *)rangeController didEndUpdatesAnimated:(BOOL)animated completion:(void (^)(BOOL))completion
 {
   ASDisplayNodeAssertMainThread();
-  NSUInteger numberOfUpdateBlocks = _batchUpdateBlocks.count;
-  if (numberOfUpdateBlocks == 0 || !self.asyncDataSource || _superIsPendingDataLoad) {
+  if (!self.asyncDataSource || _superIsPendingDataLoad) {
     if (completion) {
       completion(NO);
     }
@@ -1079,15 +1085,20 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   }
   
   ASPerformBlockWithoutAnimation(!animated, ^{
+    NSUInteger numberOfUpdateBlocks = _batchUpdateBlocks.count;
     [_layoutFacilitator collectionViewWillPerformBatchUpdates];
     [self _superPerformBatchUpdates:^{
       for (dispatch_block_t block in _batchUpdateBlocks) {
         block();
       }
     } completion:^(BOOL finished){
+      // Flush any range changes that happened as part of the update animations ending.
+      [_rangeController updateIfNeeded];
       [self _scheduleCheckForBatchFetchingForNumberOfChanges:numberOfUpdateBlocks];
       if (completion) { completion(finished); }
     }];
+    // Flush any range changes that happened as part of submitting the update.
+    [_rangeController updateIfNeeded];
   });
   
   [_batchUpdateBlocks removeAllObjects];
@@ -1114,6 +1125,8 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   } else {
     [UIView performWithoutAnimation:^{
       [super insertItemsAtIndexPaths:indexPaths];
+      // Flush any range changes that happened as part of submitting the update.
+      [_rangeController updateIfNeeded];
       [self _scheduleCheckForBatchFetchingForNumberOfChanges:indexPaths.count];
     }];
   }
@@ -1134,6 +1147,8 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   } else {
     [UIView performWithoutAnimation:^{
       [super deleteItemsAtIndexPaths:indexPaths];
+      // Flush any range changes that happened as part of submitting the update.
+      [_rangeController updateIfNeeded];
       [self _scheduleCheckForBatchFetchingForNumberOfChanges:indexPaths.count];
     }];
   }
@@ -1154,6 +1169,8 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   } else {
     [UIView performWithoutAnimation:^{
       [super insertSections:indexSet];
+      // Flush any range changes that happened as part of submitting the update.
+      [_rangeController updateIfNeeded];
       [self _scheduleCheckForBatchFetchingForNumberOfChanges:indexSet.count];
     }];
   }
@@ -1174,6 +1191,8 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   } else {
     [UIView performWithoutAnimation:^{
       [super deleteSections:indexSet];
+      // Flush any range changes that happened as part of submitting the update.
+      [_rangeController updateIfNeeded];
       [self _scheduleCheckForBatchFetchingForNumberOfChanges:indexSet.count];
     }];
   }
@@ -1275,7 +1294,8 @@ static NSString * const kCellReuseIdentifier = @"_ASCollectionViewCell";
   // Updating the visible node index paths only for not range managed nodes. Range managed nodes will get their
   // their update in the layout pass
   if (![node supportsRangeManagedInterfaceState]) {
-    [_rangeController visibleNodeIndexPathsDidChangeWithScrollDirection:self.scrollDirection];
+    [_rangeController setNeedsUpdate];
+    [_rangeController updateIfNeeded];
   }
 }
 

@@ -97,11 +97,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/PINCache.framework"
   install_framework "Pods/PINRemoteImage.framework"
   install_framework "Pods/ReactiveCocoa.framework"
-  install_framework "Pods/Result.framework"
-  install_framework "Pods/RxCocoa.framework"
-  install_framework "Pods/RxSwift.framework"
   install_framework "Pods/SDWebImage.framework"
-  install_framework "Pods/SnapKit.framework"
   install_framework "Pods/YYKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -118,10 +114,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/PINCache.framework"
   install_framework "Pods/PINRemoteImage.framework"
   install_framework "Pods/ReactiveCocoa.framework"
-  install_framework "Pods/Result.framework"
-  install_framework "Pods/RxCocoa.framework"
-  install_framework "Pods/RxSwift.framework"
   install_framework "Pods/SDWebImage.framework"
-  install_framework "Pods/SnapKit.framework"
   install_framework "Pods/YYKit.framework"
 fi

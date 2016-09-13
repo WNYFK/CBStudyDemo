@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/RACReplaySubject.h
+../../../ReactiveCocoa/ReactiveCocoa/RACReplaySubject.h

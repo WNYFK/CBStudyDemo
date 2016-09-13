@@ -1,1 +1,1 @@
-../../../ReactiveCocoa/ReactiveCocoa/Objective-C/NSNotificationCenter+RACSupport.h
+../../../ReactiveCocoa/ReactiveCocoa/NSNotificationCenter+RACSupport.h
