@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370AA53C1D9B963F00469839 /* MYPScrollViewPagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA53B1D9B963F00469839 /* MYPScrollViewPagingViewController.m */; };
 		3710315F1D7EBB10001A9AD7 /* CBDynamicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710315E1D7EBB10001A9AD7 /* CBDynamicView.m */; };
 		371031621D7EC51D001A9AD7 /* CBDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031611D7EC51D001A9AD7 /* CBDynamicViewController.m */; };
 		371031651D7EC635001A9AD7 /* CBDynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031641D7EC635001A9AD7 /* CBDynamicCell.m */; };
@@ -100,6 +101,8 @@
 /* Begin PBXFileReference section */
 		0357BF4552C0992C83D90A5D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B811628CA54DA3748105F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		370AA53A1D9B963F00469839 /* MYPScrollViewPagingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYPScrollViewPagingViewController.h; sourceTree = "<group>"; };
+		370AA53B1D9B963F00469839 /* MYPScrollViewPagingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYPScrollViewPagingViewController.m; sourceTree = "<group>"; };
 		3710315D1D7EBB10001A9AD7 /* CBDynamicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicView.h; sourceTree = "<group>"; };
 		3710315E1D7EBB10001A9AD7 /* CBDynamicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDynamicView.m; sourceTree = "<group>"; };
 		371031601D7EC51D001A9AD7 /* CBDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDynamicViewController.h; sourceTree = "<group>"; };
@@ -468,6 +471,8 @@
 				3762033A1D6D69900079DAA0 /* CBHomeHoleViewController.m */,
 				3762033C1D6D70A60079DAA0 /* CBNonatomicMultiThreadCrashViewController.h */,
 				3762033D1D6D70A60079DAA0 /* CBNonatomicMultiThreadCrashViewController.m */,
+				370AA53A1D9B963F00469839 /* MYPScrollViewPagingViewController.h */,
+				370AA53B1D9B963F00469839 /* MYPScrollViewPagingViewController.m */,
 			);
 			path = Hole;
 			sourceTree = "<group>";
@@ -872,6 +877,7 @@
 				37F873C61D865A0100316311 /* CBCoreDataConnect.m in Sources */,
 				37F3C41C1D5DD1A800C3CB1F /* CBTabbarController.m in Sources */,
 				371031C51D7FBB83001A9AD7 /* CBDynamicPanCell.m in Sources */,
+				370AA53C1D9B963F00469839 /* MYPScrollViewPagingViewController.m in Sources */,
 				372C481E1D829617002DB575 /* UIBarButtonItem+Create.m in Sources */,
 				372C47E21D828B4F002DB575 /* CBNormalInputSource.m in Sources */,
 				372C482A1D82B979002DB575 /* CBCoreDataViewController.m in Sources */,
