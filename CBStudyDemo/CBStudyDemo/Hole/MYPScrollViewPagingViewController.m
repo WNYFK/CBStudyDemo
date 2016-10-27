@@ -8,7 +8,7 @@
 
 #import "MYPScrollViewPagingViewController.h"
 
-@interface MYPScrollViewPagingViewController ()
+@interface MYPScrollViewPagingViewController ()<UIScrollViewDelegate>
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 
@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    self.scrollView.delegate = self;
     self.scrollView.bounces = NO;
     self.scrollView.pagingEnabled = YES;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.width * 3, self.scrollView.height);
@@ -36,6 +37,14 @@
     UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(view2.right, 0, self.scrollView.width, self.scrollView.height)];
     view3.backgroundColor = [UIColor yellowColor];
     [self.scrollView addSubview:view3];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem creatBarButtonWithTitle:@"点击" callBack:^(UIBarButtonItem *buttonItem) {
+        [self.scrollView setContentOffset:CGPointMake(10, 10)];
+    }];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"");
 }
 
 @end

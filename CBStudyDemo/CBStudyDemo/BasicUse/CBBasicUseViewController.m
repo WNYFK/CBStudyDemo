@@ -23,6 +23,7 @@
 #import "CBCompositeRACViewController.h"
 #import "CBCoreDataFirstUseViewController.h"
 #import "CBCoreDataMultiThreadUseViewController.h"
+#import "CBMasonryViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -74,6 +75,11 @@
     CBSectionItem *KitDynamicSectionItem = [[CBSectionItem alloc] initWithTitle:@"Kit_Dynamic"];
     [KitDynamicSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"dynamic" destinationClass:[CBDynamicViewController class]]];
     [self.dataArr addObject:KitDynamicSectionItem];
+    
+    CBSectionItem *AutolayoutSectionItem = [[CBSectionItem alloc] initWithTitle:@"Autolayout"];
+    [AutolayoutSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"masonry" destinationClass:[CBMasonryViewController class]]];
+    [self.dataArr addObject:AutolayoutSectionItem];
+    
 }
 
 @end

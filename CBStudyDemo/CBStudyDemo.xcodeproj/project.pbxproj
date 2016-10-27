@@ -69,6 +69,7 @@
 		37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B2AFC41D6DEBD700EC731D /* CBCatonObserver.m */; };
 		37BD55F21D7A9DFA0075FFB4 /* CBRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */; };
 		37BD55F51D7ABF6E0075FFB4 /* CBGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */; };
+		37E57A111DC2197D002BFC93 /* CBMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */; };
 		37F09D721D7C63EF00853F71 /* CBGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */; };
 		37F09D751D7DA8A700853F71 /* CBGestureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D741D7DA8A700853F71 /* CBGestureScrollView.m */; };
 		37F09D781D7DA9A400853F71 /* CBHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D771D7DA9A400853F71 /* CBHorizontalView.m */; };
@@ -228,6 +229,8 @@
 		37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRACViewController.m; sourceTree = "<group>"; };
 		37BD55F31D7ABF6E0075FFB4 /* CBGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureViewController.h; sourceTree = "<group>"; };
 		37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGestureViewController.m; sourceTree = "<group>"; };
+		37E57A0F1DC2197D002BFC93 /* CBMasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMasonryViewController.h; sourceTree = "<group>"; };
+		37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMasonryViewController.m; sourceTree = "<group>"; };
 		37F09D701D7C63EF00853F71 /* CBGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureRecognizer.h; sourceTree = "<group>"; };
 		37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGestureRecognizer.m; sourceTree = "<group>"; };
 		37F09D731D7DA8A700853F71 /* CBGestureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureScrollView.h; sourceTree = "<group>"; };
@@ -581,6 +584,15 @@
 			path = GestureRecognizer;
 			sourceTree = "<group>";
 		};
+		37E57A0E1DC2195D002BFC93 /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				37E57A0F1DC2197D002BFC93 /* CBMasonryViewController.h */,
+				37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
 		37F3C3F71D5DC6CA00C3CB1F = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +649,7 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
+				37E57A0E1DC2195D002BFC93 /* AutoLayout */,
 				372C48081D828C3B002DB575 /* MoJieDetail */,
 				372C47F51D828C06002DB575 /* CoreData */,
 				372C47F11D828BC8002DB575 /* RunTime */,
@@ -899,6 +912,7 @@
 				371031621D7EC51D001A9AD7 /* CBDynamicViewController.m in Sources */,
 				376203261D6ACC030079DAA0 /* UIImageView+CBWebCache.m in Sources */,
 				3710316B1D7EE4EA001A9AD7 /* CBDynamicItem.m in Sources */,
+				37E57A111DC2197D002BFC93 /* CBMasonryViewController.m in Sources */,
 				37F879BB1D6EEAF200779AC5 /* CBCatonTestViewController.m in Sources */,
 				376203241D6ACC030079DAA0 /* CBWebImageDownloaderOperation.m in Sources */,
 				372C48171D828C3B002DB575 /* CBStrechableHeaderViewController.m in Sources */,
