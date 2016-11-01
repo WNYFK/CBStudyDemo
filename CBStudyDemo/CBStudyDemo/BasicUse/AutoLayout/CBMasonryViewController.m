@@ -29,11 +29,13 @@
     self.navigationItem.rightBarButtonItems = @[leftAddBtnItem, rightAddBtnItem];
     
     self.leftLabel = [[UILabel alloc] init];
+    self.leftLabel.backgroundColor = [UIColor greenColor];
     self.leftLabel.numberOfLines = 0;
     self.leftLabel.text = @"左左左左";
     [self.view addSubview:self.leftLabel];
     
     self.rightLabel = [[UILabel alloc] init];
+    self.rightLabel.backgroundColor = [UIColor greenColor];
     self.rightLabel.numberOfLines = 0;
     self.rightLabel.text = @"asdfasdfasdfasdfsafasdfsadfasdf右有有有";
     [self.view addSubview:self.rightLabel];

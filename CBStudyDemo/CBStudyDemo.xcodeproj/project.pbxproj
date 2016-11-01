@@ -123,6 +123,7 @@
 		3716213D1D65B7FB00CC2D4A /* CBConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBConstant.h; sourceTree = "<group>"; };
 		3716213F1D65B93B00CC2D4A /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		371621401D65B93B00CC2D4A /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		37277BFD1DC86E0100E2A432 /* CBPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CBPlayground.playground; sourceTree = "<group>"; };
 		372C47D71D828B22002DB575 /* CBCollectionHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCollectionHomeViewController.h; sourceTree = "<group>"; };
 		372C47D81D828B22002DB575 /* CBCollectionHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCollectionHomeViewController.m; sourceTree = "<group>"; };
 		372C47DB1D828B4F002DB575 /* CBCFRunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCFRunLoopViewController.h; sourceTree = "<group>"; };
@@ -330,6 +331,14 @@
 			name = CBUIKit;
 			path = CBStudyDemo/CBUIKit;
 			sourceTree = SOURCE_ROOT;
+		};
+		37277BFC1DC86DE100E2A432 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				37277BFD1DC86E0100E2A432 /* CBPlayground.playground */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
 		};
 		372C47D61D828AE3002DB575 /* CollectionView */ = {
 			isa = PBXGroup;
@@ -614,6 +623,7 @@
 		37F3C4021D5DC6CA00C3CB1F /* CBStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				37277BFC1DC86DE100E2A432 /* Playground */,
 				37F879BF1D6FE1CD00779AC5 /* LocalStorage */,
 				37B2AFBF1D6DEB1900EC731D /* Performance */,
 				376203381D6D696E0079DAA0 /* Hole */,
