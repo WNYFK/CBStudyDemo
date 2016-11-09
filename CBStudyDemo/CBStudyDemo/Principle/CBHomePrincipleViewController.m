@@ -12,6 +12,7 @@
 #import "CBKVCRealizeViewController.h"
 #import "CBGestureViewController.h"
 #import "CBTouchTestViewController.h"
+#import "CBAutoReleaseHomeViewController.h"
 
 @implementation CBHomePrincipleViewController
 
@@ -35,6 +36,10 @@
     [gestureSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"手势" destinationClass:[CBGestureViewController class]]];
     [gestureSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"touch" destinationClass:[CBTouchTestViewController class]]];
     [self.dataArr addObject:gestureSectionItem];
+    
+    CBSectionItem *autoReleaseSectionItem = [[CBSectionItem alloc] initWithTitle:@"AutoRelease"];
+    [autoReleaseSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"AutoReease 原理" destinationClass:[CBAutoReleaseHomeViewController class]]];
+    [self.dataArr addObject:autoReleaseSectionItem];
 }
 
 @end

@@ -56,6 +56,7 @@
 		376203371D6C4F6E0079DAA0 /* CBMemoryCache_YY.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203361D6C4F6E0079DAA0 /* CBMemoryCache_YY.m */; };
 		3762033B1D6D69900079DAA0 /* CBHomeHoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3762033A1D6D69900079DAA0 /* CBHomeHoleViewController.m */; };
 		3762033E1D6D70A60079DAA0 /* CBNonatomicMultiThreadCrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3762033D1D6D70A60079DAA0 /* CBNonatomicMultiThreadCrashViewController.m */; };
+		3763F8C61DD031020050F9B5 /* CBAutoReleaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3763F8C51DD031020050F9B5 /* CBAutoReleaseHomeViewController.m */; };
 		37726A181D6447AB00294575 /* CBWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37726A171D6447AB00294575 /* CBWebImageViewController.m */; };
 		378176811D61DA180092C6A4 /* CBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176801D61DA180092C6A4 /* CBBaseViewController.m */; };
 		378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378176861D61E2380092C6A4 /* CBSwiftNormal.swift */; };
@@ -202,6 +203,8 @@
 		3762033A1D6D69900079DAA0 /* CBHomeHoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHomeHoleViewController.m; sourceTree = "<group>"; };
 		3762033C1D6D70A60079DAA0 /* CBNonatomicMultiThreadCrashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNonatomicMultiThreadCrashViewController.h; sourceTree = "<group>"; };
 		3762033D1D6D70A60079DAA0 /* CBNonatomicMultiThreadCrashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNonatomicMultiThreadCrashViewController.m; sourceTree = "<group>"; };
+		3763F8C41DD031020050F9B5 /* CBAutoReleaseHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAutoReleaseHomeViewController.h; sourceTree = "<group>"; };
+		3763F8C51DD031020050F9B5 /* CBAutoReleaseHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAutoReleaseHomeViewController.m; sourceTree = "<group>"; };
 		37726A161D6447AB00294575 /* CBWebImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBWebImageViewController.h; sourceTree = "<group>"; };
 		37726A171D6447AB00294575 /* CBWebImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBWebImageViewController.m; sourceTree = "<group>"; };
 		3781767B1D61D9620092C6A4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -489,6 +492,22 @@
 			path = Hole;
 			sourceTree = "<group>";
 		};
+		3763F8C31DD030C70050F9B5 /* Autorelease */ = {
+			isa = PBXGroup;
+			children = (
+				3763F8C41DD031020050F9B5 /* CBAutoReleaseHomeViewController.h */,
+				3763F8C51DD031020050F9B5 /* CBAutoReleaseHomeViewController.m */,
+			);
+			name = Autorelease;
+			sourceTree = "<group>";
+		};
+		3763F8C81DD0625C0050F9B5 /* DebugHelp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DebugHelp;
+			sourceTree = "<group>";
+		};
 		378176901D62A8E10092C6A4 /* KVO */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,6 +642,7 @@
 		37F3C4021D5DC6CA00C3CB1F /* CBStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3763F8C81DD0625C0050F9B5 /* DebugHelp */,
 				37277BFC1DC86DE100E2A432 /* Playground */,
 				37F879BF1D6FE1CD00779AC5 /* LocalStorage */,
 				37B2AFBF1D6DEB1900EC731D /* Performance */,
@@ -693,6 +713,7 @@
 		37F3C41F1D5DD31100C3CB1F /* Principle */ = {
 			isa = PBXGroup;
 			children = (
+				3763F8C31DD030C70050F9B5 /* Autorelease */,
 				37BD55EF1D7A9DAD0075FFB4 /* GestureRecognizer */,
 				3781769E1D633D570092C6A4 /* KVC */,
 				378176901D62A8E10092C6A4 /* KVO */,
@@ -890,6 +911,7 @@
 				37B2AFC21D6DEB4400EC731D /* CBHomePerformanceViewController.m in Sources */,
 				37F3C4281D5DD35900C3CB1F /* CBHomePrincipleViewController.m in Sources */,
 				372C47D91D828B22002DB575 /* CBCollectionHomeViewController.m in Sources */,
+				3763F8C61DD031020050F9B5 /* CBAutoReleaseHomeViewController.m in Sources */,
 				37F3C42E1D5DD66000C3CB1F /* CBSkipItem.m in Sources */,
 				376203311D6AD7590079DAA0 /* CBWebImageViewController_YY.m in Sources */,
 				37F09D7B1D7F0F9E00853F71 /* CBTouchTestViewController.m in Sources */,
