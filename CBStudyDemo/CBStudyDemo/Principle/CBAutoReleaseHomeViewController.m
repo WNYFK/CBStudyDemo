@@ -7,6 +7,7 @@
 //
 
 #import "CBAutoReleaseHomeViewController.h"
+#import "CBAutoreleaseForThreadViewController.h"
 
 @interface CBAutoReleaseHomeViewController ()
 
@@ -18,20 +19,12 @@ __weak NSString* reference = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    @autoreleasepool {
-        NSString *str = [NSString stringWithFormat:@"chenbin"];
-        reference = str;
-    }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    NSLog(@"%@", reference);
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    NSLog(@"%@",reference);
+    
+    CBSectionItem *sectionItem = [[CBSectionItem alloc] init];
+    [self.dataArr addObject:sectionItem];
+    
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"autorelease for thread" destinationClass:[CBAutoreleaseForThreadViewController class]]];
+    
 }
 
 

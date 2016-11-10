@@ -17,6 +17,7 @@
 		371031C81D7FEB40001A9AD7 /* CBRACTestVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031C71D7FEB40001A9AD7 /* CBRACTestVIewController.m */; };
 		371031CB1D803D6F001A9AD7 /* CBCompositeRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371031CA1D803D6F001A9AD7 /* CBCompositeRACViewController.m */; };
 		371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 371621401D65B93B00CC2D4A /* UIView+Layout.m */; };
+		372AF6891DD33A75007D0599 /* CBAutoreleaseForThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF6881DD33A75007D0599 /* CBAutoreleaseForThreadViewController.m */; };
 		372C47D91D828B22002DB575 /* CBCollectionHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47D81D828B22002DB575 /* CBCollectionHomeViewController.m */; };
 		372C47E11D828B4F002DB575 /* CBCFRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47DC1D828B4F002DB575 /* CBCFRunLoopViewController.m */; };
 		372C47E21D828B4F002DB575 /* CBNormalInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C47DE1D828B4F002DB575 /* CBNormalInputSource.m */; };
@@ -125,6 +126,8 @@
 		3716213F1D65B93B00CC2D4A /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		371621401D65B93B00CC2D4A /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		37277BFD1DC86E0100E2A432 /* CBPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CBPlayground.playground; sourceTree = "<group>"; };
+		372AF6871DD33A75007D0599 /* CBAutoreleaseForThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAutoreleaseForThreadViewController.h; sourceTree = "<group>"; };
+		372AF6881DD33A75007D0599 /* CBAutoreleaseForThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAutoreleaseForThreadViewController.m; sourceTree = "<group>"; };
 		372C47D71D828B22002DB575 /* CBCollectionHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCollectionHomeViewController.h; sourceTree = "<group>"; };
 		372C47D81D828B22002DB575 /* CBCollectionHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCollectionHomeViewController.m; sourceTree = "<group>"; };
 		372C47DB1D828B4F002DB575 /* CBCFRunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCFRunLoopViewController.h; sourceTree = "<group>"; };
@@ -497,6 +500,8 @@
 			children = (
 				3763F8C41DD031020050F9B5 /* CBAutoReleaseHomeViewController.h */,
 				3763F8C51DD031020050F9B5 /* CBAutoReleaseHomeViewController.m */,
+				372AF6871DD33A75007D0599 /* CBAutoreleaseForThreadViewController.h */,
+				372AF6881DD33A75007D0599 /* CBAutoreleaseForThreadViewController.m */,
 			);
 			name = Autorelease;
 			sourceTree = "<group>";
@@ -894,6 +899,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372AF6891DD33A75007D0599 /* CBAutoreleaseForThreadViewController.m in Sources */,
 				376203251D6ACC030079DAA0 /* CBWebImageManager.m in Sources */,
 				372C48151D828C3B002DB575 /* CBMoGuJieDetailViewController.m in Sources */,
 				372C48191D828C3B002DB575 /* CBStrechableSecViewController.m in Sources */,
