@@ -13,6 +13,7 @@
 #import "CBGestureViewController.h"
 #import "CBTouchTestViewController.h"
 #import "CBAutoReleaseHomeViewController.h"
+#import "CBRunLoopPrincipleViewController.h"
 
 @implementation CBHomePrincipleViewController
 
@@ -40,6 +41,10 @@
     CBSectionItem *autoReleaseSectionItem = [[CBSectionItem alloc] initWithTitle:@"AutoRelease"];
     [autoReleaseSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"AutoReease 原理" destinationClass:[CBAutoReleaseHomeViewController class]]];
     [self.dataArr addObject:autoReleaseSectionItem];
+    
+    CBSectionItem *runloopSectionItem = [[CBSectionItem alloc] initWithTitle:@"RunLoop"];
+    [runloopSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"RunLoop原理" destinationClass:[CBRunLoopPrincipleViewController class]]];
+    [self.dataArr addObject:runloopSectionItem];
 }
 
 @end

@@ -43,6 +43,10 @@
 		372C48241D829E2F002DB575 /* UIButton+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C48231D829E2F002DB575 /* UIButton+Create.m */; };
 		372C48271D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 372C48251D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld */; };
 		372C482A1D82B979002DB575 /* CBCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C48291D82B979002DB575 /* CBCoreDataViewController.m */; };
+		374BB3221DD95F61000362B3 /* CBRunLoopPrincipleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB3211DD95F61000362B3 /* CBRunLoopPrincipleViewController.m */; };
+		374BB3251DD9606E000362B3 /* CBRunLoopChangeModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB3241DD9606E000362B3 /* CBRunLoopChangeModelViewController.m */; };
+		374BB3281DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB3271DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m */; };
+		374BB32E1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB32D1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m */; };
 		376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203131D6ACC030079DAA0 /* CBImageCache.m */; };
 		376203221D6ACC030079DAA0 /* CBWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203151D6ACC030079DAA0 /* CBWebImageCompat.m */; };
 		376203231D6ACC030079DAA0 /* CBWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203171D6ACC030079DAA0 /* CBWebImageDownloader.m */; };
@@ -177,6 +181,14 @@
 		372C48261D82ACB0002DB575 /* CBStudyDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CBStudyDemo.xcdatamodel; sourceTree = "<group>"; };
 		372C48281D82B979002DB575 /* CBCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataViewController.h; sourceTree = "<group>"; };
 		372C48291D82B979002DB575 /* CBCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataViewController.m; sourceTree = "<group>"; };
+		374BB3201DD95F61000362B3 /* CBRunLoopPrincipleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRunLoopPrincipleViewController.h; sourceTree = "<group>"; };
+		374BB3211DD95F61000362B3 /* CBRunLoopPrincipleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunLoopPrincipleViewController.m; sourceTree = "<group>"; };
+		374BB3231DD9606E000362B3 /* CBRunLoopChangeModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRunLoopChangeModelViewController.h; sourceTree = "<group>"; };
+		374BB3241DD9606E000362B3 /* CBRunLoopChangeModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunLoopChangeModelViewController.m; sourceTree = "<group>"; };
+		374BB3261DD969AD000362B3 /* CBRunLoopSourceHandleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRunLoopSourceHandleViewController.h; sourceTree = "<group>"; };
+		374BB3271DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunLoopSourceHandleViewController.m; sourceTree = "<group>"; };
+		374BB32C1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRunLoopObserverHandleManager.h; sourceTree = "<group>"; };
+		374BB32D1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunLoopObserverHandleManager.m; sourceTree = "<group>"; };
 		376203121D6ACC030079DAA0 /* CBImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBImageCache.h; sourceTree = "<group>"; };
 		376203131D6ACC030079DAA0 /* CBImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBImageCache.m; sourceTree = "<group>"; };
 		376203141D6ACC030079DAA0 /* CBWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBWebImageCompat.h; sourceTree = "<group>"; };
@@ -443,6 +455,21 @@
 				372C48251D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld */,
 			);
 			name = BaseUse;
+			sourceTree = "<group>";
+		};
+		374BB31F1DD95F3B000362B3 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				374BB3201DD95F61000362B3 /* CBRunLoopPrincipleViewController.h */,
+				374BB3211DD95F61000362B3 /* CBRunLoopPrincipleViewController.m */,
+				374BB3231DD9606E000362B3 /* CBRunLoopChangeModelViewController.h */,
+				374BB3241DD9606E000362B3 /* CBRunLoopChangeModelViewController.m */,
+				374BB3261DD969AD000362B3 /* CBRunLoopSourceHandleViewController.h */,
+				374BB3271DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m */,
+				374BB32C1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.h */,
+				374BB32D1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m */,
+			);
+			name = RunLoop;
 			sourceTree = "<group>";
 		};
 		376203111D6ACC030079DAA0 /* CBWebImg_SD */ = {
@@ -718,6 +745,7 @@
 		37F3C41F1D5DD31100C3CB1F /* Principle */ = {
 			isa = PBXGroup;
 			children = (
+				374BB31F1DD95F3B000362B3 /* RunLoop */,
 				3763F8C31DD030C70050F9B5 /* Autorelease */,
 				37BD55EF1D7A9DAD0075FFB4 /* GestureRecognizer */,
 				3781769E1D633D570092C6A4 /* KVC */,
@@ -811,8 +839,8 @@
 				TargetAttributes = {
 					37F3C3FF1D5DC6CA00C3CB1F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6U4Q5ZVMMM;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -909,6 +937,7 @@
 				3762032B1D6ACF860079DAA0 /* CBWebImageOperation_YY.m in Sources */,
 				3762032E1D6AD09E0079DAA0 /* CBWebImageManager_YY.m in Sources */,
 				37F873C31D86590E00316311 /* User.m in Sources */,
+				374BB3251DD9606E000362B3 /* CBRunLoopChangeModelViewController.m in Sources */,
 				372C47ED1D828B94002DB575 /* CBGCDViewController.m in Sources */,
 				372C48051D828C06002DB575 /* CBManagedObject.m in Sources */,
 				371031C81D7FEB40001A9AD7 /* CBRACTestVIewController.m in Sources */,
@@ -961,7 +990,9 @@
 				376203271D6ACC030079DAA0 /* UIView+CBWebCacheOperation.m in Sources */,
 				371031651D7EC635001A9AD7 /* CBDynamicCell.m in Sources */,
 				372C48021D828C06002DB575 /* CBCoreDataThirdLibUseViewController.m in Sources */,
+				374BB32E1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m in Sources */,
 				372C48271D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld in Sources */,
+				374BB3281DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m in Sources */,
 				3710315F1D7EBB10001A9AD7 /* CBDynamicView.m in Sources */,
 				37726A181D6447AB00294575 /* CBWebImageViewController.m in Sources */,
 				37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */,
@@ -981,6 +1012,7 @@
 				37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */,
 				376203371D6C4F6E0079DAA0 /* CBMemoryCache_YY.m in Sources */,
 				372C47EE1D828B94002DB575 /* CBOperationViewController.m in Sources */,
+				374BB3221DD95F61000362B3 /* CBRunLoopPrincipleViewController.m in Sources */,
 				378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */,
 				372C48181D828C3B002DB575 /* CBStrechableScrollViewController.m in Sources */,
 				376203231D6ACC030079DAA0 /* CBWebImageDownloader.m in Sources */,
@@ -1095,6 +1127,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = CBStudyDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CBStudyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1116,6 +1149,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = CBStudyDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CBStudyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
