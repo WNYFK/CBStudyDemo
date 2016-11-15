@@ -81,6 +81,7 @@
     NSLog(@"CBRunLoopSourceHandle dealloc");
     CFRelease(self.subThreadSource0);
     CFRelease(self.mainThreadSource0);
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 static void release(const void *info) {
@@ -184,6 +185,11 @@ static CFRunLoopSourceRef createSource0(id obj) {
         self.subThreadLoopSourceObject = [[CBRunLoopSourceObject alloc] initWithThreadName:[NSThread currentThread].name];
     }
     [self.subThreadLoopSourceObject handleSourceMethod];
+    [self performSelector:@selector(subThreadPerTest) withObject:nil afterDelay:60];
+}
+
+- (void)subThreadPerTest {
+    NSLog(@"SubThreadPerTest");
 }
 
 - (void)threadHandleSource:(CFRunLoopSourceRef)source thread:(CFRunLoopRef)loop {

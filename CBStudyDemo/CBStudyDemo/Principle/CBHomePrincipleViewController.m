@@ -14,6 +14,9 @@
 #import "CBTouchTestViewController.h"
 #import "CBAutoReleaseHomeViewController.h"
 #import "CBRunLoopPrincipleViewController.h"
+#import "CBOperationQueueViewController.h"
+#import "CBGCDPrincipleViewController.h"
+#import "CBPrincipleThreadViewController.h"
 
 @implementation CBHomePrincipleViewController
 
@@ -45,6 +48,12 @@
     CBSectionItem *runloopSectionItem = [[CBSectionItem alloc] initWithTitle:@"RunLoop"];
     [runloopSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"RunLoop原理" destinationClass:[CBRunLoopPrincipleViewController class]]];
     [self.dataArr addObject:runloopSectionItem];
+    
+    CBSectionItem *mulThreadSectionItem = [[CBSectionItem alloc] initWithTitle:@"多线程"];
+    [mulThreadSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"NSOperationQueue" destinationClass:[CBOperationQueueViewController class]]];
+    [mulThreadSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"NSThread" destinationClass:[CBPrincipleThreadViewController class]]];
+    [mulThreadSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"GCD" destinationClass:[CBGCDPrincipleViewController class]]];
+    [self.dataArr addObject:mulThreadSectionItem];
 }
 
 @end

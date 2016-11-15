@@ -47,6 +47,10 @@
 		374BB3251DD9606E000362B3 /* CBRunLoopChangeModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB3241DD9606E000362B3 /* CBRunLoopChangeModelViewController.m */; };
 		374BB3281DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB3271DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m */; };
 		374BB32E1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB32D1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m */; };
+		374BB45A1DDB10B5000362B3 /* CBOperationQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB4591DDB10B5000362B3 /* CBOperationQueueViewController.m */; };
+		374BB45D1DDB11EB000362B3 /* CBPrincipleThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB45C1DDB11EB000362B3 /* CBPrincipleThreadViewController.m */; };
+		374BB4601DDB11F7000362B3 /* CBGCDPrincipleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB45F1DDB11F7000362B3 /* CBGCDPrincipleViewController.m */; };
+		374BB4661DDB1EB7000362B3 /* CBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB4651DDB1EB7000362B3 /* CBOperation.m */; };
 		376203211D6ACC030079DAA0 /* CBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203131D6ACC030079DAA0 /* CBImageCache.m */; };
 		376203221D6ACC030079DAA0 /* CBWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203151D6ACC030079DAA0 /* CBWebImageCompat.m */; };
 		376203231D6ACC030079DAA0 /* CBWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 376203171D6ACC030079DAA0 /* CBWebImageDownloader.m */; };
@@ -189,6 +193,14 @@
 		374BB3271DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunLoopSourceHandleViewController.m; sourceTree = "<group>"; };
 		374BB32C1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRunLoopObserverHandleManager.h; sourceTree = "<group>"; };
 		374BB32D1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunLoopObserverHandleManager.m; sourceTree = "<group>"; };
+		374BB4581DDB10B5000362B3 /* CBOperationQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBOperationQueueViewController.h; sourceTree = "<group>"; };
+		374BB4591DDB10B5000362B3 /* CBOperationQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBOperationQueueViewController.m; sourceTree = "<group>"; };
+		374BB45B1DDB11EB000362B3 /* CBPrincipleThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPrincipleThreadViewController.h; sourceTree = "<group>"; };
+		374BB45C1DDB11EB000362B3 /* CBPrincipleThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrincipleThreadViewController.m; sourceTree = "<group>"; };
+		374BB45E1DDB11F7000362B3 /* CBGCDPrincipleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGCDPrincipleViewController.h; sourceTree = "<group>"; };
+		374BB45F1DDB11F7000362B3 /* CBGCDPrincipleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGCDPrincipleViewController.m; sourceTree = "<group>"; };
+		374BB4641DDB1EB7000362B3 /* CBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBOperation.h; sourceTree = "<group>"; };
+		374BB4651DDB1EB7000362B3 /* CBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBOperation.m; sourceTree = "<group>"; };
 		376203121D6ACC030079DAA0 /* CBImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBImageCache.h; sourceTree = "<group>"; };
 		376203131D6ACC030079DAA0 /* CBImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBImageCache.m; sourceTree = "<group>"; };
 		376203141D6ACC030079DAA0 /* CBWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBWebImageCompat.h; sourceTree = "<group>"; };
@@ -472,6 +484,45 @@
 			name = RunLoop;
 			sourceTree = "<group>";
 		};
+		374BB4571DDB107F000362B3 /* MulThread */ = {
+			isa = PBXGroup;
+			children = (
+				374BB4611DDB1446000362B3 /* Operation */,
+				374BB4621DDB145E000362B3 /* NSThread */,
+				374BB4631DDB146C000362B3 /* GCD */,
+			);
+			name = MulThread;
+			sourceTree = "<group>";
+		};
+		374BB4611DDB1446000362B3 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				374BB4581DDB10B5000362B3 /* CBOperationQueueViewController.h */,
+				374BB4591DDB10B5000362B3 /* CBOperationQueueViewController.m */,
+				374BB4641DDB1EB7000362B3 /* CBOperation.h */,
+				374BB4651DDB1EB7000362B3 /* CBOperation.m */,
+			);
+			name = Operation;
+			sourceTree = "<group>";
+		};
+		374BB4621DDB145E000362B3 /* NSThread */ = {
+			isa = PBXGroup;
+			children = (
+				374BB45B1DDB11EB000362B3 /* CBPrincipleThreadViewController.h */,
+				374BB45C1DDB11EB000362B3 /* CBPrincipleThreadViewController.m */,
+			);
+			name = NSThread;
+			sourceTree = "<group>";
+		};
+		374BB4631DDB146C000362B3 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				374BB45E1DDB11F7000362B3 /* CBGCDPrincipleViewController.h */,
+				374BB45F1DDB11F7000362B3 /* CBGCDPrincipleViewController.m */,
+			);
+			name = GCD;
+			sourceTree = "<group>";
+		};
 		376203111D6ACC030079DAA0 /* CBWebImg_SD */ = {
 			isa = PBXGroup;
 			children = (
@@ -745,6 +796,7 @@
 		37F3C41F1D5DD31100C3CB1F /* Principle */ = {
 			isa = PBXGroup;
 			children = (
+				374BB4571DDB107F000362B3 /* MulThread */,
 				374BB31F1DD95F3B000362B3 /* RunLoop */,
 				3763F8C31DD030C70050F9B5 /* Autorelease */,
 				37BD55EF1D7A9DAD0075FFB4 /* GestureRecognizer */,
@@ -928,6 +980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				372AF6891DD33A75007D0599 /* CBAutoreleaseForThreadViewController.m in Sources */,
+				374BB4661DDB1EB7000362B3 /* CBOperation.m in Sources */,
 				376203251D6ACC030079DAA0 /* CBWebImageManager.m in Sources */,
 				372C48151D828C3B002DB575 /* CBMoGuJieDetailViewController.m in Sources */,
 				372C48191D828C3B002DB575 /* CBStrechableSecViewController.m in Sources */,
@@ -985,6 +1038,7 @@
 				372C48171D828C3B002DB575 /* CBStrechableHeaderViewController.m in Sources */,
 				37F09D721D7C63EF00853F71 /* CBGestureRecognizer.m in Sources */,
 				37BD55F21D7A9DFA0075FFB4 /* CBRACViewController.m in Sources */,
+				374BB45A1DDB10B5000362B3 /* CBOperationQueueViewController.m in Sources */,
 				372C47F01D828B94002DB575 /* CBThreadViewController.m in Sources */,
 				37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */,
 				376203271D6ACC030079DAA0 /* UIView+CBWebCacheOperation.m in Sources */,
@@ -992,6 +1046,7 @@
 				372C48021D828C06002DB575 /* CBCoreDataThirdLibUseViewController.m in Sources */,
 				374BB32E1DD9A74F000362B3 /* CBRunLoopObserverHandleManager.m in Sources */,
 				372C48271D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld in Sources */,
+				374BB4601DDB11F7000362B3 /* CBGCDPrincipleViewController.m in Sources */,
 				374BB3281DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m in Sources */,
 				3710315F1D7EBB10001A9AD7 /* CBDynamicView.m in Sources */,
 				37726A181D6447AB00294575 /* CBWebImageViewController.m in Sources */,
@@ -1020,6 +1075,7 @@
 				372C47F41D828BC8002DB575 /* CBRunTimeVIewController.m in Sources */,
 				37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */,
 				372C47EF1D828B94002DB575 /* CBThread.m in Sources */,
+				374BB45D1DDB11EB000362B3 /* CBPrincipleThreadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
