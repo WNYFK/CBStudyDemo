@@ -10,4 +10,6 @@
 
 @interface CBOperation : NSOperation
 
+- (instancetype)initWithPersistTime:(int)persistTime;
+
 @end
