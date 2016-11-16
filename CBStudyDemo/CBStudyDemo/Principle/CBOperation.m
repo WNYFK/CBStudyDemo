@@ -34,13 +34,29 @@
 
 - (void)start {
     @autoreleasepool {
+        [self.lock lock];
+        if (self.isCancelled) { return; }
+        self.executing = YES;
+        [self.lock unlock];
         sleep(self.persistTime / 2);
-    
+        if (!self.isCancelled) {
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                sleep(self.persistTime / 2);
+                if (!self.isCancelled) {
+                    [self.lock lock];
+                    self.finished = YES;
+                    [self.lock unlock];
+                    NSLog(@"完成：%d", self.persistTime);
+                }
+            });
+        }
     }
 }
 
 - (void)cancel {
-    self.cancelled = true;
+    NSLog(@"取消：%d", self.persistTime);
+    self.cancelled = YES;
+    self.finished = YES;
     [super cancel];
 }
 

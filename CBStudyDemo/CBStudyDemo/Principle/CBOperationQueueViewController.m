@@ -7,11 +7,13 @@
 //
 
 #import "CBOperationQueueViewController.h"
+#import "CBOperation.h"
 
 @interface CBOperationQueueViewController ()
 
 @property (nonatomic, strong) NSOperationQueue *blockOperationQueue;
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
+@property (nonatomic, strong) NSMutableArray<NSOperation *> *operations;
 
 @end
 
@@ -24,12 +26,13 @@
     self.blockOperationQueue.maxConcurrentOperationCount = 2;
     
     self.operationQueue = [[NSOperationQueue alloc] init];
-    self.operationQueue.maxConcurrentOperationCount = 1;
+    self.operationQueue.maxConcurrentOperationCount = 2;
+    self.operations = [NSMutableArray array];
     
     @weakify(self);
-    CBSectionItem *sectionItem = [[CBSectionItem alloc] init];
+    CBSectionItem *sectionItem1 = [[CBSectionItem alloc] initWithTitle:@"BlockOperation"];
     dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"BlockOperation dispatch_async" callBack:^{
+    [sectionItem1.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"BlockOperation dispatch_async" callBack:^{
         @strongify(self);
         NSBlockOperation *blockOperation1 = [NSBlockOperation blockOperationWithBlock:^{
             NSLog(@"cell1 blockOperation1 start");
@@ -59,7 +62,7 @@
         [self.blockOperationQueue addOperation:blockOperation2];
     }]];
     
-    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"BlockOperation dispatch_after" callBack:^{
+    [sectionItem1.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"BlockOperation dispatch_after" callBack:^{
         @strongify(self);
         NSBlockOperation *blockOperation1 = [NSBlockOperation blockOperationWithBlock:^{
             NSLog(@"cell2 blockOperation1 start");
@@ -80,7 +83,27 @@
         [self.blockOperationQueue addOperation:blockOperation1];
         [self.blockOperationQueue addOperation:blockOperation2];
     }]];
-    [self.dataArr addObject:sectionItem];
+    [self.dataArr addObject:sectionItem1];
+    
+    CBSectionItem *sectionItem2 = [[CBSectionItem alloc] initWithTitle:@"Operation"];
+    [sectionItem2.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"开始Operation异步处理" callBack:^{
+        for (int i = 0; i < 10; i++) {
+            CBOperation *operation1 = [[CBOperation alloc] initWithPersistTime:10 + i * 10];
+            CBOperation *operation2 = [[CBOperation alloc] initWithPersistTime:3 + i * 3];
+            [operation2 addDependency:operation1];
+            [self.operationQueue addOperation:operation1];
+            [self.operationQueue addOperation:operation2];
+            if (i % 2 == 0) {
+                [self.operations addObject:operation1];
+            }
+        }
+    }]];
+    [sectionItem2.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"取消Operation处理" callBack:^{
+        [self.operations enumerateObjectsUsingBlock:^(NSOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [obj cancel];
+        }];
+    }]];
+    [self.dataArr addObject:sectionItem2];
 }
 
 @end
