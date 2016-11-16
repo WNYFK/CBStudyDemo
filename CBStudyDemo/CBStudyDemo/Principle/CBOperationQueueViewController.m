@@ -35,7 +35,7 @@
             NSLog(@"cell1 blockOperation1 start");
             dispatch_async(globalQueue, ^{
                 NSLog(@"cell1 blockOperation1 globalQueue");
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 15), globalQueue, ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 15 * NSEC_PER_SEC), globalQueue, ^{
                     NSLog(@"cell1 blockOperation1 dispatch after finished");
                 });
             });
@@ -47,7 +47,7 @@
             NSLog(@"cell1 blockOperation2 start");
             dispatch_async(globalQueue, ^{
                 NSLog(@"cell1 blockOperation2 global");
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2), globalQueue, ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), globalQueue, ^{
                     NSLog(@"cell1 blockOperation2 dispatch after finished");
                 });
             });
@@ -63,7 +63,7 @@
         @strongify(self);
         NSBlockOperation *blockOperation1 = [NSBlockOperation blockOperationWithBlock:^{
             NSLog(@"cell2 blockOperation1 start");
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 15), globalQueue, ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 15 * NSEC_PER_SEC), globalQueue, ^{
                 NSLog(@"cell2 blockOperation1 dispatch after finished");
             });
             NSLog(@"cell2 blockOperation1 end");
@@ -71,7 +71,7 @@
         
         NSBlockOperation *blockOperation2 = [NSBlockOperation blockOperationWithBlock:^{
             NSLog(@"cell2 blockOperation2 start");
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2), globalQueue, ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), globalQueue, ^{
                 NSLog(@"cell2 blockOperation2 dispatch after finished");
             });
             NSLog(@"cell2 blockOperation2 end");
