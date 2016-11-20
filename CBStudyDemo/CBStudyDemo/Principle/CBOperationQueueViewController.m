@@ -89,21 +89,21 @@
    __block CBOperation *operation1;
     [sectionItem2.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"开始Operation异步处理" callBack:^{
         for (int i = 0; i < 10; i++) {
-            operation1 = [[CBOperation alloc] initWithPersistTime:10 + i * 10];
+            operation1 = [[CBOperation alloc] initWithPersistTime:5 + i * 5];
             CBOperation *operation2 = [[CBOperation alloc] initWithPersistTime:3 + i * 3];
             [operation2 addDependency:operation1];
             [self.operationQueue addOperation:operation1];
-            [self.operationQueue addOperation:operation2];
+//            [self.operationQueue addOperation:operation2];
             if (i % 2 == 0) {
-//                [self.operations addObject:operation1];
+                [self.operations addObject:operation1];
             }
         }
     }]];
     [sectionItem2.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"取消Operation处理" callBack:^{
-//        [self.operations enumerateObjectsUsingBlock:^(NSOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            [obj cancel];
-//        }];
-        [operation1 cancel];
+        [self.operations enumerateObjectsUsingBlock:^(NSOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [obj cancel];
+        }];
+//        [operation1 cancel];
     }]];
     [self.dataArr addObject:sectionItem2];
 }

@@ -10,7 +10,7 @@
 
 @interface CBOperation ()
 
-//@property (assign, nonatomic, getter= isCancelled) BOOL cancelled;
+@property (assign, nonatomic, getter= isCancelled) BOOL cancelled;
 @property (assign, nonatomic, getter= isFinished) BOOL finished;
 @property (assign, nonatomic, getter= isExecuting) BOOL executing;
 @property (assign, nonatomic) int persistTime;
@@ -34,11 +34,11 @@
 
 - (void)start {
     @autoreleasepool {
-        [self.lock lock];
         if (self.isCancelled) {
             self.finished = YES;
             return;
         }
+        [self.lock lock];
         self.executing = YES;
         [self.lock unlock];
         sleep(self.persistTime / 2);
@@ -57,13 +57,14 @@
 }
 
 - (void)cancel {
-    NSLog(@"取消：%d", self.persistTime);
     if (self.isFinished) return;
-    [super cancel];
+    NSLog(@"取消：%d", self.persistTime);
     [self.lock lock];
+    self.cancelled = YES;
     if (self.isExecuting) self.executing = NO;
-    if (!self.isFinished) self.finished = YES;
+    if (!self.isFinished) _finished = YES;
     [self.lock unlock];
+    [super cancel];
 }
 
 - (BOOL)isExecuting {
@@ -100,22 +101,22 @@
     [self.lock unlock];
 }
 
-//- (BOOL)isCancelled {
-//    [self.lock lock];
-//    BOOL cancelled = _cancelled;
-//    [self.lock unlock];
-//    return cancelled;
-//}
+- (BOOL)isCancelled {
+    [self.lock lock];
+    BOOL cancelled = _cancelled;
+    [self.lock unlock];
+    return cancelled;
+}
 
-//- (void)setCancelled:(BOOL)cancelled {
-//    [self.lock lock];
-//    if (!_cancelled != cancelled) {
-//        [self willChangeValueForKey:@"isCancelled"];
-//        _cancelled = cancelled;
-//        [self didChangeValueForKey:@"isCancelled"];
-//    }
-//    [self.lock unlock];
-//}
+- (void)setCancelled:(BOOL)cancelled {
+    [self.lock lock];
+    if (self.isCancelled != cancelled) {
+        [self willChangeValueForKey:@"isCancelled"];
+        _cancelled = cancelled;
+        [self didChangeValueForKey:@"isCancelled"];
+    }
+    [self.lock unlock];
+}
 
 - (BOOL)isConcurrent {
     return YES;
