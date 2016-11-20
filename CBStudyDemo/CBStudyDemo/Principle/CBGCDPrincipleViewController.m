@@ -16,22 +16,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    CBSectionItem *sectionItem = [[CBSectionItem alloc] init];
+    
+    dispatch_queue_t globalQueue = dispatch_queue_create("com.chenbin.globalQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"globalQueue长时间任务" callBack:^{
+        dispatch_async(globalQueue, ^{
+            NSLog(@"开始长时间任务");
+            sleep(20);
+            NSLog(@"长时间任务结束");
+        });
+    }]];
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"syn" callBack:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"1111");
+            dispatch_sync(globalQueue, ^{
+                NSLog(@"222");
+            });
+            NSLog(@"3333");
+        });
+    }]];
+    
+    
+    
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"asyn" callBack:^{
+        NSLog(@"11111");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"2222");
+        });
+        NSLog(@"33333");
+    }]];
+    
+    [self.dataArr addObject:sectionItem];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

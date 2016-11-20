@@ -58,7 +58,7 @@
 
 - (void)cancel {
     if (self.isFinished) return;
-    NSLog(@"取消：%d", self.persistTime);
+    NSLog(@"取消：%d==%@", self.persistTime, self);
     [self.lock lock];
     self.cancelled = YES;
     if (self.isExecuting) self.executing = NO;

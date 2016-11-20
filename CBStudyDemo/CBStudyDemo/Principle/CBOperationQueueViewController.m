@@ -19,6 +19,16 @@
 
 @implementation CBOperationQueueViewController
 
+- (void)dealloc {
+    [self.operationQueue cancelAllOperations];
+    [self.blockOperationQueue cancelAllOperations];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"%@",self.operationQueue.operations);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -91,7 +101,7 @@
         for (int i = 0; i < 10; i++) {
             operation1 = [[CBOperation alloc] initWithPersistTime:5 + i * 5];
             CBOperation *operation2 = [[CBOperation alloc] initWithPersistTime:3 + i * 3];
-            [operation2 addDependency:operation1];
+//            [operation2 addDependency:operation1];
             [self.operationQueue addOperation:operation1];
 //            [self.operationQueue addOperation:operation2];
             if (i % 2 == 0) {
