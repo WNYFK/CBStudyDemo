@@ -34,8 +34,11 @@
 
 - (void)start {
     @autoreleasepool {
+        if (self.isCancelled) {
+            self.finished = YES;
+            return;
+        }
         [self.lock lock];
-        if (self.isCancelled) { return; }
         self.executing = YES;
         [self.lock unlock];
         sleep(self.persistTime / 2);
@@ -54,9 +57,13 @@
 }
 
 - (void)cancel {
-    NSLog(@"取消：%d", self.persistTime);
+    if (self.isFinished) return;
+    NSLog(@"取消：%d==%@", self.persistTime, self);
+    [self.lock lock];
     self.cancelled = YES;
-    self.finished = YES;
+    if (self.isExecuting) self.executing = NO;
+    if (!self.isFinished) _finished = YES;
+    [self.lock unlock];
     [super cancel];
 }
 
@@ -103,7 +110,7 @@
 
 - (void)setCancelled:(BOOL)cancelled {
     [self.lock lock];
-    if (!_cancelled != cancelled) {
+    if (self.isCancelled != cancelled) {
         [self willChangeValueForKey:@"isCancelled"];
         _cancelled = cancelled;
         [self didChangeValueForKey:@"isCancelled"];

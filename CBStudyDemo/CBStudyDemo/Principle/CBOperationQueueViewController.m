@@ -19,6 +19,16 @@
 
 @implementation CBOperationQueueViewController
 
+- (void)dealloc {
+    [self.operationQueue cancelAllOperations];
+    [self.blockOperationQueue cancelAllOperations];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"%@",self.operationQueue.operations);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -86,13 +96,14 @@
     [self.dataArr addObject:sectionItem1];
     
     CBSectionItem *sectionItem2 = [[CBSectionItem alloc] initWithTitle:@"Operation"];
+   __block CBOperation *operation1;
     [sectionItem2.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"开始Operation异步处理" callBack:^{
         for (int i = 0; i < 10; i++) {
-            CBOperation *operation1 = [[CBOperation alloc] initWithPersistTime:10 + i * 10];
+            operation1 = [[CBOperation alloc] initWithPersistTime:5 + i * 5];
             CBOperation *operation2 = [[CBOperation alloc] initWithPersistTime:3 + i * 3];
-            [operation2 addDependency:operation1];
+//            [operation2 addDependency:operation1];
             [self.operationQueue addOperation:operation1];
-            [self.operationQueue addOperation:operation2];
+//            [self.operationQueue addOperation:operation2];
             if (i % 2 == 0) {
                 [self.operations addObject:operation1];
             }
@@ -102,6 +113,7 @@
         [self.operations enumerateObjectsUsingBlock:^(NSOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [obj cancel];
         }];
+//        [operation1 cancel];
     }]];
     [self.dataArr addObject:sectionItem2];
 }
