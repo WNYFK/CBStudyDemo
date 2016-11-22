@@ -8,6 +8,6 @@
 
 #import "CBBaseTableViewController.h"
 
-@interface CBPrincipleThreadViewController : CBBaseTableViewController
+@interface CBPrincipleThreadViewController : CBBaseViewController
 
 @end

@@ -17,6 +17,7 @@
 #import "CBOperationQueueViewController.h"
 #import "CBGCDPrincipleViewController.h"
 #import "CBPrincipleThreadViewController.h"
+#import "CBRuntimeViewController.h"
 
 @implementation CBHomePrincipleViewController
 
@@ -54,6 +55,10 @@
     [mulThreadSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"NSThread" destinationClass:[CBPrincipleThreadViewController class]]];
     [mulThreadSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"GCD" destinationClass:[CBGCDPrincipleViewController class]]];
     [self.dataArr addObject:mulThreadSectionItem];
+    
+    CBSectionItem *runtimeSectionItem = [[CBSectionItem alloc] initWithTitle:@"runtime"];
+    [runtimeSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"消息机制" destinationClass:[CBRuntimeViewController class]]];
+    [self.dataArr addObject:runtimeSectionItem];
 }
 
 @end

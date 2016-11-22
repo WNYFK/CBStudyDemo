@@ -12,17 +12,53 @@
 
 @interface CBRunLoopPrincipleViewController ()
 
+@property (nonatomic, strong) NSThread *thread;
+@property (nonatomic, assign) NSInteger tag;
+
 @end
+
 
 @implementation CBRunLoopPrincipleViewController
 
+- (void)handleThread {
+    NSRunLoop *runloop = [NSRunLoop currentRunLoop];
+//    NSTimer *timer = [NSTimer bk_timerWithTimeInterval:5 block:^(NSTimer *timer) {
+//        NSLog(@"asdfasd");
+//    } repeats:YES];
+//    [runloop addTimer:timer forMode:NSRunLoopCommonModes];
+    [runloop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:30]];
+    NSLog(@"wwwww");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tag = 0;
     
     CBSectionItem *sectionItem = [[CBSectionItem alloc] initWithTitle:nil];
     [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"runloop切换model" destinationClass:[CBRunLoopChangeModelViewController class]]];
     
     [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"source使用" destinationClass:[CBRunLoopSourceHandleViewController class]]];
+    
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"runloop until" callBack:^{
+        [self performSelector:@selector(handleThread) onThread:self.thread withObject:nil waitUntilDone:NO];
+    }]];
+    
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"runloop until in main thread" callBack:^{
+        self.tag++;
+        NSRunLoop *runloop = [NSRunLoop currentRunLoop];
+        [runloop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:30]];
+        NSLog(@"当前标记：%ld", (long)self.tag);
+    }]];
+    
+    self.thread = [[NSThread alloc] initWithBlock:^{
+        NSLog(@"sub thread start");
+        NSRunLoop *runloop = [NSRunLoop currentRunLoop];
+        [runloop addPort:[NSPort new] forMode:NSDefaultRunLoopMode];
+        [runloop run];
+    }];
+    
+    self.thread.name = @"sub thread use loop";
+    [self.thread start];
     
     [self.dataArr addObject:sectionItem];
     dispatch_group_t group = dispatch_group_create();

@@ -87,7 +87,7 @@ void mainRunLoopObserver(CFRunLoopObserverRef observer, CFRunLoopActivity activi
     @weakify(self);
     self.catonTimerManager.longTimeBlock = ^(NSTimeInterval persistSecond){
         @strongify(self);
-        NSLog(@"警告MainLoop执行时间过长！持续时间 %f s",persistSecond);
+//        NSLog(@"警告MainLoop执行时间过长！持续时间 %f s",persistSecond);
 //        NSLog(@"当前堆栈：%@",[self getAllStack]);
     };
     

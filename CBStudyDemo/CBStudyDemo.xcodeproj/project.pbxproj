@@ -79,6 +79,7 @@
 		37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B2AFC41D6DEBD700EC731D /* CBCatonObserver.m */; };
 		37BD55F21D7A9DFA0075FFB4 /* CBRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */; };
 		37BD55F51D7ABF6E0075FFB4 /* CBGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */; };
+		37C85BE71DE3E6AB002ECD3B /* CBRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */; };
 		37E57A111DC2197D002BFC93 /* CBMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */; };
 		37F09D721D7C63EF00853F71 /* CBGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */; };
 		37F09D751D7DA8A700853F71 /* CBGestureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D741D7DA8A700853F71 /* CBGestureScrollView.m */; };
@@ -260,6 +261,8 @@
 		37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRACViewController.m; sourceTree = "<group>"; };
 		37BD55F31D7ABF6E0075FFB4 /* CBGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureViewController.h; sourceTree = "<group>"; };
 		37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGestureViewController.m; sourceTree = "<group>"; };
+		37C85BE51DE3E6AB002ECD3B /* CBRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRuntimeViewController.h; sourceTree = "<group>"; };
+		37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRuntimeViewController.m; sourceTree = "<group>"; };
 		37E57A0F1DC2197D002BFC93 /* CBMasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMasonryViewController.h; sourceTree = "<group>"; };
 		37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMasonryViewController.m; sourceTree = "<group>"; };
 		37F09D701D7C63EF00853F71 /* CBGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureRecognizer.h; sourceTree = "<group>"; };
@@ -695,6 +698,15 @@
 			path = GestureRecognizer;
 			sourceTree = "<group>";
 		};
+		37C85BE41DE3E674002ECD3B /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				37C85BE51DE3E6AB002ECD3B /* CBRuntimeViewController.h */,
+				37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */,
+			);
+			name = Runtime;
+			sourceTree = "<group>";
+		};
 		37E57A0E1DC2195D002BFC93 /* AutoLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,6 +808,7 @@
 		37F3C41F1D5DD31100C3CB1F /* Principle */ = {
 			isa = PBXGroup;
 			children = (
+				37C85BE41DE3E674002ECD3B /* Runtime */,
 				374BB4571DDB107F000362B3 /* MulThread */,
 				374BB31F1DD95F3B000362B3 /* RunLoop */,
 				3763F8C31DD030C70050F9B5 /* Autorelease */,
@@ -1075,6 +1088,7 @@
 				372C47F41D828BC8002DB575 /* CBRunTimeVIewController.m in Sources */,
 				37F3C4051D5DC6CA00C3CB1F /* main.m in Sources */,
 				372C47EF1D828B94002DB575 /* CBThread.m in Sources */,
+				37C85BE71DE3E6AB002ECD3B /* CBRuntimeViewController.m in Sources */,
 				374BB45D1DDB11EB000362B3 /* CBPrincipleThreadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
