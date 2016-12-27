@@ -24,6 +24,7 @@
 #import "CBCoreDataFirstUseViewController.h"
 #import "CBCoreDataMultiThreadUseViewController.h"
 #import "CBMasonryViewController.h"
+#import "CBTestViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -39,6 +40,10 @@
 }
 
 - (void)setupBaseData {
+    CBSectionItem *testSectionItem = [[CBSectionItem alloc] initWithTitle:@"测试页"];
+    [self.dataArr addObject:testSectionItem];
+    [testSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"测试" destinationClass:[CBTestViewController class]]];
+    
     CBSectionItem *runloopSectionItem = [[CBSectionItem alloc] initWithTitle:@"RunLoop"];
     [runloopSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"NSRunLoop" destinationClass:[CBNSRunLoopViewController class]]];
     [runloopSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"CFRunLoop" destinationClass:[CBCFRunLoopViewController class]]];

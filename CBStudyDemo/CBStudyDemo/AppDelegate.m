@@ -26,6 +26,7 @@
     self.window.rootViewController = self.tabbarController;
     [self.window makeKeyAndVisible];
     
+    
     [[CBCatonObserver sharedInstance] startObserver];
     return YES;
 }

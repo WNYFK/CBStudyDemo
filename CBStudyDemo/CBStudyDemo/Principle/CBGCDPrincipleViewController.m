@@ -47,6 +47,19 @@
         NSLog(@"33333");
     }]];
     
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"队列 & 线程" callBack:^{
+        dispatch_queue_t queue = dispatch_queue_create("com.chenbin.queue", nil);
+        NSLog(@"1");
+        dispatch_sync(queue, ^{
+            NSLog(@"Current thread = %@", [NSThread currentThread]);
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                NSLog(@"Current thread = %@", [NSThread currentThread]);
+            });
+            NSLog(@"2");
+        });
+        NSLog(@"3");
+    }]];
+    
     [self.dataArr addObject:sectionItem];
 }
 
