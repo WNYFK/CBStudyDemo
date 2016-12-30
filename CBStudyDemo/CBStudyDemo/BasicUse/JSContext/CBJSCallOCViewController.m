@@ -82,6 +82,7 @@ JSExportAs(calculateForJS, - (void)handleFactorialCalculateWithNumber:(NSNumber 
     NSNumber *resultNum = @(number.integerValue + 2);
     [self.jsContext[@"showResult"] callWithArguments:@[resultNum]];
     
+    
 }
 @end
 
