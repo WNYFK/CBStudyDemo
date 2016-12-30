@@ -82,6 +82,9 @@
 		37BD55F51D7ABF6E0075FFB4 /* CBGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */; };
 		37C85BE71DE3E6AB002ECD3B /* CBRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */; };
 		37E57A111DC2197D002BFC93 /* CBMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */; };
+		37EEA7501E1608D800A7074B /* JSCallOC.html in Resources */ = {isa = PBXBuildFile; fileRef = 37EEA74F1E1608D800A7074B /* JSCallOC.html */; };
+		37EEA7531E16094B00A7074B /* CBJSCallOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EEA7521E16094B00A7074B /* CBJSCallOCViewController.m */; };
+		37EEA7561E1609A000A7074B /* CBOCCallJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EEA7551E1609A000A7074B /* CBOCCallJSViewController.m */; };
 		37F09D721D7C63EF00853F71 /* CBGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */; };
 		37F09D751D7DA8A700853F71 /* CBGestureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D741D7DA8A700853F71 /* CBGestureScrollView.m */; };
 		37F09D781D7DA9A400853F71 /* CBHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D771D7DA9A400853F71 /* CBHorizontalView.m */; };
@@ -108,7 +111,6 @@
 		37F879BE1D6EEDD900779AC5 /* CBCatonTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879BD1D6EEDD900779AC5 /* CBCatonTimerManager.m */; };
 		37F879C21D6FE3BA00779AC5 /* CBLocalCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879C11D6FE3BA00779AC5 /* CBLocalCacheManager.m */; };
 		37F879E31D704FE200779AC5 /* UIApplication+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F879E21D704FE200779AC5 /* UIApplication+Category.m */; };
-		3F9E15396483BE2C4DB6BC72 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0357BF4552C0992C83D90A5D /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -267,6 +269,11 @@
 		37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRuntimeViewController.m; sourceTree = "<group>"; };
 		37E57A0F1DC2197D002BFC93 /* CBMasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMasonryViewController.h; sourceTree = "<group>"; };
 		37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMasonryViewController.m; sourceTree = "<group>"; };
+		37EEA74F1E1608D800A7074B /* JSCallOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = JSCallOC.html; path = "../../../../../../../../Downloads/JavaScriptCore-Demo-master/JavaScriptCore-Demo/JSCallOC/JSCallOC.html"; sourceTree = "<group>"; };
+		37EEA7511E16094B00A7074B /* CBJSCallOCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBJSCallOCViewController.h; sourceTree = "<group>"; };
+		37EEA7521E16094B00A7074B /* CBJSCallOCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBJSCallOCViewController.m; sourceTree = "<group>"; };
+		37EEA7541E1609A000A7074B /* CBOCCallJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBOCCallJSViewController.h; sourceTree = "<group>"; };
+		37EEA7551E1609A000A7074B /* CBOCCallJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBOCCallJSViewController.m; sourceTree = "<group>"; };
 		37F09D701D7C63EF00853F71 /* CBGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureRecognizer.h; sourceTree = "<group>"; };
 		37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGestureRecognizer.m; sourceTree = "<group>"; };
 		37F09D731D7DA8A700853F71 /* CBGestureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGestureScrollView.h; sourceTree = "<group>"; };
@@ -317,8 +324,6 @@
 		37F879C11D6FE3BA00779AC5 /* CBLocalCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLocalCacheManager.m; sourceTree = "<group>"; };
 		37F879E11D704FE200779AC5 /* UIApplication+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Category.h"; sourceTree = "<group>"; };
 		37F879E21D704FE200779AC5 /* UIApplication+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Category.m"; sourceTree = "<group>"; };
-		3CD189562814F4615FA78D2A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		71A43CC86AE23F7BE3728E85 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,22 +331,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F9E15396483BE2C4DB6BC72 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1992F6012CD91887047D6B8D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				71A43CC86AE23F7BE3728E85 /* Pods.debug.xcconfig */,
-				3CD189562814F4615FA78D2A /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		3705FCDD1DE834A7004C45BB /* test */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,13 +732,31 @@
 			path = AutoLayout;
 			sourceTree = "<group>";
 		};
+		37EEA7351E14F0B900A7074B /* MacOS&iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "MacOS&iOS";
+			sourceTree = "<group>";
+		};
+		37EEA74E1E1608CC00A7074B /* JSContext */ = {
+			isa = PBXGroup;
+			children = (
+				37EEA74F1E1608D800A7074B /* JSCallOC.html */,
+				37EEA7511E16094B00A7074B /* CBJSCallOCViewController.h */,
+				37EEA7521E16094B00A7074B /* CBJSCallOCViewController.m */,
+				37EEA7541E1609A000A7074B /* CBOCCallJSViewController.h */,
+				37EEA7551E1609A000A7074B /* CBOCCallJSViewController.m */,
+			);
+			path = JSContext;
+			sourceTree = "<group>";
+		};
 		37F3C3F71D5DC6CA00C3CB1F = {
 			isa = PBXGroup;
 			children = (
 				37F3C4021D5DC6CA00C3CB1F /* CBStudyDemo */,
 				37F3C4011D5DC6CA00C3CB1F /* Products */,
 				B91DCCBB54657B2733D5EE22 /* Frameworks */,
-				1992F6012CD91887047D6B8D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -758,6 +771,7 @@
 		37F3C4021D5DC6CA00C3CB1F /* CBStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				37EEA7351E14F0B900A7074B /* MacOS&iOS */,
 				3763F8C81DD0625C0050F9B5 /* DebugHelp */,
 				37277BFC1DC86DE100E2A432 /* Playground */,
 				37F879BF1D6FE1CD00779AC5 /* LocalStorage */,
@@ -795,6 +809,7 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
+				37EEA74E1E1608CC00A7074B /* JSContext */,
 				3705FCDD1DE834A7004C45BB /* test */,
 				37E57A0E1DC2195D002BFC93 /* AutoLayout */,
 				372C48081D828C3B002DB575 /* MoJieDetail */,
@@ -890,12 +905,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37F3C4171D5DC6CA00C3CB1F /* Build configuration list for PBXNativeTarget "CBStudyDemo" */;
 			buildPhases = (
-				0CF17B7F38F5E1D279B25716 /* Check Pods Manifest.lock */,
 				37F3C3FC1D5DC6CA00C3CB1F /* Sources */,
 				37F3C3FD1D5DC6CA00C3CB1F /* Frameworks */,
 				37F3C3FE1D5DC6CA00C3CB1F /* Resources */,
-				715D853761B63DCD7056CC98 /* Embed Pods Frameworks */,
-				DE934CEFF2BC5E53B3265DBF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -946,59 +958,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F3C4131D5DC6CA00C3CB1F /* LaunchScreen.storyboard in Resources */,
+				37EEA7501E1608D800A7074B /* JSCallOC.html in Resources */,
 				37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0CF17B7F38F5E1D279B25716 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		715D853761B63DCD7056CC98 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE934CEFF2BC5E53B3265DBF /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		37F3C3FC1D5DC6CA00C3CB1F /* Sources */ = {
@@ -1076,6 +1041,7 @@
 				374BB4601DDB11F7000362B3 /* CBGCDPrincipleViewController.m in Sources */,
 				374BB3281DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m in Sources */,
 				3710315F1D7EBB10001A9AD7 /* CBDynamicView.m in Sources */,
+				37EEA7561E1609A000A7074B /* CBOCCallJSViewController.m in Sources */,
 				37726A181D6447AB00294575 /* CBWebImageViewController.m in Sources */,
 				37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */,
 				376203341D6C4F1F0079DAA0 /* CBImageCache_YY.m in Sources */,
@@ -1096,6 +1062,7 @@
 				372C47EE1D828B94002DB575 /* CBOperationViewController.m in Sources */,
 				374BB3221DD95F61000362B3 /* CBRunLoopPrincipleViewController.m in Sources */,
 				378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */,
+				37EEA7531E16094B00A7074B /* CBJSCallOCViewController.m in Sources */,
 				372C48181D828C3B002DB575 /* CBStrechableScrollViewController.m in Sources */,
 				376203231D6ACC030079DAA0 /* CBWebImageDownloader.m in Sources */,
 				378176991D62AB980092C6A4 /* CBKVOTestClassOne.m in Sources */,
@@ -1205,7 +1172,6 @@
 		};
 		37F3C4181D5DC6CA00C3CB1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71A43CC86AE23F7BE3728E85 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1227,7 +1193,6 @@
 		};
 		37F3C4191D5DC6CA00C3CB1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CD189562814F4615FA78D2A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
