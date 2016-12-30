@@ -36,9 +36,6 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - CRToast (0.0.9)
-  - JSPatch (1.1):
-    - JSPatch/Core (= 1.1)
-  - JSPatch/Core (1.1)
   - Mantle (2.0.7):
     - Mantle/extobjc (= 2.0.7)
   - Mantle/extobjc (2.0.7)
@@ -55,34 +52,29 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - YYKit (1.0.7):
-    - YYKit/no-arc (= 1.0.7)
-  - YYKit/no-arc (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
-  - BlocksKit
+  - BlocksKit (~> 2.2.5)
   - CRToast
-  - JSPatch
   - Mantle
   - Masonry
   - MBProgressHUD
   - PLCrashReporter
-  - ReactiveCocoa (= 2.5)
-  - SDWebImage
-  - YYKit
+  - ReactiveCocoa
+  - SDWebImage (~> 3.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
-  JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PLCrashReporter: 16927d86a093d0b9cf110545dacb77cb0ed0f243
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 490015ad42773ba5658d1f200354f7d6f09a335b
+
+COCOAPODS: 1.1.1

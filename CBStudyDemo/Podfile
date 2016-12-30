@@ -1,24 +1,28 @@
+source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '8.0'
 
 use_frameworks!
+target ‘CBStudyDemo’ do
 
 #pod 'SnapKit'
 #pod 'RxSwift',    '~> 2.0'
 #pod 'RxCocoa',    '~> 2.0'
-pod 'JSPatch'
+#pod 'JSPatch'
 #pod 'Aspects'
 #pod 'AsyncDisplayKit'
-pod 'SDWebImage'
+pod 'SDWebImage',	'~> 3.5'
 pod 'AFNetworking',     '~> 2.5.0'
 #pod 'FMDB'
-pod 'BlocksKit'
+pod 'BlocksKit',	'~> 2.2.5'
 #pod 'MagicalRecord'
-pod 'YYKit'
+#pod 'YYKit'
 pod 'MBProgressHUD'
-pod 'ReactiveCocoa',    '2.5'
+pod 'ReactiveCocoa'
 pod 'Mantle'
 pod 'PLCrashReporter'
 pod 'CRToast'
 pod 'Masonry'
 #pod 'MLeaksFinder'
+
+end
