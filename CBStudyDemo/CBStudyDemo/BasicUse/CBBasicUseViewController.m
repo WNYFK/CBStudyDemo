@@ -27,6 +27,7 @@
 #import "CBTestViewController.h"
 #import "CBJSCallOCViewController.h"
 #import "CBOCCallJSViewController.h"
+#import "CBJSUseViewController.h"
 
 @interface CBBasicUseViewController ()
 
@@ -50,6 +51,7 @@
     [self.dataArr addObject:jsContextSectionItem];
     [jsContextSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"js call oc" destinationClass:[CBJSCallOCViewController class]]];
     [jsContextSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"oc call js" destinationClass:[CBOCCallJSViewController class]]];
+    [jsContextSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"webview 使用" destinationClass:[CBJSUseViewController class]]];
     
     CBSectionItem *runloopSectionItem = [[CBSectionItem alloc] initWithTitle:@"RunLoop"];
     [runloopSectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"NSRunLoop" destinationClass:[CBNSRunLoopViewController class]]];

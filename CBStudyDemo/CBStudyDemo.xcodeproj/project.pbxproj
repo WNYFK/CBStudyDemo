@@ -77,13 +77,13 @@
 		3781769C1D62CEF10092C6A4 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3781769B1D62CEF10092C6A4 /* NSObject+KVO.m */; };
 		378176A11D633D740092C6A4 /* CBKVCRealizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176A01D633D740092C6A4 /* CBKVCRealizeViewController.m */; };
 		378176A41D633EC00092C6A4 /* CBObject+KVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176A31D633EC00092C6A4 /* CBObject+KVC.m */; };
+		3790C7A81E262F29000E8C80 /* CBJSUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3790C7A71E262F29000E8C80 /* CBJSUseViewController.m */; };
 		37B2AFC21D6DEB4400EC731D /* CBHomePerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B2AFC11D6DEB4400EC731D /* CBHomePerformanceViewController.m */; };
 		37B2AFC51D6DEBD700EC731D /* CBCatonObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B2AFC41D6DEBD700EC731D /* CBCatonObserver.m */; };
 		37BD55F21D7A9DFA0075FFB4 /* CBRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */; };
 		37BD55F51D7ABF6E0075FFB4 /* CBGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */; };
 		37C85BE71DE3E6AB002ECD3B /* CBRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */; };
 		37E57A111DC2197D002BFC93 /* CBMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */; };
-		37EEA7501E1608D800A7074B /* JSCallOC.html in Resources */ = {isa = PBXBuildFile; fileRef = 37EEA74F1E1608D800A7074B /* JSCallOC.html */; };
 		37EEA7531E16094B00A7074B /* CBJSCallOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EEA7521E16094B00A7074B /* CBJSCallOCViewController.m */; };
 		37EEA7561E1609A000A7074B /* CBOCCallJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EEA7551E1609A000A7074B /* CBOCCallJSViewController.m */; };
 		37F09D721D7C63EF00853F71 /* CBGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F09D711D7C63EF00853F71 /* CBGestureRecognizer.m */; };
@@ -101,6 +101,8 @@
 		37F3C42B1D5DD46E00C3CB1F /* CBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C42A1D5DD46E00C3CB1F /* CBNavigationController.m */; };
 		37F3C42E1D5DD66000C3CB1F /* CBSkipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C42D1D5DD66000C3CB1F /* CBSkipItem.m */; };
 		37F3C4311D5DD6C300C3CB1F /* CBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F3C4301D5DD6C300C3CB1F /* CBBaseTableViewController.m */; };
+		37F76E961E1639380001C9DF /* JSCallOC.html in Resources */ = {isa = PBXBuildFile; fileRef = 37F76E941E1639380001C9DF /* JSCallOC.html */; };
+		37F76E971E1639380001C9DF /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 37F76E951E1639380001C9DF /* test.js */; };
 		37F873BA1D8657CD00316311 /* CBCoreDataFirstUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F873B91D8657CD00316311 /* CBCoreDataFirstUseViewController.m */; };
 		37F873BD1D86582A00316311 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37F873BB1D86582A00316311 /* CoreData.xcdatamodeld */; };
 		37F873C21D86590E00316311 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F873BF1D86590E00316311 /* User+CoreDataProperties.m */; };
@@ -258,6 +260,8 @@
 		378176A01D633D740092C6A4 /* CBKVCRealizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBKVCRealizeViewController.m; sourceTree = "<group>"; };
 		378176A21D633EC00092C6A4 /* CBObject+KVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBObject+KVC.h"; sourceTree = "<group>"; };
 		378176A31D633EC00092C6A4 /* CBObject+KVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBObject+KVC.m"; sourceTree = "<group>"; };
+		3790C7A61E262F29000E8C80 /* CBJSUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBJSUseViewController.h; sourceTree = "<group>"; };
+		3790C7A71E262F29000E8C80 /* CBJSUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBJSUseViewController.m; sourceTree = "<group>"; };
 		37B2AFC01D6DEB4400EC731D /* CBHomePerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHomePerformanceViewController.h; sourceTree = "<group>"; };
 		37B2AFC11D6DEB4400EC731D /* CBHomePerformanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHomePerformanceViewController.m; sourceTree = "<group>"; };
 		37B2AFC31D6DEBD700EC731D /* CBCatonObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCatonObserver.h; sourceTree = "<group>"; };
@@ -270,7 +274,6 @@
 		37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRuntimeViewController.m; sourceTree = "<group>"; };
 		37E57A0F1DC2197D002BFC93 /* CBMasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMasonryViewController.h; sourceTree = "<group>"; };
 		37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMasonryViewController.m; sourceTree = "<group>"; };
-		37EEA74F1E1608D800A7074B /* JSCallOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = JSCallOC.html; path = "../../../../../../../../Downloads/JavaScriptCore-Demo-master/JavaScriptCore-Demo/JSCallOC/JSCallOC.html"; sourceTree = "<group>"; };
 		37EEA7511E16094B00A7074B /* CBJSCallOCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBJSCallOCViewController.h; sourceTree = "<group>"; };
 		37EEA7521E16094B00A7074B /* CBJSCallOCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBJSCallOCViewController.m; sourceTree = "<group>"; };
 		37EEA7541E1609A000A7074B /* CBOCCallJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBOCCallJSViewController.h; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 		37F3C42D1D5DD66000C3CB1F /* CBSkipItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSkipItem.m; sourceTree = "<group>"; };
 		37F3C42F1D5DD6C300C3CB1F /* CBBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBaseTableViewController.h; sourceTree = "<group>"; };
 		37F3C4301D5DD6C300C3CB1F /* CBBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBaseTableViewController.m; sourceTree = "<group>"; };
+		37F76E941E1639380001C9DF /* JSCallOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSCallOC.html; sourceTree = "<group>"; };
+		37F76E951E1639380001C9DF /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		37F873B81D8657CD00316311 /* CBCoreDataFirstUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataFirstUseViewController.h; sourceTree = "<group>"; };
 		37F873B91D8657CD00316311 /* CBCoreDataFirstUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataFirstUseViewController.m; sourceTree = "<group>"; };
 		37F873BC1D86582A00316311 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -747,11 +752,14 @@
 		37EEA74E1E1608CC00A7074B /* JSContext */ = {
 			isa = PBXGroup;
 			children = (
-				37EEA74F1E1608D800A7074B /* JSCallOC.html */,
+				37F76E941E1639380001C9DF /* JSCallOC.html */,
+				37F76E951E1639380001C9DF /* test.js */,
 				37EEA7511E16094B00A7074B /* CBJSCallOCViewController.h */,
 				37EEA7521E16094B00A7074B /* CBJSCallOCViewController.m */,
 				37EEA7541E1609A000A7074B /* CBOCCallJSViewController.h */,
 				37EEA7551E1609A000A7074B /* CBOCCallJSViewController.m */,
+				3790C7A61E262F29000E8C80 /* CBJSUseViewController.h */,
+				3790C7A71E262F29000E8C80 /* CBJSUseViewController.m */,
 			);
 			path = JSContext;
 			sourceTree = "<group>";
@@ -977,7 +985,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F3C4131D5DC6CA00C3CB1F /* LaunchScreen.storyboard in Resources */,
-				37EEA7501E1608D800A7074B /* JSCallOC.html in Resources */,
+				37F76E961E1639380001C9DF /* JSCallOC.html in Resources */,
+				37F76E971E1639380001C9DF /* test.js in Resources */,
 				37F3C4101D5DC6CA00C3CB1F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1119,6 +1128,7 @@
 				37BD55F51D7ABF6E0075FFB4 /* CBGestureViewController.m in Sources */,
 				372C48071D828C06002DB575 /* CBStore.m in Sources */,
 				372C48161D828C3B002DB575 /* CBStrechableFirstViewController.m in Sources */,
+				3790C7A81E262F29000E8C80 /* CBJSUseViewController.m in Sources */,
 				37F873C21D86590E00316311 /* User+CoreDataProperties.m in Sources */,
 				376203221D6ACC030079DAA0 /* CBWebImageCompat.m in Sources */,
 				3762033E1D6D70A60079DAA0 /* CBNonatomicMultiThreadCrashViewController.m in Sources */,
