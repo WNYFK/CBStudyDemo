@@ -11,9 +11,9 @@
 
 typedef void(^CBTestBlock)();
 
-@interface CBTestObject : NSObject
+@interface CBTestObject1 : NSObject
 
-@property (nonatomic, strong) CBTestObject *testObj;
+@property (nonatomic, strong) CBTestObject1 *testObj;
 
 @property (nonatomic, copy) CBTestBlock testBlock1;
 @property (nonatomic, copy) CBTestBlock testBlock2;
@@ -39,7 +39,7 @@ __weak NSString* reference = nil;
     
     [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"autorelease for thread" destinationClass:[CBAutoreleaseForThreadViewController class]]];
 //    
-    CBTestObject *testObj1 = [[CBTestObject alloc] init];
+    CBTestObject1 *testObj1 = [[CBTestObject1 alloc] init];
     [testObj1 startTest];
 //    CBTestObject *testObj2 = [[CBTestObject alloc] init];
 //    
@@ -52,7 +52,7 @@ __weak NSString* reference = nil;
 @end
 
 
-@implementation CBTestObject
+@implementation CBTestObject1
 
 - (void)dealloc {
     NSLog(@"CBTestObject dealloc");
@@ -64,7 +64,7 @@ __weak NSString* reference = nil;
         @strongify(self);
         self.testBlock2 = ^{
             @strongify(self);
-            self.testObj = [[CBTestObject alloc] init];
+            self.testObj = [[CBTestObject1 alloc] init];
         };
     };
     self.testBlock1();

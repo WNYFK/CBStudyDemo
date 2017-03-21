@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CBTabbarController.h"
 #import "CBCatonObserver.h"
+#import "JPEngine.h"
 
 @interface AppDelegate ()
 
@@ -26,9 +27,21 @@
     self.window.rootViewController = self.tabbarController;
     [self.window makeKeyAndVisible];
     
-    
+    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"];
+    NSString *script = [NSString stringWithContentsOfFile:sourcePath encoding:NSUTF8StringEncoding error:nil];
+    [JPEngine startEngine];
+    [JPEngine evaluateScript:script];
     [[CBCatonObserver sharedInstance] startObserver];
+    
+    NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
     return YES;
+}
+
+void UncaughtExceptionHandler(NSException *exception) {
+    NSArray *symbols = [exception callStackSymbols];
+    NSString *reson = [exception reason];
+    NSString *name = [exception name];
+    NSLog(@"crash信息： %@ \n, %@ \n, %@",symbols, reson, name);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

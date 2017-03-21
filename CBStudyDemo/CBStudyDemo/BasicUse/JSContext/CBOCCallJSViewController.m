@@ -7,12 +7,15 @@
 //
 
 #import "CBOCCallJSViewController.h"
+#import "VideoLoaingView.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
 @interface CBOCCallJSViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, assign) int index;
 @property (nonatomic, strong) JSContext *jsContext;
+
+@property (nonatomic, strong) VideoLoaingView *loadingView;
 
 @end
 
@@ -29,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"oc call js";
+    self.view.backgroundColor = [UIColor whiteColor];
     self.jsContext = [[JSContext alloc] init];
     [self.jsContext evaluateScript:[self loadJSFile:@"test"]];
     self.index = 0;
@@ -43,6 +47,17 @@
         showLab.text = [NSString stringWithFormat:@"%@", [result toNumber]];
     }];
     [self.view addSubview:sendToJSBtn];
+    self.loadingView = [VideoLoaingView startAnimationOnView:self.view withSize:CGSizeMake(200, 200)];
+    
+    UIButton *startLoadBtn = [UIButton createButtonWithTitle:@"开始" frame:CGRectMake(0, 300, 100, 50) callBack:^(UIButton *button) {
+        [self.loadingView startAnimating];
+    }];
+    [self.view addSubview:startLoadBtn];
+    
+    UIButton *stopLoadBtn = [UIButton createButtonWithTitle:@"停止" frame:CGRectMake(startLoadBtn.right + 30, startLoadBtn.top, startLoadBtn.width, startLoadBtn.height) callBack:^(UIButton *button) {
+        [self.loadingView stopAnimating];
+    }];
+    [self.view addSubview:stopLoadBtn];
 }
 
 - (void)test {

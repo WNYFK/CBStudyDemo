@@ -7,6 +7,7 @@
 //
 
 #import "CBTestViewController.h"
+#import "CBTestObject.h"
 
 @interface CBFirstView : UIView
 @end
@@ -27,7 +28,7 @@
 @property (nonatomic, strong) NSCondition *condition;
 @property (nonatomic, strong) NSMutableArray *products;
 
-
+@property (nonatomic, strong) CBTestObject *testObject;
 
 @end
 
@@ -73,22 +74,47 @@
     return _condition;
 }
 
-- (void)loadView {
-    self.view = [[CBSuperView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+- (void)testBlock {
+    [self.testObject finished:^(NSDictionary *dict) {
+        NSLog(@"啊啊啊啊: %@",dict);
+    }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.intA = 0;
-    self.tableView.hidden = YES;
+//    self.tableView.hidden = YES;
 
+    self.testObject = [[CBTestObject alloc] init];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem creatBarButtonWithTitle:@"block" callBack:^(UIBarButtonItem *buttonItem) {
+        [self testBlock];
+    }];
     
     [NSThread detachNewThreadSelector:@selector(createConsumenr) toTarget:self withObject:nil];
     [NSThread detachNewThreadSelector:@selector(createProducter) toTarget:self withObject:nil];
     
     CBSectionItem *sectionItem = [[CBSectionItem alloc] init];
     [self.dataArr addObject:sectionItem];
+    
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"GCD test" callBack:^{
+        dispatch_queue_t queue = dispatch_queue_create("com.chenbin.gcd", DISPATCH_QUEUE_CONCURRENT);
+        NSLog(@"1");
+        dispatch_async(queue, ^{
+            NSLog(@"2");
+            dispatch_sync(queue, ^{
+                NSLog(@"3");
+            });
+            NSLog(@"4");
+        });
+        dispatch_async(queue, ^{
+            NSLog(@"6");
+            sleep(10);
+            NSLog(@"7");
+        });
+        NSLog(@"5");
+    }]];
     
     [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"globalQueue barrer sync" callBack:^{
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
@@ -200,6 +226,15 @@
                 NSLog(@"333");
             });
         }
+    }]];
+    
+    [sectionItem.cellItems addObject:[[CBSkipItem alloc] initWithTitle:@"crash" callBack:^{
+        dispatch_queue_t queue = dispatch_queue_create("com.chenbin.queue", DISPATCH_QUEUE_SERIAL);
+        dispatch_async(queue, ^{
+            sleep(50);
+            NSArray *arr = [NSArray array];
+            NSLog(@"%@", arr[1]);
+        });
     }]];
 }
 @end

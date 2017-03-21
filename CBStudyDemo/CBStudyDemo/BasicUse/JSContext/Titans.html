@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="Titans.js"></script>
+    <script type="text/javascript">
+
+        var performanceLogger = {};
+
+        function printLogger() {
+            console.log('成功率:'+Object.keys(performanceLogger).length/1000.0);
+            var sum = 0;
+            for(var result in performanceLogger) {
+                if (result.length == 2) {
+                    var beginTime = result[0];
+                    var endTime = result[1];
+                    sum += endTime - beginTime;
+                }
+            }
+            console.log('总耗时:'+sum);
+            console.log('平均耗时:'+sum/Object.keys(performanceLogger).length);
+        }
+
+        function onSucc(result) {
+            var now = new Date();
+            console.log(now);
+            var _guid = result['result'];
+            var times = performanceLogger[_guid];
+            if (times.length > 0) {
+                times.push(now.getTime());
+            }
+            console.log(times);
+        }
+
+        function onFail() {
+            console.log("fail");
+        }
+
+        function guid() {
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                    s4() + '-' + s4() + s4() + s4();
+        }
+
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+        }
+
+        window.Titans.onReady(function(){
+            var _guid = guid();
+            var now = new Date();
+            performanceLogger[_guid] = [now.getTime()];
+            window.Titans.callFunction("UI", "setTitle", [{"title": _guid}], onFail, onSucc);
+        });
+
+        function setTitle() {
+            for (var i = 0;i < 4;i ++) {
+                var _guid = guid();
+                var now = new Date();
+                performanceLogger[_guid] = [now.getTime()];
+                window.Titans.callFunction("UI", "setTitle", [{"title": _guid}], onFail, onSucc);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<h1>Titans</h1>
+<button type="button" onclick="setTitle()">Click Me</button>
+</body>
+</html>
