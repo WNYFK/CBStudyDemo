@@ -45,6 +45,7 @@
 		372C48241D829E2F002DB575 /* UIButton+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C48231D829E2F002DB575 /* UIButton+Create.m */; };
 		372C48271D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 372C48251D82ACB0002DB575 /* CBStudyDemo.xcdatamodeld */; };
 		372C482A1D82B979002DB575 /* CBCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C48291D82B979002DB575 /* CBCoreDataViewController.m */; };
+		373704A91EAF244100782DDC /* CBRealmObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 373704A81EAF244100782DDC /* CBRealmObject.m */; };
 		374BB3221DD95F61000362B3 /* CBRunLoopPrincipleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB3211DD95F61000362B3 /* CBRunLoopPrincipleViewController.m */; };
 		374BB3251DD9606E000362B3 /* CBRunLoopChangeModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB3241DD9606E000362B3 /* CBRunLoopChangeModelViewController.m */; };
 		374BB3281DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374BB3271DD969AD000362B3 /* CBRunLoopSourceHandleViewController.m */; };
@@ -77,7 +78,6 @@
 		377C7C891E6D68D3002B1AE4 /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 377C7C881E6D68D3002B1AE4 /* demo.js */; };
 		377C7C8C1E6D6CD4002B1AE4 /* CBTestViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 377C7C8B1E6D6CD4002B1AE4 /* CBTestViewController1.m */; };
 		378176811D61DA180092C6A4 /* CBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176801D61DA180092C6A4 /* CBBaseViewController.m */; };
-		378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378176861D61E2380092C6A4 /* CBSwiftNormal.swift */; };
 		378176931D62A9100092C6A4 /* CBKVORealizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176921D62A9100092C6A4 /* CBKVORealizeViewController.m */; };
 		378176961D62A9600092C6A4 /* CBKVOBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176951D62A9600092C6A4 /* CBKVOBlockViewController.m */; };
 		378176991D62AB980092C6A4 /* CBKVOTestClassOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 378176981D62AB980092C6A4 /* CBKVOTestClassOne.m */; };
@@ -91,6 +91,10 @@
 		37BD55F21D7A9DFA0075FFB4 /* CBRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F11D7A9DFA0075FFB4 /* CBRACViewController.m */; };
 		37BD55F51D7ABF6E0075FFB4 /* CBGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */; };
 		37C85BE71DE3E6AB002ECD3B /* CBRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */; };
+		37CDBF351E84E66200ECCA61 /* CBSwiftTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CDBF341E84E66200ECCA61 /* CBSwiftTestViewController.swift */; };
+		37CDBF371E84ECD600ECCA61 /* CBOptionalSpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CDBF361E84ECD600ECCA61 /* CBOptionalSpeedViewController.swift */; };
+		37CDBF391E84F5FD00ECCA61 /* CBArraySpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CDBF381E84F5FD00ECCA61 /* CBArraySpeedViewController.swift */; };
+		37CDBF3B1E84FBC000ECCA61 /* CBDictionarySpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CDBF3A1E84FBC000ECCA61 /* CBDictionarySpeedViewController.swift */; };
 		37E57A111DC2197D002BFC93 /* CBMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */; };
 		37EEA7531E16094B00A7074B /* CBJSCallOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EEA7521E16094B00A7074B /* CBJSCallOCViewController.m */; };
 		37EEA7561E1609A000A7074B /* CBOCCallJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EEA7551E1609A000A7074B /* CBOCCallJSViewController.m */; };
@@ -201,6 +205,8 @@
 		372C48261D82ACB0002DB575 /* CBStudyDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CBStudyDemo.xcdatamodel; sourceTree = "<group>"; };
 		372C48281D82B979002DB575 /* CBCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoreDataViewController.h; sourceTree = "<group>"; };
 		372C48291D82B979002DB575 /* CBCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoreDataViewController.m; sourceTree = "<group>"; };
+		373704A71EAF244100782DDC /* CBRealmObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRealmObject.h; sourceTree = "<group>"; };
+		373704A81EAF244100782DDC /* CBRealmObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRealmObject.m; sourceTree = "<group>"; };
 		374BB3201DD95F61000362B3 /* CBRunLoopPrincipleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRunLoopPrincipleViewController.h; sourceTree = "<group>"; };
 		374BB3211DD95F61000362B3 /* CBRunLoopPrincipleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRunLoopPrincipleViewController.m; sourceTree = "<group>"; };
 		374BB3231DD9606E000362B3 /* CBRunLoopChangeModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRunLoopChangeModelViewController.h; sourceTree = "<group>"; };
@@ -265,7 +271,6 @@
 		3781767F1D61DA180092C6A4 /* CBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBaseViewController.h; sourceTree = "<group>"; };
 		378176801D61DA180092C6A4 /* CBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBaseViewController.m; sourceTree = "<group>"; };
 		378176851D61E2380092C6A4 /* CBStudyDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBStudyDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		378176861D61E2380092C6A4 /* CBSwiftNormal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSwiftNormal.swift; sourceTree = "<group>"; };
 		378176911D62A9100092C6A4 /* CBKVORealizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBKVORealizeViewController.h; sourceTree = "<group>"; };
 		378176921D62A9100092C6A4 /* CBKVORealizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBKVORealizeViewController.m; sourceTree = "<group>"; };
 		378176941D62A9600092C6A4 /* CBKVOBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBKVOBlockViewController.h; sourceTree = "<group>"; };
@@ -293,6 +298,10 @@
 		37BD55F41D7ABF6E0075FFB4 /* CBGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGestureViewController.m; sourceTree = "<group>"; };
 		37C85BE51DE3E6AB002ECD3B /* CBRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRuntimeViewController.h; sourceTree = "<group>"; };
 		37C85BE61DE3E6AB002ECD3B /* CBRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRuntimeViewController.m; sourceTree = "<group>"; };
+		37CDBF341E84E66200ECCA61 /* CBSwiftTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSwiftTestViewController.swift; sourceTree = "<group>"; };
+		37CDBF361E84ECD600ECCA61 /* CBOptionalSpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBOptionalSpeedViewController.swift; sourceTree = "<group>"; };
+		37CDBF381E84F5FD00ECCA61 /* CBArraySpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBArraySpeedViewController.swift; sourceTree = "<group>"; };
+		37CDBF3A1E84FBC000ECCA61 /* CBDictionarySpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDictionarySpeedViewController.swift; sourceTree = "<group>"; };
 		37E57A0F1DC2197D002BFC93 /* CBMasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMasonryViewController.h; sourceTree = "<group>"; };
 		37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMasonryViewController.m; sourceTree = "<group>"; };
 		37EEA7511E16094B00A7074B /* CBJSCallOCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBJSCallOCViewController.h; sourceTree = "<group>"; };
@@ -526,6 +535,15 @@
 			name = BaseUse;
 			sourceTree = "<group>";
 		};
+		373704A61EAF23D100782DDC /* Realm&Mantle */ = {
+			isa = PBXGroup;
+			children = (
+				373704A71EAF244100782DDC /* CBRealmObject.h */,
+				373704A81EAF244100782DDC /* CBRealmObject.m */,
+			);
+			name = "Realm&Mantle";
+			sourceTree = "<group>";
+		};
 		374BB31F1DD95F3B000362B3 /* RunLoop */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,6 +728,7 @@
 		37B2AFBF1D6DEB1900EC731D /* Performance */ = {
 			isa = PBXGroup;
 			children = (
+				37CDBF331E84E63100ECCA61 /* swift */,
 				37B2AFC01D6DEB4400EC731D /* CBHomePerformanceViewController.h */,
 				37B2AFC11D6DEB4400EC731D /* CBHomePerformanceViewController.m */,
 				37F879B91D6EEAF200779AC5 /* CBCatonTestViewController.h */,
@@ -761,6 +780,17 @@
 			name = Runtime;
 			sourceTree = "<group>";
 		};
+		37CDBF331E84E63100ECCA61 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				37CDBF341E84E66200ECCA61 /* CBSwiftTestViewController.swift */,
+				37CDBF361E84ECD600ECCA61 /* CBOptionalSpeedViewController.swift */,
+				37CDBF381E84F5FD00ECCA61 /* CBArraySpeedViewController.swift */,
+				37CDBF3A1E84FBC000ECCA61 /* CBDictionarySpeedViewController.swift */,
+			);
+			name = swift;
+			sourceTree = "<group>";
+		};
 		37E57A0E1DC2195D002BFC93 /* AutoLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,13 +798,6 @@
 				37E57A101DC2197D002BFC93 /* CBMasonryViewController.m */,
 			);
 			path = AutoLayout;
-			sourceTree = "<group>";
-		};
-		37EEA7351E14F0B900A7074B /* MacOS&iOS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "MacOS&iOS";
 			sourceTree = "<group>";
 		};
 		37EEA74E1E1608CC00A7074B /* JSContext */ = {
@@ -817,7 +840,6 @@
 		37F3C4021D5DC6CA00C3CB1F /* CBStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				37EEA7351E14F0B900A7074B /* MacOS&iOS */,
 				3763F8C81DD0625C0050F9B5 /* DebugHelp */,
 				37277BFC1DC86DE100E2A432 /* Playground */,
 				37F879BF1D6FE1CD00779AC5 /* LocalStorage */,
@@ -829,7 +851,6 @@
 				37B2AFBC1D66083800EC731D /* Common */,
 				37B2AFBD1D66085300EC731D /* Tabbar */,
 				37B2AFBE1D6608D100EC731D /* Navigation */,
-				378176861D61E2380092C6A4 /* CBSwiftNormal.swift */,
 				37F3C4061D5DC6CA00C3CB1F /* AppDelegate.h */,
 				37F3C4071D5DC6CA00C3CB1F /* AppDelegate.m */,
 				37F879E11D704FE200779AC5 /* UIApplication+Category.h */,
@@ -855,6 +876,7 @@
 		37F3C41D1D5DD31100C3CB1F /* BasicUse */ = {
 			isa = PBXGroup;
 			children = (
+				373704A61EAF23D100782DDC /* Realm&Mantle */,
 				37EEA74E1E1608CC00A7074B /* JSContext */,
 				3705FCDD1DE834A7004C45BB /* test */,
 				37E57A0E1DC2195D002BFC93 /* AutoLayout */,
@@ -991,7 +1013,7 @@
 					37F3C3FF1D5DC6CA00C3CB1F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6U4Q5ZVMMM;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1113,7 +1135,9 @@
 				372C48041D828C06002DB575 /* CBFetchedResultsControllerDataSource.m in Sources */,
 				371621411D65B93B00CC2D4A /* UIView+Layout.m in Sources */,
 				3762033B1D6D69900079DAA0 /* CBHomeHoleViewController.m in Sources */,
+				37CDBF371E84ECD600ECCA61 /* CBOptionalSpeedViewController.swift in Sources */,
 				37F873C61D865A0100316311 /* CBCoreDataConnect.m in Sources */,
+				37CDBF351E84E66200ECCA61 /* CBSwiftTestViewController.swift in Sources */,
 				37F3C41C1D5DD1A800C3CB1F /* CBTabbarController.m in Sources */,
 				371031C51D7FBB83001A9AD7 /* CBDynamicPanCell.m in Sources */,
 				370AA53C1D9B963F00469839 /* MYPScrollViewPagingViewController.m in Sources */,
@@ -1135,6 +1159,7 @@
 				3781769C1D62CEF10092C6A4 /* NSObject+KVO.m in Sources */,
 				3705FCE01DE834BC004C45BB /* CBTestViewController.m in Sources */,
 				37F879BE1D6EEDD900779AC5 /* CBCatonTimerManager.m in Sources */,
+				37CDBF391E84F5FD00ECCA61 /* CBArraySpeedViewController.swift in Sources */,
 				372C47E31D828B4F002DB575 /* CBNSRunLoopViewController.m in Sources */,
 				371031621D7EC51D001A9AD7 /* CBDynamicViewController.m in Sources */,
 				376203261D6ACC030079DAA0 /* UIImageView+CBWebCache.m in Sources */,
@@ -1174,14 +1199,15 @@
 				37F873C21D86590E00316311 /* User+CoreDataProperties.m in Sources */,
 				377C7C841E6D66A7002B1AE4 /* CBJSPatchViewController.m in Sources */,
 				376203221D6ACC030079DAA0 /* CBWebImageCompat.m in Sources */,
+				373704A91EAF244100782DDC /* CBRealmObject.m in Sources */,
 				3762033E1D6D70A60079DAA0 /* CBNonatomicMultiThreadCrashViewController.m in Sources */,
 				37F3C42B1D5DD46E00C3CB1F /* CBNavigationController.m in Sources */,
 				378176961D62A9600092C6A4 /* CBKVOBlockViewController.m in Sources */,
 				37F3C4081D5DC6CA00C3CB1F /* AppDelegate.m in Sources */,
 				376203371D6C4F6E0079DAA0 /* CBMemoryCache_YY.m in Sources */,
 				372C47EE1D828B94002DB575 /* CBOperationViewController.m in Sources */,
+				37CDBF3B1E84FBC000ECCA61 /* CBDictionarySpeedViewController.swift in Sources */,
 				374BB3221DD95F61000362B3 /* CBRunLoopPrincipleViewController.m in Sources */,
-				378176871D61E2380092C6A4 /* CBSwiftNormal.swift in Sources */,
 				37EEA7531E16094B00A7074B /* CBJSCallOCViewController.m in Sources */,
 				372C48181D828C3B002DB575 /* CBStrechableScrollViewController.m in Sources */,
 				376203231D6ACC030079DAA0 /* CBWebImageDownloader.m in Sources */,
@@ -1248,6 +1274,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1303,12 +1330,13 @@
 				INFOPLIST_FILE = CBStudyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wnyfk.CBStudyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CBStudyDemo/CBStudyDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1329,7 +1357,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CBStudyDemo/CBStudyDemo-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

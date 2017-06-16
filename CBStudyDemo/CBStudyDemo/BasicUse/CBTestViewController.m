@@ -47,6 +47,7 @@
     [self.products removeObject:0];
     NSLog(@"消费产品");
     [_condition unlock];
+    
 }
 
 - (void)createProducter

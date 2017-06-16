@@ -24,6 +24,8 @@
 #import "MBProgressHUD.h"
 #import "CRToast.h"
 #import "Masonry.h"
+#import "Realm.h"
+#import "Mantle.h"
 
 
 //#import "ReactiveCocoa.h"
